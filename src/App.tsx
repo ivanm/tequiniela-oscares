@@ -1,38 +1,43 @@
-import * as React from "react"
+import * as React from "react";
 import {
-  ChakraProvider,
+  CSSReset,
+  Theme,
   Box,
+  Flex,
+  Heading,
+  Image,
   Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
+  Stack,
+  Wrap,
+  WrapItem,
+  Button,
   theme,
-} from "@chakra-ui/react"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
-
+  ChakraProvider,
+} from "@chakra-ui/react";
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Grid minH="100vh" p={3}>
-        <ColorModeSwitcher justifySelf="flex-end" />
-        <VStack spacing={8}>
-          <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-          </Text>
-          <Link
-            color="teal.500"
-            href="https://chakra-ui.com"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Chakra
-          </Link>
-        </VStack>
-      </Grid>
+    <CSSReset />
+    <header>
+      <Flex align="center" p={4} bg="white" color="black">
+        <Heading as="h1" size="lg">
+          Oscarin
+        </Heading>
+        <Button>Mi Quiniela</Button>
+      </Flex>
+    </header>
+    <Box as="main" bg="white">
+      <Wrap>
+        {Array(10)
+          .fill(null)
+          .map((_, i) => (
+            <WrapItem>
+              <Box p={2}>
+                <Image src="https://picsum.photos/200" alt="Gallery Item 1" />
+                <Text mt={2}>Item {i}</Text>
+              </Box>
+            </WrapItem>
+          ))}
+      </Wrap>
     </Box>
   </ChakraProvider>
-)
+);
