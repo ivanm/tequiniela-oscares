@@ -13,6 +13,7 @@ import {
 
 import theme from "./theme";
 import BigCard from "./cards/BigCard";
+import nominees from "./nominees";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -29,7 +30,7 @@ export const App = () => (
         <Heading as="h1" size="lg">
           TEQU
         </Heading>
-        <Image src="/figure.svg" alt="Oscar Figure"/>
+        <Image src="/figure.svg" alt="Oscar Figure" />
         <Heading as="h1" size="lg" mr={5}>
           NIELA
         </Heading>
@@ -48,7 +49,7 @@ export const App = () => (
         </Flex>
       </Flex>
     </Box>
-    <Box as="main" bg="#E5E5E5" mt="72px" pl={15  } pr={15}>
+    <Box as="main" mt="72px" pl={15} pr={15}>
       <Flex ml={3} mt={6} mb={3} pt={4}>
         <Image src="/figure.svg" alt="Oscar Figure" />
         <Flex align="center">
@@ -58,18 +59,13 @@ export const App = () => (
         </Flex>
       </Flex>
       <Wrap>
-        {Array(100)
-          .fill(null)
-          .map((_, i) => (
-            <WrapItem>
-              <Box p={2}>
-                <BigCard
-                  imgSrc="https://picsum.photos/200"
-                  title={`Item ${i}`}
-                />
-              </Box>
-            </WrapItem>
-          ))}
+        {nominees.bestPicture.map(({ imgSrc, movie }, i) => (
+          <WrapItem key={i}>
+            <Box p={2}>
+              <BigCard imgSrc={imgSrc} title={movie} />
+            </Box>
+          </WrapItem>
+        ))}
       </Wrap>
     </Box>
   </ChakraProvider>
