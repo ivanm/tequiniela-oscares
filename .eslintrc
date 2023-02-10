@@ -1,0 +1,12 @@
+{
+  "extends": ["react-app"],
+  "plugins": ["tsc"],
+  "rules": {
+    "tsc/config": [
+      1,
+      {
+        "configFile": "tsconfig.json"
+      }
+    ]
+  }
+}
