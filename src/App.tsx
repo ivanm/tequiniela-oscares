@@ -5,30 +5,59 @@ import {
   Box,
   Flex,
   Heading,
-  Image,
   Text,
   Stack,
   Wrap,
   WrapItem,
   Button,
+  Image,
   ChakraProvider,
 } from "@chakra-ui/react";
 
-import theme from './theme';
+import theme from "./theme";
 export const App = () => (
   <ChakraProvider theme={theme}>
     <CSSReset />
-    <header>
-      <Flex align="center" p={4} bg="white" color="black">
+    <Box
+      as="header"
+      position="fixed"
+      w="100%"
+      background="#fff url(/topbg.png) repeat-x bottom"
+    >
+      <Flex align="center" p={4} bg="transparent" color="black">
         <Heading as="h1" size="lg">
-          Oscarin
+          TEQU
         </Heading>
-        <Button>Mi Quiniela</Button>
+        <Image src="/figure.svg" alt="Oscar Figure" />
+        <Heading as="h1" size="lg" mr={5}>
+          NIELA
+        </Heading>
+        <Button mr={2}>Mi Quiniela</Button>
+        <Button className="inactive" mr={2}>
+          Ranking
+        </Button>
+        <Button className="inactive" mr={2}>
+          Reglas
+        </Button>
+        <Flex ml="auto">
+          <Button className="inactive">Compartir</Button>
+          <Flex align="center">
+            <Box height={26}>@vaan</Box>
+          </Flex>
+        </Flex>
       </Flex>
-    </header>
-    <Box as="main" bg="white">
+    </Box>
+    <Box as="main" bg="white" mt="90px">
+      <Flex ml={3} mt={6} mb={3}>
+        <Image src="/figure.svg" alt="Oscar Figure" />
+        <Flex align="center">
+          <Heading fontWeight="extrabold" as="h1" fontSize="24px" mr={2}>
+            Best Picture
+          </Heading>
+        </Flex>
+      </Flex>
       <Wrap>
-        {Array(10)
+        {Array(100)
           .fill(null)
           .map((_, i) => (
             <WrapItem>
