@@ -15,6 +15,8 @@ import {
 } from "@chakra-ui/react";
 
 import theme from "./theme";
+import BigCard from "./cards/BigCard";
+
 export const App = () => (
   <ChakraProvider theme={theme}>
     <CSSReset />
@@ -22,13 +24,15 @@ export const App = () => (
       as="header"
       position="fixed"
       w="100%"
-      background="#fff url(/topbg.png) repeat-x bottom"
+      background="#fff"
+      boxShadow="0px 2px 2px rgba(0, 0, 0, 0.1)"
+      zIndex={2}
     >
       <Flex align="center" p={4} bg="transparent" color="black">
         <Heading as="h1" size="lg">
           TEQU
         </Heading>
-        <Image src="/figure.svg" alt="Oscar Figure" />
+        <Image src="/figure.svg" alt="Oscar Figure"/>
         <Heading as="h1" size="lg" mr={5}>
           NIELA
         </Heading>
@@ -47,8 +51,8 @@ export const App = () => (
         </Flex>
       </Flex>
     </Box>
-    <Box as="main" bg="white" mt="90px">
-      <Flex ml={3} mt={6} mb={3}>
+    <Box as="main" bg="#E5E5E5" mt="72px" pl={15  } pr={15}>
+      <Flex ml={3} mt={6} mb={3} pt={4}>
         <Image src="/figure.svg" alt="Oscar Figure" />
         <Flex align="center">
           <Heading fontWeight="extrabold" as="h1" fontSize="24px" mr={2}>
@@ -62,8 +66,10 @@ export const App = () => (
           .map((_, i) => (
             <WrapItem>
               <Box p={2}>
-                <Image src="https://picsum.photos/200" alt="Gallery Item 1" />
-                <Text mt={2}>Item {i}</Text>
+                <BigCard
+                  imgSrc="https://picsum.photos/200"
+                  title={`Item ${i}`}
+                />
               </Box>
             </WrapItem>
           ))}
