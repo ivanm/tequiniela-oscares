@@ -62,7 +62,7 @@ export const App = () => (
         {nominees.bestPicture.map(({ imgSrc, movie }, i) => (
           <WrapItem key={i}>
             <Box p={2}>
-              <BigCard imgSrc={imgSrc} title={movie} />
+              <BigCard imgSrc={imgSrc} title={movie} status="selected-won" />
             </Box>
           </WrapItem>
         ))}
