@@ -1,12 +1,9 @@
 import * as React from "react";
 import {
   CSSReset,
-  Theme,
   Box,
   Flex,
   Heading,
-  Text,
-  Stack,
   Wrap,
   WrapItem,
   Button,
