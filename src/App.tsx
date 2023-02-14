@@ -4,17 +4,14 @@ import {
   Box,
   Flex,
   Heading,
-  Wrap,
-  WrapItem,
   Button,
   Image,
   ChakraProvider,
 } from "@chakra-ui/react";
 
 import theme from "./theme";
-import BigCard from "./cards/BigCard";
-import SmallCard from "./cards/SmallCard";
 import nominees from "./nominees";
+import NominationCards from "./NominationCards";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -51,98 +48,178 @@ export const App = () => (
       </Flex>
     </Box>
     <Box as="main" mt="72px" pl={15} pr={15}>
-      <Flex ml={3} mt={6} mb={3} pt={4}>
-        <Image src="/figure.svg" alt="Oscar Figure" />
-        <Flex align="center">
-          <Heading fontWeight="extrabold" as="h1" fontSize="24px" mr={2}>
-            Best Picture
-          </Heading>
-        </Flex>
-      </Flex>
-      <Wrap>
-        {nominees.bestPicture.map(({ imgSrc, movie }, i) => (
-          <WrapItem key={i}>
-            <Box p={2}>
-              <BigCard imgSrc={imgSrc} title={movie} status="normal" />
-            </Box>
-          </WrapItem>
-        ))}
-      </Wrap>
-
+      <NominationCards
+        containerDirection="column"
+        cardsDirection="row"
+        nominations={nominees.bestPicture}
+        size="big"
+        title="Best Picture"
+        ml={3}
+        mt={6}
+        mb={3}
+        pt={4}
+      />
       <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
-        <Flex direction="column">
-          <Flex ml={3} mt={6} mb={3} pt={4}>
-            <Image src="/figure.svg" alt="Oscar Figure" />
-            <Flex align="center">
-              <Heading fontWeight="extrabold" as="h1" fontSize="24px" mr={2}>
-                Best Director
-              </Heading>
-            </Flex>
-          </Flex>
-          <Wrap direction="column">
-            {nominees.directing.map(({ imgSrc, movie, name }, i) => (
-              <WrapItem key={i}>
-                <Box p={2}>
-                  <SmallCard
-                    imgSrc={imgSrc}
-                    title={movie}
-                    name={name}
-                    status="normal"
-                  />
-                </Box>
-              </WrapItem>
-            ))}
-          </Wrap>
-        </Flex>
-
-        <Flex direction="column">
-          <Flex ml={3} mt={6} mb={3} pt={4}>
-            <Image src="/figure.svg" alt="Oscar Figure" />
-            <Flex align="center">
-              <Heading fontWeight="extrabold" as="h1" fontSize="24px" mr={2}>
-                Best Actor
-              </Heading>
-            </Flex>
-          </Flex>
-          <Wrap direction="column">
-            {nominees.leadingActor.map(({ imgSrc, movie, name }, i) => (
-              <WrapItem key={i}>
-                <Box p={2}>
-                  <SmallCard
-                    imgSrc={imgSrc}
-                    title={movie}
-                    name={name}
-                    status="normal"
-                  />
-                </Box>
-              </WrapItem>
-            ))}
-          </Wrap>
-        </Flex>
-        <Flex direction="column">
-          <Flex ml={3} mt={6} mb={3} pt={4}>
-            <Image src="/figure.svg" alt="Oscar Figure" />
-            <Flex align="center">
-              <Heading fontWeight="extrabold" as="h1" fontSize="24px" mr={2}>
-                Best Actress
-              </Heading>
-            </Flex>
-          </Flex>
-          <Wrap direction="column">
-            {nominees.leadingActress.map(({ imgSrc, movie, name }, i) => (
-              <WrapItem key={i}>
-                <Box p={2}>
-                  <SmallCard
-                    imgSrc={imgSrc}
-                    title={movie}
-                    name={name}
-                    status="normal"
-                  />
-                </Box>
-              </WrapItem>
-            ))}
-          </Wrap>
-        </Flex>
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.directing}
+          size="small"
+          title="Best Director"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.leadingActor}
+          size="small"
+          title="Best Actor"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.leadingActress}
+          size="small"
+          title="Best Actress"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+      </Flex>
+      <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.supportingActor}
+          size="small"
+          title="Best Supporting Actor"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.supportingActress}
+          size="small"
+          title="Best Supporting Actress"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.animatedFeature}
+          size="small"
+          title="Best Animated Feature Film"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+      </Flex>
+      <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.originalScreenplay}
+          size="small"
+          title="Best Original Screenplay"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.adaptedScreenplay}
+          size="small"
+          title="Best Adapted Screenplay"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.internationalFeature}
+          size="small"
+          title="Best International Feature Film"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.documentaryFeature}
+          size="small"
+          title="Best Documentary Feature"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+      </Flex>
+      <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.documentaryShort}
+          size="small"
+          title="Best Documentary Short Subject"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.liveActionShort}
+          size="small"
+          title="Best Live Action Short Film"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.animatedShort}
+          size="small"
+          title="Best Animated Short Film"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.originalScore}
+          size="small"
+          title="Best Original Score"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
       </Flex>
     </Box>
     <Box as="main" mt={3} pl={15} pr={15}></Box>
