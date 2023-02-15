@@ -46,7 +46,7 @@ const NominationCards = ({
             lg: size !== "mini" ? "24px" : "17px",
           }}
           mr={2}
-          maxWidth={{base: 150, lg: 220}}
+          maxWidth={{base: 170, lg: 320}}
         >
           {title}
         </Heading>
