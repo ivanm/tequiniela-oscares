@@ -1,9 +1,7 @@
-import { Card, Image, Flex, Text } from "@chakra-ui/react";
+import { Card, Flex, Text } from "@chakra-ui/react";
 
-export interface SmallCardProps {
+export interface MiniCardProps {
   title: string;
-  imgSrc: string | undefined;
-  name: string | undefined;
   status:
     | "normal"
     | "selected"
@@ -13,7 +11,7 @@ export interface SmallCardProps {
     | "not-selected-lost";
 }
 
-const SmallCard = ({ title, imgSrc, name, status }: SmallCardProps) => {
+const MiniCard = ({ title, status }: MiniCardProps) => {
   const bgColor =
     status === "selected"
       ? "#016FB9"
@@ -44,35 +42,22 @@ const SmallCard = ({ title, imgSrc, name, status }: SmallCardProps) => {
       opacity={["not-selected-lost"].includes(status) ? ".2" : "1"}
       direction="row"
     >
-      {imgSrc && (
-        <Image
-          borderLeftRadius="sm"
-          src={imgSrc}
-          alt={title}
-          objectFit="cover"
-          align="0px -12px"
-          height="100px"
-          width="100px"
-          minWidth="100px"
-        />
-      )}
       <Flex
-        pl={4}
-        pr={4}
+        pl={10}
+        pr={10}
         justify="center"
-        pt={2}
-        pb={2}
+        pt={3}
+        pb={3}
         direction="column"
-        w={{ base: 180, md: 220, lg: 320 }}
+        w={{ base: 200, lg: 300 }}
+        minHeight={"70px"}
       >
-        <Text fontSize={{ base: "sm", lg: "lg" }} color={textColor}>
-          {name}
-        </Text>
-        <Text fontSize={{ base: "xs", lg: "sm" }} color={textColor}>
+        <Text fontSize={{ base: "11px", lg: "sm" }} color={textColor}>
           {title}
         </Text>
       </Flex>
     </Card>
   );
 };
-export default SmallCard;
+export default MiniCard;
+

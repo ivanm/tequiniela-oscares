@@ -59,7 +59,7 @@ export const App = () => (
         mb={3}
         pt={4}
       />
-      <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
+      <Flex direction={{ base: "column", md: "row" }} justify="space-between">
         <NominationCards
           containerDirection="column"
           cardsDirection="column"
@@ -94,7 +94,7 @@ export const App = () => (
           pt={4}
         />
       </Flex>
-      <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
+      <Flex direction={{ base: "column", md: "row" }} justify="space-between">
         <NominationCards
           containerDirection="column"
           cardsDirection="column"
@@ -129,12 +129,12 @@ export const App = () => (
           pt={4}
         />
       </Flex>
-      <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
+      <Flex direction={{ base: "column", md: "row" }} justify="space-between">
         <NominationCards
           containerDirection="column"
           cardsDirection="column"
           nominations={nominees.originalScreenplay}
-          size="small"
+          size="mini"
           title="Best Original Screenplay"
           ml={3}
           mt={6}
@@ -145,7 +145,7 @@ export const App = () => (
           containerDirection="column"
           cardsDirection="column"
           nominations={nominees.adaptedScreenplay}
-          size="small"
+          size="mini"
           title="Best Adapted Screenplay"
           ml={3}
           mt={6}
@@ -156,7 +156,7 @@ export const App = () => (
           containerDirection="column"
           cardsDirection="column"
           nominations={nominees.internationalFeature}
-          size="small"
+          size="mini"
           title="Best International Feature Film"
           ml={3}
           mt={6}
@@ -167,7 +167,7 @@ export const App = () => (
           containerDirection="column"
           cardsDirection="column"
           nominations={nominees.documentaryFeature}
-          size="small"
+          size="mini"
           title="Best Documentary Feature"
           ml={3}
           mt={6}
@@ -175,12 +175,12 @@ export const App = () => (
           pt={4}
         />
       </Flex>
-      <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
+      <Flex direction={{ base: "column", md: "row" }} justify="space-between">
         <NominationCards
           containerDirection="column"
           cardsDirection="column"
           nominations={nominees.documentaryShort}
-          size="small"
+          size="mini"
           title="Best Documentary Short Subject"
           ml={3}
           mt={6}
@@ -191,7 +191,7 @@ export const App = () => (
           containerDirection="column"
           cardsDirection="column"
           nominations={nominees.liveActionShort}
-          size="small"
+          size="mini"
           title="Best Live Action Short Film"
           ml={3}
           mt={6}
@@ -202,7 +202,7 @@ export const App = () => (
           containerDirection="column"
           cardsDirection="column"
           nominations={nominees.animatedShort}
-          size="small"
+          size="mini"
           title="Best Animated Short Film"
           ml={3}
           mt={6}
@@ -213,8 +213,100 @@ export const App = () => (
           containerDirection="column"
           cardsDirection="column"
           nominations={nominees.originalScore}
-          size="small"
+          size="mini"
           title="Best Original Score"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+      </Flex>
+      <Flex direction={{ base: "column", md: "row" }} justify="space-between">
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.originalSong}
+          size="mini"
+          title="Best Original Song"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.sound}
+          size="mini"
+          title="Best Sound"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.productionDesign}
+          size="mini"
+          title="Best Production Design"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.cinematography}
+          size="mini"
+          title="Best Cinematography"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+      </Flex>
+      <Flex direction={{ base: "column", md: "row" }} justify="space-between">
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.makeup}
+          size="mini"
+          title="Best Makeup and Hairstyling"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.costumeDesign}
+          size="mini"
+          title="Best Costume Design"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.filmEditing}
+          size="mini"
+          title="Best Film Editing"
+          ml={3}
+          mt={6}
+          mb={3}
+          pt={4}
+        />
+        <NominationCards
+          containerDirection="column"
+          cardsDirection="column"
+          nominations={nominees.visualEffects}
+          size="mini"
+          title="Best Visual Effects" 
           ml={3}
           mt={6}
           mb={3}

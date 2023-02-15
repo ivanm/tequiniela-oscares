@@ -7,7 +7,6 @@ export interface Nomination {
 export interface Nominees {
   bestPicture: Nomination[];
   directing: Nomination[];
-  // costumeDesign: Nomination[];
   leadingActor: Nomination[];
   leadingActress: Nomination[];
   supportingActor: Nomination[];
@@ -21,6 +20,14 @@ export interface Nominees {
   liveActionShort: Nomination[];
   animatedShort: Nomination[];
   originalScore: Nomination[];
+  originalSong: Nomination[];
+  sound: Nomination[];
+  productionDesign: Nomination[];
+  cinematography: Nomination[];
+  makeup: Nomination[];
+  costumeDesign: Nomination[];
+  filmEditing: Nomination[];
+  visualEffects: Nomination[];
 }
 
 const nominees: Nominees = {
@@ -204,12 +211,12 @@ const nominees: Nominees = {
   animatedFeature: [
     {
       movie: "Guillermo del Toro's Pinocchio",
-      name: "Guillermo del Toro, Mark Gustafson, Gary Ungar, and Alex Bulkley",
+      name: "G. del Toro, M. Gustafson, G. Ungar, and A. Bulkley",
       imgSrc: "/moviePosters/guillermo-del-toros-pinocchio.jpg",
     },
     {
       movie: "Marcel the Shell with Shoes On",
-      name: "Dean Fleischer Camp, E. Holm, A. Goldman, C. Kaplan, and P. Mezey",
+      name: "D. F. Camp, E. Holm, A. Goldman, C. Kaplan, and P. Mezey",
       imgSrc: "/moviePosters/marcel.jpg",
     },
     {
@@ -231,177 +238,273 @@ const nominees: Nominees = {
   originalScreenplay: [
     {
       movie: "The Banshees of Inisherin",
-      name: "Martin McDonagh",
     },
     {
       movie: "Everything Everywhere All at Once",
-      name: "Daniel Kwan and Daniel Scheinert",
     },
     {
       movie: "The Fabelmans",
-      name: "Steven Spielberg and Tony Kushner",
     },
     {
       movie: "Tár",
-      name: "Todd Field",
     },
     {
       movie: "Triangle of Sadness",
-      name: "Ruben Östlund",
     },
   ],
   adaptedScreenplay: [
     {
       movie: "All Quiet on the Western Front",
-      name: "Edward Berger, Lesley Paterson, and Ian Stokell",
     },
     {
       movie: "Glass Onion: A Knives Out Mystery",
-      name: "Rian Johnson",
     },
     {
       movie: "Living",
-      name: " Kazuo Ishiguro",
     },
     {
       movie: "Top Gun: Maverick",
-      name: " Ehren Kruger, Eric Warren Singer, and Christopher McQuarrie",
     },
     {
       movie: "Women Talking",
-      name: " Sarah Polley",
     },
   ],
   internationalFeature: [
     {
       movie: "All Quiet on the Western Front",
-      name: "Edward Berger",
     },
     {
       movie: "Argentina, 1985",
-      name: "Santiago Mitre",
     },
     {
       movie: "Close",
-      name: "Lukas Dhont",
     },
     {
       movie: "EO",
-      name: "Jerzy Skolimowski",
     },
     {
       movie: "The Quiet Girl",
-      name: "Colm Bairéad",
     },
   ],
   documentaryFeature: [
     {
       movie: "All That Breathes",
-      name: "Shaunak Sen, Aman Mann, and Teddy Leifer",
     },
     {
       movie: "All the Beauty and the Bloodshed",
-      name: "Laura Poitras, Howard Gertler, John Lyons, Nan Goldin, and Yoni Golijov",
     },
     {
       movie: "Fire of Love",
-      name: "Sara Dosa, Shane Boris, and Ina Fichman",
     },
     {
       movie: "A House Made of Splinters",
-      name: "Simon Lereng Wilmont and Monica Hellström",
     },
     {
       movie: "Navalny",
-      name: "Daniel Roher, Odessa Rae, Diane Becker, Melanie Miller, and Shane Boris",
     },
   ],
   documentaryShort: [
     {
       movie: "The Elephant Whisperers",
-      name: "Kartiki Gonsalves and Guneet Monga",
     },
     {
       movie: "Haulout",
-      name: "Evgenia Arbugaeva and Maxim Arbugaev",
     },
     {
       movie: "How Do You Measure a Year?",
-      name: "Jay Rosenblatt",
     },
     {
       movie: "The Martha Mitchell Effect",
-      name: "Anne Alvergue and Beth Levison",
     },
     {
       movie: "Stranger at the Gate",
-      name: "Joshua Seftel and Conall Jones",
     },
   ],
   liveActionShort: [
     {
       movie: "An Irish Goodbye",
-      name: "Tom Berkely and Ross White",
     },
     {
       movie: "Ivalu",
-      name: "Anders Walter and Rebecca Pruzan",
     },
     {
       movie: "Le Pupille",
-      name: "Alice Rohrwacher and Alfonso Cuarón", 
     },
     {
       movie: "Night Ride",
-      name: "Eirik Tveiten and Gaute Lid Larssen",
     },
     {
       movie: "The Red Suitcase",
-      name: "Cyrus Neshvad",
     },
   ],
   animatedShort: [
     {
       movie: "The Boy, the Mole, the Fox and the Horse",
-      name: "Charlie Mackesy and Matthew Freud",
     },
     {
       movie: "The Flying Sailor",
-      name: "Wendy Tilby and Amanda Forbis",
     },
     {
       movie: "Ice Merchants",
-      name: "João Gonzalez and Bruno Caetano", 
     },
     {
       movie: "My Year of Dicks",
-      name: "Sara Gunnarsdóttir and Pamela Ribon",
     },
     {
       movie: "An Ostrich Told Me the World Is Fake and I Think I Believe It",
-      name: "Lachlan Pendragon",
     },
   ],
   originalScore: [
     {
       movie: "All Quiet on the Western Front",
-      name: "Volker Bertelmann",
     },
     {
       movie: "Babylon",
-      name: "Justin Hurwitz",
     },
     {
       movie: "The Banshees of Inisherin",
-      name: "Carter Burwell", 
     },
     {
       movie: "Everything Everywhere All at Once",
-      name: "Son Lux",
     },
     {
       movie: "The Fabelmans",
-      name: "John Williams",
+    },
+  ],
+  originalSong: [
+    {
+      movie: "Tell It Like a Woman ",
+    },
+    {
+      movie: "Top Gun: Maverick",
+    },
+    {
+      movie: "Black Panther: Wakanda Forever",
+    },
+    {
+      movie: "RRR",
+    },
+    {
+      movie: "Everything Everywhere All at Once",
+    },
+  ],
+  sound: [
+    {
+      movie: "All Quiet on the Western Front",
+    },
+    {
+      movie: "Avatar: The Way of Water",
+    },
+    {
+      movie: "The Batman",
+    },
+    {
+      movie: "Elvis",
+    },
+    {
+      movie: "Top Gun: Maverick",
+    },
+  ],
+  productionDesign: [
+    {
+      movie: "All Quiet on the Western Front",
+    },
+    {
+      movie: "Avatar: The Way of Water",
+    },
+    {
+      movie: "Babylon",
+    },
+    {
+      movie: "Elvis",
+    },
+    {
+      movie: "The Fabelmans",
+    },
+  ],
+  cinematography: [
+    {
+      movie: "All Quiet on the Western Front",
+    },
+    {
+      movie: "Bardo, False Chronicle of a Handful of Truths",
+    },
+    {
+      movie: "Elvis",
+    },
+    {
+      movie: "Empire of Light",
+    },
+    {
+      movie: "Tár",
+    },
+  ],
+  makeup: [
+    {
+      movie: "All Quiet on the Western Front",
+    },
+    {
+      movie: "The Batman",
+    },
+    {
+      movie: "Black Panther: Wakanda Forever",
+    },
+    {
+      movie: "Elvis",
+    },
+    {
+      movie: "The Whale",
+    },
+  ],
+  costumeDesign: [
+    {
+      movie: "Babylon",
+    },
+    {
+      movie: "Black Panther: Wakanda Forever",
+    },
+    {
+      movie: "Elvis",
+    },
+    {
+      movie: "Everything Everywhere All at Once",
+    },
+    {
+      movie: "Mrs. Harris Goes to Paris",
+    },
+  ],
+  filmEditing: [
+    {
+      movie: "The Banshees of Inisherin",
+    },
+    {
+      movie: "Elvis",
+    },
+    {
+      movie: "Everything Everywhere All at Once",
+    },
+    {
+      movie: "Tár",
+    },
+    {
+      movie: "Top Gun: Maverick",
+    },
+  ],
+  visualEffects: [
+    {
+      movie: "All Quiet on the Western Front",
+    },
+    {
+      movie: "Avatar: The Way of Water",
+    },
+    {
+      movie: "The Batman",
+    },
+    {
+      movie: "Black Panther: Wakanda Forever",
+    },
+    {
+      movie: "Top Gun: Maverick",
     },
   ],
 };
