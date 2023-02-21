@@ -1,4 +1,13 @@
-import { Box, Wrap, WrapItem, Flex, Image, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Wrap,
+  WrapItem,
+  Flex,
+  Image,
+  Heading,
+  Grid,
+  GridItem,
+} from "@chakra-ui/react";
 import SmallCard from "./cards/SmallCard";
 import BigCard from "./cards/BigCard";
 import MiniCard from "./cards/MiniCard";
@@ -46,15 +55,23 @@ const NominationCards = ({
             lg: size !== "mini" ? "24px" : "17px",
           }}
           mr={2}
-          maxWidth={{base: 170, lg: 320}}
+          maxWidth={{ base: 170, lg: 320 }}
         >
           {title}
         </Heading>
       </Flex>
     </Flex>
-    <Wrap direction={cardsDirection}>
+    <Grid
+      templateColumns={{
+        base: "repeat(auto-fit, minmax(100px, 1fr))",
+        sm: "repeat(auto-fit, minmax(200px, 1fr))",
+        lg: "repeat(auto-fit, minmax(200px, 1fr))",
+        xl: "repeat(auto-fit, minmax(220px, 1fr))",
+      }}
+      gap={3}
+    >
       {nominations.map(({ imgSrc, movie, name }, i) => (
-        <WrapItem key={i}>
+        <GridItem key={i}>
           <Box p={2}>
             {size === "small" ? (
               <SmallCard
@@ -73,9 +90,9 @@ const NominationCards = ({
             )}
             {size === "mini" ? <MiniCard title={movie} status="normal" /> : ""}
           </Box>
-        </WrapItem>
+        </GridItem>
       ))}
-    </Wrap>
+    </Grid>
   </Flex>
 );
 
