@@ -8,5 +8,5 @@ export default defineConfig({
     port: 3000,
   },
   plugins: [react(), eslintPlugin()],
-  base: process.env.NODE_ENV === "production" ? "/<REPO>/" : undefined,
+  base: process.env.NODE_ENV === "production" ? "/tequiniela-oscares/" : undefined,
 });
