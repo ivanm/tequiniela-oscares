@@ -34,205 +34,205 @@ const nominees: Nominees = {
   bestPicture: [
     {
       movie: "All Quiet on the Western Front",
-      imgSrc: "/moviePosters/all-quiet.jpg",
+      imgSrc: "moviePosters/all-quiet.jpg",
     },
     {
       movie: "Avatar: The Way of Water",
-      imgSrc: "/moviePosters/avatar.jpg",
+      imgSrc: "moviePosters/avatar.jpg",
     },
     {
       movie: "The Banshees of Inisherin",
-      imgSrc: "/moviePosters/the-banshees.jpg",
+      imgSrc: "moviePosters/the-banshees.jpg",
     },
     {
       movie: "Elvis",
-      imgSrc: "/moviePosters/elvis.jpg",
+      imgSrc: "moviePosters/elvis.jpg",
     },
     {
       movie: "Everything Everywhere All at Once",
-      imgSrc: "/moviePosters/everything-everywhere.jpg",
+      imgSrc: "moviePosters/everything-everywhere.jpg",
     },
     {
       movie: "The Fabelmans",
-      imgSrc: "/moviePosters/the-fabelmans.jpg",
+      imgSrc: "moviePosters/the-fabelmans.jpg",
     },
     {
       movie: "Tár",
-      imgSrc: "/moviePosters/tar.jpg",
+      imgSrc: "moviePosters/tar.jpg",
     },
     {
       movie: "Top Gun: Maverick",
-      imgSrc: "/moviePosters/top-gun.jpg",
+      imgSrc: "moviePosters/top-gun.jpg",
     },
     {
       movie: "Triangle of Sadness",
-      imgSrc: "/moviePosters/triangle-of-sadness.jpg",
+      imgSrc: "moviePosters/triangle-of-sadness.jpg",
     },
     {
       movie: "Women Talking",
-      imgSrc: "/moviePosters/women-talking.jpg",
+      imgSrc: "moviePosters/women-talking.jpg",
     },
   ],
   directing: [
     {
       movie: "The Banshees of Inisherin",
       name: "Martin McDonagh",
-      imgSrc: "/portraits/martin-mcdonag.jpg",
+      imgSrc: "portraits/martin-mcdonag.jpg",
     },
     {
       movie: "Everything Everywhere All at Once",
       name: "Daniel Kwan and Daniel Scheinert",
-      imgSrc: "/portraits/daniel-kwan-daniel-scheinert.jpg",
+      imgSrc: "portraits/daniel-kwan-daniel-scheinert.jpg",
     },
     {
       movie: "The Fabelmans",
       name: "Steven Spielberg",
-      imgSrc: "/portraits/steven-spielberg.jpg",
+      imgSrc: "portraits/steven-spielberg.jpg",
     },
     {
       movie: "Tár",
       name: "Todd Field",
-      imgSrc: "/portraits/todd-field.jpg",
+      imgSrc: "portraits/todd-field.jpg",
     },
     {
       movie: "Triangle of Sadness",
       name: "Ruben Östlund",
-      imgSrc: "/portraits/ruben-ostlund.jpg",
+      imgSrc: "portraits/ruben-ostlund.jpg",
     },
   ],
   leadingActor: [
     {
       movie: "Elvis Presley",
       name: "Austin Butler",
-      imgSrc: "/portraits/austin-butler.jpg",
+      imgSrc: "portraits/austin-butler.jpg",
     },
     {
       movie: "The Banshees of Inisherin",
       name: "Colin Farrell",
-      imgSrc: "/portraits/colin-farrell.jpg",
+      imgSrc: "portraits/colin-farrell.jpg",
     },
     {
       movie: "The Whale",
       name: "Brendan Fraser",
-      imgSrc: "/portraits/brendan-fraser.jpg",
+      imgSrc: "portraits/brendan-fraser.jpg",
     },
     {
       movie: "Aftersun",
       name: "Paul Mescal",
-      imgSrc: "/portraits/paul-mescal.jpg",
+      imgSrc: "portraits/paul-mescal.jpg",
     },
     {
       movie: "Living",
       name: "Bill Nighy",
-      imgSrc: "/portraits/bill-nighy.jpg",
+      imgSrc: "portraits/bill-nighy.jpg",
     },
   ],
   leadingActress: [
     {
       movie: "Tár",
       name: "Cate Blanchett",
-      imgSrc: "/portraits/cate-blanchett.jpg",
+      imgSrc: "portraits/cate-blanchett.jpg",
     },
     {
       movie: "Blonde",
       name: "Ana de Armas",
-      imgSrc: "/portraits/ana-de-armas.jpg",
+      imgSrc: "portraits/ana-de-armas.jpg",
     },
     {
       movie: "To Leslie",
       name: "Andrea Riseborough",
-      imgSrc: "/portraits/andrea-riseborough.jpg",
+      imgSrc: "portraits/andrea-riseborough.jpg",
     },
     {
       movie: "The Fabelmans",
       name: "Michelle Williams",
-      imgSrc: "/portraits/michelle-williams.jpg",
+      imgSrc: "portraits/michelle-williams.jpg",
     },
     {
       movie: "Everything Everywhere All at Once",
       name: "Michelle Yeoh",
-      imgSrc: "/portraits/michelle-yeoh.jpg",
+      imgSrc: "portraits/michelle-yeoh.jpg",
     },
   ],
   supportingActor: [
     {
       movie: "The Banshees of Inisherin",
       name: "Brendan Gleeson",
-      imgSrc: "/portraits/brendan-gleeson.jpg",
+      imgSrc: "portraits/brendan-gleeson.jpg",
     },
     {
       movie: "Causeway",
       name: "Brian Tyree Henry",
-      imgSrc: "/portraits/brian-tyree-henry.jpg",
+      imgSrc: "portraits/brian-tyree-henry.jpg",
     },
     {
       movie: "The Fabelmans",
       name: "Judd Hirsch",
-      imgSrc: "/portraits/judd-hirsch.jpg",
+      imgSrc: "portraits/judd-hirsch.jpg",
     },
     {
       movie: "The Banshees of Inisherin",
       name: "Barry Keoghan",
-      imgSrc: "/portraits/barry-keoghan.jpg",
+      imgSrc: "portraits/barry-keoghan.jpg",
     },
     {
       movie: "Everything Everywhere All at Once",
       name: "Ke Huy Quan",
-      imgSrc: "/portraits/ke-huy-quan.jpg",
+      imgSrc: "portraits/ke-huy-quan.jpg",
     },
   ],
   supportingActress: [
     {
       movie: "Black Panther: Wakanda Forever",
       name: "Angela Bassett",
-      imgSrc: "/portraits/angela-bassett.jpg",
+      imgSrc: "portraits/angela-bassett.jpg",
     },
     {
       movie: "The Whale",
       name: "Hong Chau",
-      imgSrc: "/portraits/hong-chau.jpg",
+      imgSrc: "portraits/hong-chau.jpg",
     },
     {
       movie: "The Banshees of Inisherin",
       name: "Kerry Condon",
-      imgSrc: "/portraits/kerry-condon.jpg",
+      imgSrc: "portraits/kerry-condon.jpg",
     },
     {
       movie: "Everything Everywhere All at Once",
       name: "Jamie Lee Curtis",
-      imgSrc: "/portraits/jamie-lee-curtis.jpg",
+      imgSrc: "portraits/jamie-lee-curtis.jpg",
     },
     {
       movie: "Everything Everywhere All at Once",
       name: "Stephanie Hsu",
-      imgSrc: "/portraits/stephanie-hsu.jpg",
+      imgSrc: "portraits/stephanie-hsu.jpg",
     },
   ],
   animatedFeature: [
     {
       movie: "Guillermo del Toro's Pinocchio",
       // name: "G. del Toro, M. Gustafson, G. Ungar, and A. Bulkley",
-      imgSrc: "/moviePosters/guillermo-del-toros-pinocchio.jpg",
+      imgSrc: "moviePosters/guillermo-del-toros-pinocchio.jpg",
     },
     {
       movie: "Marcel the Shell with Shoes On",
       // name: "D. F. Camp, E. Holm, A. Goldman, C. Kaplan, and P. Mezey",
-      imgSrc: "/moviePosters/marcel.jpg",
+      imgSrc: "moviePosters/marcel.jpg",
     },
     {
       movie: "Puss in Boots: The Last Wish",
       // name: "Joel Crawford and Mark Swift",
-      imgSrc: "/moviePosters/puss-in-boots.jpg",
+      imgSrc: "moviePosters/puss-in-boots.jpg",
     },
     {
       movie: "The Sea Beast",
       // name: "Chris Williams and Jed Schlanger",
-      imgSrc: "/moviePosters/the-sea-beast.jpg",
+      imgSrc: "moviePosters/the-sea-beast.jpg",
     },
     {
       movie: "Turning Red",
       // name: "Domee Shi and Lindsey Collins",
-      imgSrc: "/moviePosters/turning-red.jpg",
+      imgSrc: "moviePosters/turning-red.jpg",
     },
   ],
   originalScreenplay: [

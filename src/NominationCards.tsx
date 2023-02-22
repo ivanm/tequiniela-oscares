@@ -1,7 +1,5 @@
 import {
   Box,
-  Wrap,
-  WrapItem,
   Flex,
   Image,
   Heading,
