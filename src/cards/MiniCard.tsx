@@ -48,7 +48,7 @@ const MiniCard = ({ title, status }: MiniCardProps) => {
         pt={3}
         pb={3}
         direction="column"
-        w={{ base: 350, md: 290, lg: 200, xl: 280 }}
+        w={{ base: 350, md: 290, lg: 200, xl: "300px" }}
         height={"70px"}
       >
         <Text fontSize={{ base: "15px", lg: "sm" }} color={textColor}>

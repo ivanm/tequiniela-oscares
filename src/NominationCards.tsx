@@ -51,8 +51,8 @@ const NominationCards = ({
           fontWeight="extrabold"
           as="h1"
           fontSize={{
-            base: size !== "mini" ? "20px" : "18px",
-            lg: size !== "mini" ? "24px" : "17px",
+            base: size !== "mini" ? "18px" : "17px",
+            lg: size !== "mini" ? "20px" : "18px",
           }}
           mr={2}
           maxWidth={{ base: 300, lg: 220, xl: 280 }}
