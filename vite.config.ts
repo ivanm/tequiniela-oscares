@@ -9,5 +9,5 @@ export default defineConfig({
   },
   plugins: [react(), eslintPlugin()],
   base:
-    process.env.NODE_ENV === "production" ? "/tequiniela-oscares/" : undefined,
+    process.env.NODE_ENV === "production" ? "/" : undefined,
 });
