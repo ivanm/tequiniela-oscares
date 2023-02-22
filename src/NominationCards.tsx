@@ -45,7 +45,7 @@ const NominationCards = ({
 }: NominationCardsProps) => (
   <Flex direction={containerDirection}>
     <Flex mt={mt} mr={mr} mb={mb} ml={ml} pt={pt} pr={pr} pb={pb} pl={pl}>
-      <Image src="/figure.svg" alt="Oscar Figure" />
+      <Image src="figure.svg" alt="Oscar Figure" />
       <Flex align="center" minHeight="45px">
         <Heading
           fontWeight="extrabold"
