@@ -51,23 +51,27 @@ const NominationCards = ({
           fontWeight="extrabold"
           as="h1"
           fontSize={{
-            base: size !== "mini" ? "20px" : "15px",
+            base: size !== "mini" ? "20px" : "18px",
             lg: size !== "mini" ? "24px" : "17px",
           }}
           mr={2}
-          maxWidth={{ base: 170, lg: 320 }}
+          maxWidth={{ base: 300, lg: 220, xl: 280 }}
         >
           {title}
         </Heading>
       </Flex>
     </Flex>
     <Grid
-      templateColumns={{
-        base: "repeat(auto-fit, minmax(100px, 1fr))",
-        sm: "repeat(auto-fit, minmax(200px, 1fr))",
-        lg: "repeat(auto-fit, minmax(200px, 1fr))",
-        xl: "repeat(auto-fit, minmax(220px, 1fr))",
-      }}
+      templateColumns={
+        cardsDirection === "row"
+          ? {
+              base: "repeat(auto-fit, minmax(100px, 1fr))",
+              sm: "repeat(auto-fit, minmax(200px, 1fr))",
+              lg: "repeat(auto-fit, minmax(200px, 1fr))",
+              xl: "repeat(auto-fit, minmax(220px, 1fr))",
+            }
+          : "1fr"
+      }
       gap={3}
     >
       {nominations.map(({ imgSrc, movie, name }, i) => (

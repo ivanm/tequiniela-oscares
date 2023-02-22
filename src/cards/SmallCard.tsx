@@ -63,14 +63,25 @@ const SmallCard = ({ title, imgSrc, name, status }: SmallCardProps) => {
         pt={2}
         pb={2}
         direction="column"
-        w={{ base: 180, md: 220, lg: 320 }}
+        w={{ base: 180, md: 180, lg: "200px", xl: 300, "2xl": 350 }}
       >
-        <Text fontSize={{ base: "sm", lg: "lg" }} color={textColor}>
-          {name}
+        <Text
+          lineHeight={1.1}
+          fontSize={{ base: "sm", lg: "lg" }}
+          color={textColor}
+        >
+          {name ?? title}
         </Text>
-        <Text fontSize={{ base: "xs", lg: "sm" }} color={textColor}>
-          {title}
-        </Text>
+        {name ? (
+          <Text
+            pt={1}
+            lineHeight={1.1}
+            fontSize={{ base: "xs", lg: "sm" }}
+            color={textColor}
+          >
+            {title}
+          </Text>
+        ) : null}
       </Flex>
     </Card>
   );

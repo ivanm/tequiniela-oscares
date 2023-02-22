@@ -72,7 +72,7 @@ export const App = () => {
           </Flex>
         </Flex>
       </Box>
-      <Box as="main" mt="72px" pl={15} pr={15} w="calc(100vw - 30px)">
+      <Box as="main" mt="72px" pl={15} w="calc(100vw - 30px)">
         <NominationCards
           containerDirection="column"
           cardsDirection="row"
@@ -84,7 +84,7 @@ export const App = () => {
           mb={3}
           pt={4}
         />
-        <Flex direction={{ base: "column", md: "row" }} justify="space-between">
+        <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
           <NominationCards
             containerDirection="column"
             cardsDirection="column"
@@ -119,7 +119,7 @@ export const App = () => {
             pt={4}
           />
         </Flex>
-        <Flex direction={{ base: "column", md: "row" }} justify="space-between">
+        <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
           <NominationCards
             containerDirection="column"
             cardsDirection="column"
@@ -154,7 +154,7 @@ export const App = () => {
             pt={4}
           />
         </Flex>
-        <Flex direction={{ base: "column", md: "row" }} justify="space-between">
+        <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
           <NominationCards
             containerDirection="column"
             cardsDirection="column"
@@ -200,7 +200,7 @@ export const App = () => {
             pt={4}
           />
         </Flex>
-        <Flex direction={{ base: "column", md: "row" }} justify="space-between">
+        <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
           <NominationCards
             containerDirection="column"
             cardsDirection="column"
@@ -246,7 +246,7 @@ export const App = () => {
             pt={4}
           />
         </Flex>
-        <Flex direction={{ base: "column", md: "row" }} justify="space-between">
+        <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
           <NominationCards
             containerDirection="column"
             cardsDirection="column"
@@ -292,7 +292,7 @@ export const App = () => {
             pt={4}
           />
         </Flex>
-        <Flex direction={{ base: "column", md: "row" }} justify="space-between">
+        <Flex direction={{ base: "column", lg: "row" }} justify="space-between">
           <NominationCards
             containerDirection="column"
             cardsDirection="column"

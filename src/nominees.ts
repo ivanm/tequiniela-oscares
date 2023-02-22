@@ -211,27 +211,27 @@ const nominees: Nominees = {
   animatedFeature: [
     {
       movie: "Guillermo del Toro's Pinocchio",
-      name: "G. del Toro, M. Gustafson, G. Ungar, and A. Bulkley",
+      // name: "G. del Toro, M. Gustafson, G. Ungar, and A. Bulkley",
       imgSrc: "/moviePosters/guillermo-del-toros-pinocchio.jpg",
     },
     {
       movie: "Marcel the Shell with Shoes On",
-      name: "D. F. Camp, E. Holm, A. Goldman, C. Kaplan, and P. Mezey",
+      // name: "D. F. Camp, E. Holm, A. Goldman, C. Kaplan, and P. Mezey",
       imgSrc: "/moviePosters/marcel.jpg",
     },
     {
       movie: "Puss in Boots: The Last Wish",
-      name: "Joel Crawford and Mark Swift",
+      // name: "Joel Crawford and Mark Swift",
       imgSrc: "/moviePosters/puss-in-boots.jpg",
     },
     {
       movie: "The Sea Beast",
-      name: "Chris Williams and Jed Schlanger",
+      // name: "Chris Williams and Jed Schlanger",
       imgSrc: "/moviePosters/the-sea-beast.jpg",
     },
     {
       movie: "Turning Red",
-      name: "Domee Shi and Lindsey Collins",
+      // name: "Domee Shi and Lindsey Collins",
       imgSrc: "/moviePosters/turning-red.jpg",
     },
   ],

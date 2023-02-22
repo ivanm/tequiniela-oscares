@@ -43,16 +43,15 @@ const MiniCard = ({ title, status }: MiniCardProps) => {
       direction="row"
     >
       <Flex
-        pl={10}
-        pr={10}
+        pl={4}
         justify="center"
         pt={3}
         pb={3}
         direction="column"
-        w={{ base: 200, lg: 300 }}
-        minHeight={"70px"}
+        w={{ base: 350, md: 290, lg: 200, xl: 280 }}
+        height={"70px"}
       >
-        <Text fontSize={{ base: "11px", lg: "sm" }} color={textColor}>
+        <Text fontSize={{ base: "15px", lg: "sm" }} color={textColor}>
           {title}
         </Text>
       </Flex>
