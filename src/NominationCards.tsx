@@ -1,11 +1,4 @@
-import {
-  Box,
-  Flex,
-  Image,
-  Heading,
-  Grid,
-  GridItem,
-} from "@chakra-ui/react";
+import { Box, Flex, Image, Heading, Grid, GridItem } from "@chakra-ui/react";
 import SmallCard from "./cards/SmallCard";
 import BigCard from "./cards/BigCard";
 import MiniCard from "./cards/MiniCard";

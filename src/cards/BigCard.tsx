@@ -42,7 +42,7 @@ const BigCard = ({ title, imgSrc, status }: BigCardProps) => {
           alt={title}
         />
       )}
-      <Flex justify="center" pt={2} pb={2} pl={4} pr={4} h="62px" align="center" textAlign="center">
+      <Flex justify="center" pt={2} pb={2} pl={2} pr={2} h="62px" align="center" textAlign="center">
         <Text
           fontSize={{ base: "xs", lg: "sm" }}
           color={
