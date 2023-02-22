@@ -40,8 +40,9 @@ export const App = () => (
         </Button>
         <Flex ml="auto">
           <Button className="inactive">Compartir</Button>
-          <Flex align="center">
-            <Box height={26}>@vaan</Box>
+          <Flex align="center" ml={3}>
+            <Image boxSize="20px" src="logo-twitter.png" />
+            <Box height={26} ml={1}>paquito</Box>
           </Flex>
         </Flex>
       </Flex>
