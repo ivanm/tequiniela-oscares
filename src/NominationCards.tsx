@@ -8,6 +8,7 @@ export interface NominationCardsProps {
   containerDirection: "row" | "column";
   cardsDirection: "row" | "column";
   nominations: Nomination[];
+  nominationSlug: string;
   size: "big" | "small" | "mini";
   title: string;
   mt?: number | string;
@@ -23,6 +24,7 @@ const NominationCards = ({
   containerDirection,
   cardsDirection,
   nominations,
+  nominationSlug,
   size,
   title,
   mt,
@@ -65,25 +67,59 @@ const NominationCards = ({
       }
       gap={3}
     >
-      {nominations.map(({ imgSrc, movie, name }, i) => (
+      {nominations.map(({ movie, movieSlug, name, nameSlug }, i) => (
         <GridItem key={i}>
           <Box p={2}>
             {size === "small" ? (
               <SmallCard
-                imgSrc={imgSrc}
+                imgSrc={
+                  nameSlug
+                    ? `portraits/${nameSlug}.jpg`
+                    : `moviePosters/${movieSlug}.jpg`
+                }
+                matchKey={nameSlug ? "nameSlug" : "movieSlug"}
                 title={movie}
                 name={name}
-                status="normal"
+                movieSlug={movieSlug}
+                nameSlug={nameSlug}
+                nominationSlug={nominationSlug}
+                nomination={{
+                  movie,
+                  movieSlug,
+                  name,
+                  nameSlug,
+                }}
               />
             ) : (
               ""
             )}
             {size === "big" ? (
-              <BigCard imgSrc={imgSrc} title={movie} status="normal" />
+              <BigCard
+                imgSrc={`moviePosters/${movieSlug}.jpg`}
+                title={movie}
+                movieSlug={movieSlug}
+                nominationSlug={nominationSlug}
+                nomination={{
+                  movie,
+                  movieSlug,
+                }}
+              />
             ) : (
               ""
             )}
-            {size === "mini" ? <MiniCard title={movie} status="normal" /> : ""}
+            {size === "mini" ? (
+              <MiniCard
+                title={movie}
+                movieSlug={movieSlug}
+                nominationSlug={nominationSlug}
+                nomination={{
+                  movie,
+                  movieSlug,
+                }}
+              />
+            ) : (
+              ""
+            )}
           </Box>
         </GridItem>
       ))}
