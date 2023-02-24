@@ -225,6 +225,7 @@ export interface Nominees {
 }
 
 export interface SelectedNominations {
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   [key: string]: any;
   bestPicture?: BestPictureNomination;
   directing?: DirectingNomination;
@@ -251,8 +252,8 @@ export interface SelectedNominations {
   visualEffects?: VisualEffectsNomination;
 }
 
-export interface UserNominations extends SelectedNominations {}
-export interface WinnerNominations extends SelectedNominations {}
+export type UserNominations = SelectedNominations;
+export type WinnerNominations = SelectedNominations;
 
 const nominees: Nominees = {
   bestPicture: [

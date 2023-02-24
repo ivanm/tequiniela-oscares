@@ -1,10 +1,11 @@
-import { useState, useEffect, useCallback } from "react";
-import { Card, Image, Flex, Text } from "@chakra-ui/react";
+import { Card, Flex, Image, Text } from "@chakra-ui/react";
 import { omit } from "ramda";
+import { useCallback, useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
+
 import {
-  userNominationsState,
   hasNominationTimePassedState,
+  userNominationsState,
   winnerNominationsState,
 } from "../atoms";
 import {
@@ -88,11 +89,7 @@ const SmallCard = ({
         setStatus("normal");
       }
     }
-  }, [
-    hasNominationTimePassed,
-    isSelected,
-    isWinner,
-  ]);
+  }, [hasNominationTimePassed, isSelected, isWinner]);
 
   useEffect(() => {
     calcStatus();

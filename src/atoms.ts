@@ -1,4 +1,5 @@
 import { atom, type RecoilState } from "recoil";
+
 import { type UserNominations, WinnerNominations } from "./nominees";
 
 export const hasNominationTimePassedState: RecoilState<boolean> = atom<boolean>(

@@ -1,7 +1,8 @@
-import { Box, Flex, Image, Heading, Grid, GridItem } from "@chakra-ui/react";
-import SmallCard from "./cards/SmallCard";
+import { Box, Flex, Grid, GridItem, Heading, Image } from "@chakra-ui/react";
+
 import BigCard from "./cards/BigCard";
 import MiniCard from "./cards/MiniCard";
+import SmallCard from "./cards/SmallCard";
 import type { Nomination } from "./nominees";
 
 export interface NominationCardsProps {

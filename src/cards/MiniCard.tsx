@@ -1,10 +1,11 @@
-import { useState, useEffect, useCallback } from "react";
 import { Card, Flex, Text } from "@chakra-ui/react";
 import { omit } from "ramda";
+import { useCallback, useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
+
 import {
-  userNominationsState,
   hasNominationTimePassedState,
+  userNominationsState,
   winnerNominationsState,
 } from "../atoms";
 import {
@@ -34,7 +35,6 @@ const MiniCard = ({
   nominationSlug,
   nomination,
 }: MiniCardProps) => {
-
   const [userNominations, setUserNominations] =
     useRecoilState<UserNominations>(userNominationsState);
 
@@ -77,16 +77,11 @@ const MiniCard = ({
         setStatus("normal");
       }
     }
-  }, [
-    hasNominationTimePassed,
-    isSelected,
-    isWinner,
-  ]);
+  }, [hasNominationTimePassed, isSelected, isWinner]);
 
   useEffect(() => {
     calcStatus();
   }, [calcStatus]);
-
 
   const bgColor =
     status === "selected"

@@ -1,9 +1,9 @@
-import { CSSReset, Box, Flex, Heading, Button, Image } from "@chakra-ui/react";
-import nominees from "./nominees";
-import NominationCards from "./NominationCards";
-
+import { Box, Button, CSSReset, Flex, Heading, Image } from "@chakra-ui/react";
 import { useRecoilState } from "recoil";
+
 import { hasNominationTimePassedState } from "./atoms";
+import NominationCards from "./NominationCards";
+import nominees from "./nominees";
 
 export const App = () => {
   // Blocks Frontend after 2023-03-12, needs Backend validation
