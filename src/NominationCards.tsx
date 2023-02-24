@@ -66,7 +66,7 @@ const NominationCards = ({
             }
           : "1fr"
       }
-      gap={3}
+      gap={1}
     >
       {nominations.map(({ movie, movieSlug, name, nameSlug }, i) => (
         <GridItem key={i}>

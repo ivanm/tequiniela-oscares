@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Box, Button, CSSReset, Flex, Heading, Image } from "@chakra-ui/react";
 import { useRecoilState } from "recoil";
 
@@ -6,14 +7,28 @@ import NominationCards from "./NominationCards";
 import nominees from "./nominees";
 
 export const App = () => {
-  // Blocks Frontend after 2023-03-12, needs Backend validation
-  // const hasNominationTimePassed = new Date().getTime() > new Date('2023-03-12').getTime();
-  // Uncomment to fast-forward time to 2023-03-12
-  const [hasNominationTimePassed, setHasNominationTimePassed] = useRecoilState(
+  const [scrollbarWidth, setScrollbarWidth] = useState<number | undefined>();
+
+  useEffect(() => {
+    resizeEffect();
+    window.addEventListener("resize", () => {
+      resizeEffect();
+    });
+
+    return () => {
+      window.removeEventListener("resize", resizeEffect);
+    };
+  }, []);
+
+  const resizeEffect = () => {
+    setScrollbarWidth(window.innerWidth - document.body.clientWidth);
+  };
+
+  const [, setHasNominationTimePassed] = useRecoilState(
     hasNominationTimePassedState
   );
 
-  console.log("passed", hasNominationTimePassed);
+  console.log("scrollbarWidth", scrollbarWidth);
   return (
     <>
       <CSSReset />
@@ -57,7 +72,12 @@ export const App = () => {
           </Flex>
         </Flex>
       </Box>
-      <Box as="main" mt="72px" mb="80px" w="calc(100vw - 30px)">
+      <Box
+        as="main"
+        mt="72px"
+        mb="80px"
+        w={`calc(100vw - ${scrollbarWidth}px)`}
+      >
         <Flex
           direction="column"
           className="card-container"
