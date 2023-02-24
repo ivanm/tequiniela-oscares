@@ -108,12 +108,18 @@ const BigCard = ({
 
   return (
     <Card
-      border="3px solid transparent"
+      border={
+        bgColor
+          ? "3px solid transparent"
+          : status === "not-selected-won"
+          ? "3px solid transparent"
+          : undefined
+      }
       borderColor={
         bgColor
           ? bgColor
           : status === "not-selected-won"
-          ? 'cards.won'
+          ? "cards.won"
           : undefined
       }
       bg={bgColor}

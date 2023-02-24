@@ -59,10 +59,13 @@ const NominationCards = ({
       templateColumns={
         cardsDirection === "row"
           ? {
-              base: "repeat(auto-fit, minmax(100px, 1fr))",
-              sm: "repeat(auto-fit, minmax(200px, 1fr))",
-              lg: "repeat(auto-fit, minmax(200px, 1fr))",
-              xl: "repeat(auto-fit, minmax(220px, 1fr))",
+              // base: "repeat(auto-fit, minmax(285px, 1fr))",
+              base: "repeat(auto-fit, minmax(114px, 1fr))",
+              sm: "repeat(auto-fit, minmax(120px, 1fr))",
+              md: "repeat(auto-fit, minmax(138px, 1fr))",
+              lg: "repeat(auto-fit, minmax(183px, 1fr))",
+              xl: "repeat(auto-fit, minmax(245px, 1fr))",
+              "2xl": "repeat(auto-fit, minmax(270px, 1fr))",
             }
           : "1fr"
       }

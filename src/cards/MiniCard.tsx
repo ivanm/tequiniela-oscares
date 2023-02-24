@@ -114,12 +114,18 @@ const MiniCard = ({
 
   return (
     <Card
-      border="3px solid transparent"
+      border={
+        bgColor
+          ? "3px solid transparent"
+          : status === "not-selected-won"
+          ? "3px solid transparent"
+          : undefined
+      }
       borderColor={
         bgColor
           ? bgColor
           : status === "not-selected-won"
-          ? 'cards.won'
+          ? "cards.won"
           : undefined
       }
       bg={bgColor}
@@ -133,7 +139,7 @@ const MiniCard = ({
         pt={3}
         pb={3}
         direction="column"
-        w={{ base: 350, md: 290, lg: 200, xl: "285px" }}
+        w={{ base: 180, md: 290, lg: 200, xl: "285px" }}
         height={"70px"}
       >
         <Text fontSize={{ base: "15px", lg: "sm" }} color={textColor}>

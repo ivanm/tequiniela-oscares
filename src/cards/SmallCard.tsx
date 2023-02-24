@@ -122,12 +122,18 @@ const SmallCard = ({
 
   return (
     <Card
-      border="3px solid transparent"
+      border={
+        bgColor
+          ? "3px solid transparent"
+          : status === "not-selected-won"
+          ? "3px solid transparent"
+          : undefined
+      }
       borderColor={
         bgColor
           ? bgColor
           : status === "not-selected-won"
-          ? 'cards.won'
+          ? "cards.won"
           : undefined
       }
       bg={bgColor}
@@ -154,7 +160,7 @@ const SmallCard = ({
         pt={2}
         pb={2}
         direction="column"
-        w={{ base: 180, md: 180, lg: "190px", xl: "290px" }}
+        w={{ base: 120, sm: 180, md: 180, lg: "190px", xl: "290px" }}
       >
         <Text
           lineHeight={1.1}
