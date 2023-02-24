@@ -87,11 +87,11 @@ const BigCard = ({
 
   const bgColor =
     status === "selected"
-      ? "#016FB9"
+      ? "cards.selected"
       : status === "selected-won"
-      ? "#239A0C"
+      ? "cards.won"
       : status === "selected-lost"
-      ? "#C11A1A"
+      ? "cards.lost"
       : undefined;
 
   const handleCardClick = () => {
@@ -108,15 +108,16 @@ const BigCard = ({
 
   return (
     <Card
-      border={
+      border="3px solid transparent"
+      borderColor={
         bgColor
-          ? `3px solid ${bgColor}`
+          ? bgColor
           : status === "not-selected-won"
-          ? "3px solid #239A0C"
+          ? 'cards.won'
           : undefined
       }
       bg={bgColor}
-      opacity={["not-selected-lost"].includes(status) ? ".2" : "1"}
+      opacity={["not-selected-lost"].includes(status) ? ".5" : "1"}
       onClick={!hasNominationTimePassed ? handleCardClick : undefined}
     >
       {imgSrc && (
@@ -138,7 +139,7 @@ const BigCard = ({
             ["selected", "selected-won", "selected-lost"].includes(status)
               ? "white"
               : status === "not-selected-won"
-              ? "#239A0C"
+              ? "cards.won"
               : undefined
           }
         >
