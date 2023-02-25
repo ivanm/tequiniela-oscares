@@ -37,19 +37,18 @@ const NominationCards = ({
   pb,
   pl,
 }: NominationCardsProps) => (
-  <Flex direction={containerDirection}>
-    <Flex mt={mt} mr={mr} mb={mb} ml={ml} pt={pt} pr={pr} pb={pb} pl={pl}>
+  <Flex  mt={mt} mr={mr} mb={mb} ml={ml} pt={pt} pr={pr} pb={pb} pl={pl} direction={containerDirection} grow={1} basis={0}>
+    <Flex pl={3} pr={3} pt={3} pb={3}>
       <Image src="figure.svg" alt="Oscar Figure" />
       <Flex align="center" minHeight="45px">
         <Heading
           fontWeight="extrabold"
           as="h1"
           fontSize={{
-            base: size !== "mini" ? "18px" : "17px",
+            base: "19px",
             lg: size !== "mini" ? "20px" : "18px",
           }}
           mr={2}
-          maxWidth={{ base: 300, lg: size !== "mini" ? 230 : "160px", xl: 280 }}
         >
           {title}
         </Heading>
@@ -59,7 +58,6 @@ const NominationCards = ({
       templateColumns={
         cardsDirection === "row"
           ? {
-              // base: "repeat(auto-fit, minmax(285px, 1fr))",
               base: "repeat(auto-fit, minmax(114px, 1fr))",
               sm: "repeat(auto-fit, minmax(120px, 1fr))",
               md: "repeat(auto-fit, minmax(138px, 1fr))",
@@ -69,11 +67,11 @@ const NominationCards = ({
             }
           : "1fr"
       }
-      gap={1}
+      gap={"10px"}
     >
       {nominations.map(({ movie, movieSlug, name, nameSlug }, i) => (
         <GridItem key={i}>
-          <Box p={2}>
+          <Box>
             {size === "small" ? (
               <SmallCard
                 imgSrc={

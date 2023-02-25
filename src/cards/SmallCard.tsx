@@ -160,7 +160,6 @@ const SmallCard = ({
         pt={2}
         pb={2}
         direction="column"
-        w={{ base: 120, sm: 180, md: 180, lg: "190px", xl: "290px" }}
       >
         <Text
           lineHeight={1.1}

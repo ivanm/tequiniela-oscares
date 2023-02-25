@@ -135,11 +135,11 @@ const MiniCard = ({
     >
       <Flex
         pl={4}
+        pr={4}
         justify="center"
         pt={3}
         pb={3}
         direction="column"
-        w={{ base: 180, md: 290, lg: 200, xl: "285px" }}
         height={"70px"}
       >
         <Text fontSize={{ base: "15px", lg: "sm" }} color={textColor}>
