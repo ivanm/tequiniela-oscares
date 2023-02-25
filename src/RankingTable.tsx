@@ -54,6 +54,7 @@ export const RankingTable = () => {
     { user: "Eleanor", points: 37 },
     { user: "Christopher", points: 95 },
   ];
+  mockResults.sort((a, b) => b.points - a.points);
 
   return (
     <Card mt={4}>

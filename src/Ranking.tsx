@@ -33,8 +33,8 @@ export const Ranking = () => (
     </Flex>
     <Flex pl={2} pr={2}>
       <Text>
-        La ceremonia de los Premios Óscar se llevará a cabo el domingo 27 de
-        marzo de 2022. Durante el evento, actualizaremos los resultados tan
+        La ceremonia de los Premios Óscar se llevará a cabo el domingo 12 de
+        marzo de 2023. Durante el evento, actualizaremos los resultados tan
         pronto como se vayan anunciando, y este ranking se actualizará conforme
         a los resultados de los participantes.
       </Text>
