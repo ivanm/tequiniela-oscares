@@ -63,9 +63,6 @@ button:focus-visible {
   a.chakra-button:hover {
     color: inherit;
   }
-  a.chakra-button {
-    background: transparent;
-  }
   button {
     background-color: #f9f9f9;
   }

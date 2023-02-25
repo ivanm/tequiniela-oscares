@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Heading, Image } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 
 import { hasNominationTimePassedState } from "./atoms";
 import { useRecoilState } from "recoil";
@@ -8,6 +8,8 @@ export const Header = () => {
   const [, setHasNominationTimePassed] = useRecoilState(
     hasNominationTimePassedState
   );
+
+  const { pathname } = useLocation();
 
   return (
     <Box
@@ -26,13 +28,30 @@ export const Header = () => {
         <Heading as="h1" size="lg" mr={5}>
           NIELA
         </Heading>
-        <Button as={RouterLink} to="/" mr={2}>
+        <Button
+          as={RouterLink}
+          to="/"
+          mr={2}
+          bg={pathname === "/" ? "gray.200" : "transparent"}
+        >
           Mi Quiniela
         </Button>
-        <Button as={RouterLink} to="/ranking" className="inactive" mr={2}>
+        <Button
+          as={RouterLink}
+          to="/ranking"
+          className="inactive"
+          mr={2}
+          bg={pathname === "/ranking" ? "gray.200" : "transparent"}
+        >
           Ranking
         </Button>
-        <Button as={RouterLink} to="/rules" className="inactive" mr={2}>
+        <Button
+          as={RouterLink}
+          to="/rules"
+          className="inactive"
+          mr={2}
+          bg={pathname === "/rules" ? "gray.200" : "transparent"}
+        >
           Reglas
         </Button>
         <Flex ml="auto">
