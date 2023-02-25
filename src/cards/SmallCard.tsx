@@ -120,6 +120,8 @@ const SmallCard = ({
     );
   };
 
+  const isClickable = !hasNominationTimePassed;
+
   return (
     <Card
       border={
@@ -139,7 +141,8 @@ const SmallCard = ({
       bg={bgColor}
       opacity={["not-selected-lost"].includes(status) ? ".5" : "1"}
       direction="row"
-      onClick={!hasNominationTimePassed ? handleCardClick : undefined}
+      onClick={isClickable ? handleCardClick : undefined}
+      className={`card${isClickable ? " card-clickable" : ""}`}
     >
       {imgSrc && (
         <Image
@@ -153,14 +156,7 @@ const SmallCard = ({
           minWidth="100px"
         />
       )}
-      <Flex
-        pl={4}
-        pr={4}
-        justify="center"
-        pt={2}
-        pb={2}
-        direction="column"
-      >
+      <Flex pl={4} pr={4} justify="center" pt={2} pb={2} direction="column">
         <Text
           lineHeight={1.1}
           fontSize={{ base: "sm", lg: "lg" }}

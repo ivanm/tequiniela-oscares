@@ -111,6 +111,8 @@ const MiniCard = ({
         : { ...userNominations, [nominationSlug]: nomination }
     );
   };
+  
+  const isClickable = !hasNominationTimePassed;
 
   return (
     <Card
@@ -131,7 +133,8 @@ const MiniCard = ({
       bg={bgColor}
       opacity={["not-selected-lost"].includes(status) ? ".5" : "1"}
       direction="row"
-      onClick={!hasNominationTimePassed ? handleCardClick : undefined}
+      onClick={isClickable ? handleCardClick : undefined}
+      className={`card${isClickable ? " card-clickable" : ""}`}
     >
       <Flex
         pl={4}

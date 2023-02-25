@@ -106,6 +106,8 @@ const BigCard = ({
     );
   };
 
+  const isClickable = !hasNominationTimePassed;
+
   return (
     <Card
       border={
@@ -124,7 +126,8 @@ const BigCard = ({
       }
       bg={bgColor}
       opacity={["not-selected-lost"].includes(status) ? ".5" : "1"}
-      onClick={!hasNominationTimePassed ? handleCardClick : undefined}
+      onClick={isClickable ? handleCardClick : undefined}
+      className={`card${isClickable ? " card-clickable" : ""}`}
     >
       {imgSrc && (
         <Image w="100%" borderTopRadius="sm" src={imgSrc} alt={title} />
