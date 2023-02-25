@@ -46,7 +46,7 @@ const NominationCards = ({
           as="h1"
           fontSize={{
             base: "19px",
-            lg: size !== "mini" ? "20px" : "18px",
+            lg: size !== "mini" ? "20px" : "16px",
           }}
           mr={2}
         >

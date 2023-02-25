@@ -26,9 +26,9 @@ export const Nominations = () => (
       mt={2}
     />
     <Flex
-      mt={4}
+      mt={{ base: 8, lg: 5 }}
       direction={{ base: "column", lg: "row" }}
-      gap={3}
+      gap={8}
       justify="space-between"
     >
       <NominationCards
@@ -57,9 +57,9 @@ export const Nominations = () => (
       />
     </Flex>
     <Flex
-      mt={4}
+      mt={{ base: 8, lg: 5 }}
       direction={{ base: "column", lg: "row" }}
-      gap={3}
+      gap={8}
       justify="space-between"
     >
       <NominationCards
@@ -88,9 +88,9 @@ export const Nominations = () => (
       />
     </Flex>
     <Flex
-      mt={5}
+      mt={{ base: 8, lg: 5 }}
       direction={{ base: "column", lg: "row" }}
-      gap={5}
+      gap={8}
       justify="space-between"
     >
       <NominationCards
@@ -129,7 +129,7 @@ export const Nominations = () => (
     <Flex
       mt={5}
       direction={{ base: "column", lg: "row" }}
-      gap={5}
+      gap={8}
       justify="space-between"
     >
       <NominationCards
@@ -168,7 +168,7 @@ export const Nominations = () => (
     <Flex
       mt={5}
       direction={{ base: "column", lg: "row" }}
-      gap={5}
+      gap={8}
       justify="space-between"
     >
       <NominationCards
@@ -207,7 +207,7 @@ export const Nominations = () => (
     <Flex
       mt={5}
       direction={{ base: "column", lg: "row" }}
-      gap={5}
+      gap={8}
       justify="space-between"
     >
       <NominationCards
