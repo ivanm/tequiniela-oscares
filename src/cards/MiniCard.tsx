@@ -143,9 +143,10 @@ const MiniCard = ({
         pt={3}
         pb={3}
         direction="column"
-        height={"70px"}
+        height={"56px"}
+        as="b"
       >
-        <Text fontSize={{ base: "15px", lg: "sm" }} color={textColor}>
+        <Text fontSize={{ base: "sm", lg: "xs" }} color={textColor}>
           {title}
         </Text>
       </Flex>

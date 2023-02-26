@@ -138,12 +138,13 @@ const BigCard = ({
         pb={2}
         pl={2}
         pr={2}
-        h="62px"
+        h="55px"
         align="center"
         textAlign="center"
       >
         <Text
           fontSize={{ base: "xs", lg: "sm" }}
+          as="b"
           color={
             ["selected", "selected-won", "selected-lost"].includes(status)
               ? "white"

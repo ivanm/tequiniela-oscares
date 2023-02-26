@@ -21,11 +21,11 @@ export const Header = () => {
       zIndex={2}
     >
       <Flex align="center" p={4} bg="transparent" color="black">
-        <Heading as="h1" size="lg">
+        <Heading as="h1" size="lg" fontWeight={400}>
           TEQU
         </Heading>
         <Image src="figure.svg" alt="Oscar Figure" />
-        <Heading as="h1" size="lg" mr={5}>
+        <Heading as="h1" size="lg" mr={5} fontWeight={400}>
           NIELA
         </Heading>
         <Button
@@ -33,6 +33,7 @@ export const Header = () => {
           to="/"
           mr={2}
           bg={pathname === "/" ? "gray.200" : "transparent"}
+          fontWeight={500}
         >
           Mi Quiniela
         </Button>
@@ -42,6 +43,7 @@ export const Header = () => {
           className="inactive"
           mr={2}
           bg={pathname === "/ranking" ? "gray.200" : "transparent"}
+          fontWeight={500}
         >
           Ranking
         </Button>
@@ -51,6 +53,7 @@ export const Header = () => {
           className="inactive"
           mr={2}
           bg={pathname === "/rules" ? "gray.200" : "transparent"}
+          fontWeight={500}
         >
           Reglas
         </Button>
@@ -60,6 +63,7 @@ export const Header = () => {
             onClick={() => {
               setHasNominationTimePassed(true);
             }}
+            fontWeight={500}
           >
             Compartir
           </Button>

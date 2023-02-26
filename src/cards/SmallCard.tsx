@@ -161,6 +161,7 @@ const SmallCard = ({
           lineHeight={1.1}
           fontSize={{ base: "sm", lg: "lg" }}
           color={textColor}
+          as="b"
         >
           {name ?? title}
         </Text>
