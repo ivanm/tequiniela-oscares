@@ -6,9 +6,11 @@ import { Nominations } from "./Nominations";
 import { Ranking } from "./Ranking";
 import { Rules } from "./Rules";
 import { Header } from "./Header";
+import firebaseConfig from './firebaseConfig';
 
 export const App = () => {
   const [scrollbarWidth, setScrollbarWidth] = useState<number | undefined>();
+  console.log(firebaseConfig);
 
   useEffect(() => {
     resizeEffect();
