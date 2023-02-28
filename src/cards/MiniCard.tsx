@@ -2,6 +2,7 @@ import { Card, Flex, Text } from "@chakra-ui/react";
 import { omit } from "ramda";
 import { useCallback, useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
+import { useUser } from "reactfire";
 
 import {
   hasNominationTimePassedState,
@@ -47,6 +48,8 @@ const MiniCard = ({
   );
 
   const [status, setStatus] = useState<Status>("normal");
+
+  const { data: user } = useUser();
 
   const isSelected =
     userNominations[nominationSlug]?.movieSlug &&
@@ -112,7 +115,8 @@ const MiniCard = ({
     );
   };
   
-  const isClickable = !hasNominationTimePassed;
+  const isClickable =
+    user !== null && !hasNominationTimePassed && status !== "selected";
 
   return (
     <Card
