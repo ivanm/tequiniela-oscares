@@ -1,5 +1,5 @@
 import { Button } from "@chakra-ui/react";
-import { useAuth, AuthProvider } from "reactfire";
+import { useAuth } from "reactfire";
 import {
   GoogleAuthProvider,
   signInWithRedirect,
@@ -12,9 +12,6 @@ export const Login = () => {
   const handleSignIn = () => {
     signInWithRedirect(auth, provider);
   };
-
-  console.log('testAuty', auth);
-  console.log('testProvider', provider);
  
   return (
       <div>

@@ -1,15 +1,19 @@
 import { Box, Button, Flex, Heading, Image } from "@chakra-ui/react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
+import { useUser, useAuth } from "reactfire";
 
 import { hasNominationTimePassedState } from "./atoms";
 import { useRecoilState } from "recoil";
 
 export const Header = () => {
+
   const [, setHasNominationTimePassed] = useRecoilState(
     hasNominationTimePassedState
   );
 
   const { pathname } = useLocation();
+  const { data: user } = useUser();
+  const auth = useAuth();
 
   return (
     <Box
@@ -67,12 +71,31 @@ export const Header = () => {
           >
             Compartir
           </Button>
-          <Flex align="center" ml={3}>
-            <Image boxSize="20px" src="logo-twitter.png" />
-            <Box height={26} ml={1}>
-              paquito
-            </Box>
-          </Flex>
+          {user ? (
+            <Flex align="center" ml={3}>
+              <Image boxSize="20px" src={user?.photoURL ? user.photoURL : undefined} />
+              <Box
+                onClick={() => {
+                  auth.signOut();
+                }}
+                height={26}
+                ml={1}
+              >
+                {user.displayName}
+              </Box>
+            </Flex>
+          ) : (
+            <Button
+              as={RouterLink}
+              to="/login"
+              className="inactive"
+              mr={2}
+              bg={pathname === "/rules" ? "gray.200" : "transparent"}
+              fontWeight={500}
+            >
+              Log in
+            </Button>
+          )}
         </Flex>
       </Flex>
     </Box>

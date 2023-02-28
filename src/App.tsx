@@ -1,8 +1,9 @@
 import { Box, CSSReset } from "@chakra-ui/react";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { AuthProvider, useFirebaseApp } from 'reactfire';
-import { getAuth } from 'firebase/auth';
+import { AuthProvider, FirestoreProvider, useFirebaseApp } from "reactfire";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 import { Nominations } from "./Nominations";
 import { Ranking } from "./Ranking";
@@ -13,7 +14,6 @@ import firebaseConfig from "./firebaseConfig";
 
 export const App = () => {
   const [scrollbarWidth, setScrollbarWidth] = useState<number | undefined>();
-  console.log(firebaseConfig);
 
   useEffect(() => {
     resizeEffect();
@@ -32,24 +32,26 @@ export const App = () => {
   const app = useFirebaseApp();
   // const auth = getAuth(app);
   const auth = getAuth();
-
+  const firestoreInstance = getFirestore(app);
   return (
     <AuthProvider sdk={auth}>
-      <CSSReset />
-      <Header />
-      <Box
-        as="main"
-        mt="72px"
-        mb="80px"
-        w={{ base: "auto", sm: `calc(100vw - ${scrollbarWidth}px)` }}
-      >
-        <Routes>
-          <Route path="/" element={<Nominations />} />
-          <Route path="/ranking" element={<Ranking />} />
-          <Route path="/rules" element={<Rules />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </Box>
+      <FirestoreProvider sdk={firestoreInstance}>
+        <CSSReset />
+        <Header />
+        <Box
+          as="main"
+          mt="72px"
+          mb="80px"
+          w={{ base: "auto", sm: `calc(100vw - ${scrollbarWidth}px)` }}
+        >
+          <Routes>
+            <Route path="/" element={<Nominations />} />
+            <Route path="/ranking" element={<Ranking />} />
+            <Route path="/rules" element={<Rules />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </Box>
+      </FirestoreProvider>
     </AuthProvider>
   );
 };

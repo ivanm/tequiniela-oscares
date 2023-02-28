@@ -37,7 +37,19 @@ const NominationCards = ({
   pb,
   pl,
 }: NominationCardsProps) => (
-  <Flex  mt={mt} mr={mr} mb={mb} ml={ml} pt={pt} pr={pr} pb={pb} pl={pl} direction={containerDirection} grow={1} basis={0}>
+  <Flex
+    mt={mt}
+    mr={mr}
+    mb={mb}
+    ml={ml}
+    pt={pt}
+    pr={pr}
+    pb={pb}
+    pl={pl}
+    direction={containerDirection}
+    grow={1}
+    basis={0}
+  >
     <Flex pl={3} pr={3} pt={3} pb={3}>
       <Image src="figure.svg" alt="Oscar Figure" />
       <Flex align="center" minHeight="45px">
@@ -88,8 +100,8 @@ const NominationCards = ({
                 nomination={{
                   movie,
                   movieSlug,
-                  name,
-                  nameSlug,
+                  ...(name ? { name } : {}),
+                  ...(nameSlug ? { nameSlug } : {}),
                 }}
               />
             ) : (
