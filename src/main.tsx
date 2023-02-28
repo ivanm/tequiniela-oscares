@@ -5,16 +5,23 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RecoilRoot } from "recoil";
 import { BrowserRouter } from "react-router-dom";
+import { initializeApp } from "firebase/app";
+import { FirebaseAppProvider } from "reactfire";
 
 import { App } from "./App";
 import theme from "./theme";
+import firebaseConfig from "./firebaseConfig";
+
+// initializeApp(firebaseConfig);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <RecoilRoot>
       <ChakraProvider theme={theme}>
         <BrowserRouter>
-          <App />
+          <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+            <App />
+          </FirebaseAppProvider>
         </BrowserRouter>
       </ChakraProvider>
     </RecoilRoot>
