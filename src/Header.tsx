@@ -161,7 +161,7 @@ export const Header = () => {
               to="/login"
               className="inactive"
               mr={2}
-              bg={pathname === "/rules" ? "gray.200" : "transparent"}
+              bg={pathname === "/login" ? "gray.200" : "transparent"}
               fontWeight={500}
             >
               Iniciar Sesión

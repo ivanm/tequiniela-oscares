@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from "react";
 
-
 const useEffectOnce = (effect: (() => void) | (() => () => void)) => {
   const destroyFunc = useRef<(() => void) | void>();
   const effectCalled = useRef<boolean>(false);

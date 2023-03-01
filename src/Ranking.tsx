@@ -7,11 +7,11 @@ export const Ranking = () => (
     className="ranking-container"
     m={{
       base: "0 10px",
-      sm: "0 20px",
-      md: "0 30px",
-      lg: "0 30px",
-      xl: "0 20px",
-      "2xl": "0 150px",
+      sm: "0 60px",
+      md: "0 60px",
+      lg: "0 100px",
+      xl: "0 200px",
+      "2xl": "0 250px",
     }}
   >
     <Flex pl={3} pr={3} pt={3} pb={3} mt={2}>
@@ -31,7 +31,7 @@ export const Ranking = () => (
         </Heading>
       </Flex>
     </Flex>
-    <Flex pl={2} pr={2}>
+    <Flex pl={2} pr={2} mb={3}>
       <Text>
         La ceremonia de los Premios Óscar se llevará a cabo el domingo 12 de
         marzo de 2023. Durante el evento, actualizaremos los resultados tan
