@@ -1,17 +1,5 @@
 import { atom, type RecoilState } from "recoil";
-import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
 import { type UserNominations, WinnerNominations } from "./nominees";
-import { initializeApp } from "firebase/app";
-import {
-  addDoc,
-  collection,
-  getDocs,
-  updateDoc,
-  doc,
-} from "firebase/firestore";
-
-import firebaseConfig from "./firebaseConfig";
 
 export const hasNominationTimePassedState: RecoilState<boolean> = atom<boolean>(
   {
@@ -27,88 +15,6 @@ export const userNominationsState: RecoilState<UserNominations> =
   atom<UserNominations>({
     key: "userNominations",
     default: {},
-    effects: [
-      ({ onSet, setSelf }) => {
-
-        // TODO Optimize this logic, query is called multiple times!
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        (async () => {
-          const querySnapshot = await getDocs(
-            collection(db, "tequiniela-user-nominations")
-          );
-
-          const allNominations = querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            data: doc.data(),
-          }));
-
-          const auth = await getAuth(app);
-          const user = auth.currentUser;
-
-          const userNominationsServer =
-            user !== null
-              ? allNominations.find(({ data: { uid } }) => {
-                  return uid === user.uid;
-                })
-              : undefined;
-          if (
-            userNominationsServer &&
-            userNominationsServer.data &&
-            userNominationsServer.data.nominations
-          ) {
-            setSelf(userNominationsServer.data.nominations);
-          }
-        })();
-
-        onSet(async (userNominations) => {
-          const app = initializeApp(firebaseConfig);
-          const db = getFirestore(app);
-          const auth = getAuth(app);
-          const user = auth.currentUser;
-
-          let documentId = "";
-
-          const querySnapshot = await getDocs(
-            collection(db, "tequiniela-user-nominations")
-          );
-
-          const allNominations = querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            data: doc.data(),
-          }));
-
-          const userNominationsServer =
-            user !== null
-              ? allNominations.find(({ data: { uid } }) => {
-                  return uid === user.uid;
-                })
-              : undefined;
-          if (
-            userNominationsServer &&
-            userNominationsServer.data &&
-            userNominationsServer.data.nominations
-          ) {
-            documentId = userNominationsServer.id;
-          }
-
-          if (user != null) {
-            if (documentId === "") {
-              addDoc(collection(db, "tequiniela-user-nominations"), {
-                uid: user.uid,
-                nominations: userNominations,
-              });
-            } else {
-              updateDoc(doc(db, "tequiniela-user-nominations", documentId), {
-                nominations: userNominations,
-              });
-            }
-          }
-        });
-      },
-    ],
   });
 
 export const winnerNominationsState: RecoilState<WinnerNominations> =
@@ -146,4 +52,9 @@ export const documentIdState: RecoilState<string | undefined> = atom<
 >({
   key: "documentId",
   default: undefined,
+});
+
+export const allUsersNominationsState : RecoilState<UserNominations[]> = atom<UserNominations[]>({
+  key: "allUsersNominations",
+  default: [],
 });

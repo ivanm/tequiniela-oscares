@@ -10,7 +10,7 @@ import { Ranking } from "./Ranking";
 import { Rules } from "./Rules";
 import { Header } from "./Header";
 import { Login } from "./Login";
-import firebaseConfig from "./firebaseConfig";
+import { AtomStates } from "./AtomStates";
 
 export const App = () => {
   const [scrollbarWidth, setScrollbarWidth] = useState<number | undefined>();
@@ -29,13 +29,15 @@ export const App = () => {
   const resizeEffect = () => {
     setScrollbarWidth(window.innerWidth - document.body.clientWidth);
   };
+
   const app = useFirebaseApp();
-  // const auth = getAuth(app);
   const auth = getAuth();
   const firestoreInstance = getFirestore(app);
+
   return (
     <AuthProvider sdk={auth}>
       <FirestoreProvider sdk={firestoreInstance}>
+        <AtomStates />
         <CSSReset />
         <Header />
         <Box
