@@ -29,7 +29,6 @@ export const AtomStates = () => {
   const db = useFirestore();
 
   useEffectOnce(() => {
-    console.log("once??");
     (async () => {
       const querySnapshot = await getDocs(
         collection(db, "tequiniela-user-nominations")
@@ -58,11 +57,10 @@ export const AtomStates = () => {
         setDocumentId(userNominationsServer.id);
         setUserNominations(userNominationsServer.data.nominations);
       } else if (user != null && documentId === undefined) {
-        console.log('user', user);
         const docRef = await addDoc(
           collection(db, "tequiniela-user-nominations"),
           {
-            displayName:user.displayName,
+            displayName: user.displayName,
             email: user.email,
             photoURL: user.photoURL,
             uid: user.uid,
@@ -87,10 +85,21 @@ export const AtomStates = () => {
         updateDoc(doc(db, "tequiniela-user-nominations", documentId), {
           nominations: userNominations,
         });
+        const found = allUsersNominations.find(({ id }) => id === documentId);
+
+        if (found != undefined) {
+          const currentDoc = {
+            ...found,
+            data: { ...found.data, nominations: userNominations },
+          };
+          setAllUsersNominations([
+            ...allUsersNominations.filter(({ id }) => id !== documentId),
+            currentDoc,
+          ]);
+        }
       }
     })();
   }, [userNominations]);
 
-  console.log("all", allUsersNominations);
   return <></>;
 };

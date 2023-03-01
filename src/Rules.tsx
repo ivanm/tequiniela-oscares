@@ -1,4 +1,4 @@
-import { Flex, Heading, Image } from "@chakra-ui/react";
+import { Flex, Heading, Image, Text } from "@chakra-ui/react";
 export const Rules = () => (
   <Flex
     direction="column"
@@ -29,6 +29,21 @@ export const Rules = () => (
         </Heading>
       </Flex>
     </Flex>
+    <Flex pl={2} pr={2} direction="column" gap={2}>
+      <Text>¡Bienvenidos a la tradicional quiniela de los Oscars!</Text>
+      <Text>
+        Únete a la diversión y compite con otros aficionados del cine para ver
+        quién tiene el ojo más agudo para seleccionar a los ganadores.
+      </Text>
+      <Text>
+        ¡No importa si eres un cinéfilo experimentado o simplemente un
+        espectador casual, la quiniela es para todos!
+      </Text>
+      <Text>
+        Prepárate para disfrutar de una noche llena de sorpresas, celebridades y
+        grandes premios, ¡y demuestra tus habilidades para elegir a los
+        ganadores de los Oscars en la Tequiniela!
+      </Text>
+    </Flex>
   </Flex>
 );
-
