@@ -1,6 +1,5 @@
 import { Box, CSSReset } from "@chakra-ui/react";
 import { Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { AuthProvider, FirestoreProvider, useFirebaseApp } from "reactfire";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -11,25 +10,10 @@ import { Rules } from "./Rules";
 import { Header } from "./Header";
 import { Login } from "./Login";
 import { AtomStates } from "./AtomStates";
+import useResize from "./hooks/useResize";
 
 export const App = () => {
-  const [scrollbarWidth, setScrollbarWidth] = useState<number | undefined>();
-
-  useEffect(() => {
-    resizeEffect();
-    window.addEventListener("resize", () => {
-      resizeEffect();
-    });
-
-    return () => {
-      window.removeEventListener("resize", resizeEffect);
-    };
-  }, []);
-
-  const resizeEffect = () => {
-    setScrollbarWidth(window.innerWidth - document.body.clientWidth + 1);
-  };
-
+  const { scrollbarWidth } = useResize();
   const app = useFirebaseApp();
   const auth = getAuth();
   const firestoreInstance = getFirestore(app);
