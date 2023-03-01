@@ -22,7 +22,7 @@ After cloning this repo, run
 
 ```
 npm install
-yarn dev
+npm run dev
 ```
 
 You can also use `yarn eslint` to check type errors, and `yarn eslint:fix` to fix them.
@@ -32,7 +32,7 @@ You can also use `yarn eslint` to check type errors, and `yarn eslint:fix` to fi
 Make sure you are building using the correct env values, and run:
 
 ```
-yarn build
+npm run build
 ```
 
 It will generate a bundled folder on `dist`.
