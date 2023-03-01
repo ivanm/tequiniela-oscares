@@ -64,6 +64,7 @@ export const Header = () => {
             </Heading>
             {menuLinks.map(({ to, title }) => (
               <Button
+                background="transparent"
                 key={to}
                 as={RouterLink}
                 to={to}
@@ -77,6 +78,7 @@ export const Header = () => {
           </>
         ) : (
           <>
+            <Image src="figure.svg" alt="Oscar Figure" mr={3}/>
             <Menu>
               <MenuButton
                 pl={1}
@@ -86,8 +88,7 @@ export const Header = () => {
                 rightIcon={<ChevronDownIcon />}
               >
                 <Flex align="center" ml={3}>
-                  <Image src="figure.svg" alt="Oscar Figure" />
-                  <Text>{menuTitle}</Text>
+                  <Text fontSize="md">{menuTitle}</Text>
                 </Flex>
               </MenuButton>
               <MenuList>
