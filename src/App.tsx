@@ -27,7 +27,7 @@ export const App = () => {
   }, []);
 
   const resizeEffect = () => {
-    setScrollbarWidth(window.innerWidth - document.body.clientWidth +1);
+    setScrollbarWidth(window.innerWidth - document.body.clientWidth + 1);
   };
 
   const app = useFirebaseApp();
