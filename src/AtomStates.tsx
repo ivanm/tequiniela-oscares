@@ -7,6 +7,7 @@ import {
   collection,
   getDocs,
   updateDoc,
+  setDoc,
   doc,
   onSnapshot,
   query,
@@ -71,21 +72,18 @@ export const AtomStates = () => {
         userNominationsServer.data &&
         userNominationsServer.data.nominations
       ) {
-        setDocumentId(userNominationsServer.id);
+        setDocumentId(userNominationsServer.data.uid);
         setUserNominations(userNominationsServer.data.nominations);
       } else if (user != null && documentId === undefined) {
-        const docRef = await addDoc(
-          collection(db, "tequiniela-user-nominations"),
-          {
-            displayName: user.displayName,
-            email: user.email,
-            photoURL: user.photoURL,
-            uid: user.uid,
-            created: new Date().toISOString(),
-            nominations: {},
-          }
-        );
-        setDocumentId(docRef.id);
+        await setDoc(doc(db, "tequiniela-user-nominations", user.uid), {
+          displayName: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+          uid: user.uid,
+          created: new Date().toISOString(),
+          nominations: {},
+        });
+        setDocumentId(user.uid);
       }
     })();
 
