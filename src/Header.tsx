@@ -16,14 +16,12 @@ import {
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { useUser, useAuth } from "reactfire";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 import { hasNominationTimePassedState, userNominationsState } from "./atoms";
 
 export const Header = () => {
-  const [hasNominationTimePassed, setHasNominationTimePassed] = useRecoilState(
-    hasNominationTimePassedState
-  );
+  const hasNominationTimePassed = useRecoilValue(hasNominationTimePassedState);
 
   const [userNominations, setUserNominations] =
     useRecoilState(userNominationsState);
@@ -110,14 +108,7 @@ export const Header = () => {
         )}
 
         <Flex ml="auto">
-          <Button
-            className="inactive"
-            onClick={() => {
-              setHasNominationTimePassed(true);
-            }}
-            fontWeight={500}
-            display="none"
-          >
+          <Button className="inactive" fontWeight={500} display="none">
             Compartir
           </Button>
           {user ? (
