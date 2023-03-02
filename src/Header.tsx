@@ -125,9 +125,6 @@ export const Header = () => {
               <Flex align="center">
                 <Tag
                   className="inactive"
-                  onClick={() => {
-                    setHasNominationTimePassed(true);
-                  }}
                   fontWeight={500}
                   borderRadius="lg"
                   bg={
