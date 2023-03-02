@@ -139,6 +139,7 @@ const MiniCard = ({
       direction="row"
       onClick={isClickable ? handleCardClick : undefined}
       className={`card${isClickable ? " card-clickable" : ""}`}
+      borderRadius="xl"
     >
       <Flex
         pl={4}

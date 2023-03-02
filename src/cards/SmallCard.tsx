@@ -147,10 +147,11 @@ const SmallCard = ({
       direction="row"
       onClick={isClickable ? handleCardClick : undefined}
       className={`card${isClickable ? " card-clickable" : ""}`}
+      borderRadius="xl"
     >
       {imgSrc && (
         <Image
-          borderLeftRadius="sm"
+          borderLeftRadius="xl"
           src={imgSrc}
           alt={title}
           objectFit="cover"

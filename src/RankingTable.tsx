@@ -18,13 +18,13 @@ export const RankingTable = () => {
   return (
     <Card mt={4}>
       <Flex justify="space-around" borderBottom="1px solid #aaa">
-        <Box w="10%" fontSize="lg" pl={8} pt={4} pb={4}>
+        <Box w="10%" fontSize="lg" pl={8} pt={3} pb={3}>
           #
         </Box>
-        <Box w="60%" fontSize="lg" pl={8} pt={4} pb={4}>
+        <Box w="60%" fontSize="lg" pl={8} pt={3} pb={3}>
           Usuario
         </Box>
-        <Box w="30%" fontSize="lg" pl={8} pt={4} pb={4}>
+        <Box w="30%" fontSize="lg" pl={8} pt={3} pb={3}>
           Aciertos
         </Box>
       </Flex>

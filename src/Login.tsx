@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { Flex, Heading} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { Flex, Heading, Spinner } from "@chakra-ui/react";
 import { useAuth, useUser } from "reactfire";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import GoogleButton from "react-google-button";
@@ -9,18 +9,22 @@ export const Login = () => {
   const auth = useAuth();
   const navigate = useNavigate();
   const { data: user } = useUser();
-  
+
   const provider = new GoogleAuthProvider();
+  const [isSignInLoading] = useState<boolean>(
+    localStorage.getItem("loading-google") != null
+  );
 
   const handleSignIn = async () => {
-    await signInWithRedirect(auth, provider);
-    navigate("/", { replace: true });
+    localStorage.setItem("loading-google", "true");
+    signInWithRedirect(auth, provider);
   };
 
   useEffect(() => {
     if (user) {
       navigate("/", { replace: true });
     }
+    localStorage.removeItem("loading-google");
   }, [user]);
 
   return (
@@ -36,25 +40,39 @@ export const Login = () => {
         "2xl": "0 150px",
       }}
     >
-      <Flex pl={3} pr={3} pt={3} pb={3} mt={2} justify="center" mb={5}>
-        <Flex align="center" minHeight="45px">
-          <Heading
-            fontWeight="extrabold"
-            as="h1"
-            fontSize={{
-              base: "19px",
-              lg: "20px",
-            }}
-            mr={2}
-            ml={2}
-          >
-            Iniciar Sesión
-          </Heading>
+      {!isSignInLoading ? (
+        <>
+          <Flex pl={3} pr={3} pt={3} pb={3} mt={2} justify="center" mb={5}>
+            <Flex align="center" minHeight="45px">
+              <Heading
+                fontWeight="extrabold"
+                as="h1"
+                fontSize={{
+                  base: "19px",
+                  lg: "20px",
+                }}
+                mr={2}
+                ml={2}
+              >
+                Iniciar Sesión
+              </Heading>
+            </Flex>
+          </Flex>
+          <Flex justify="center">
+            <GoogleButton onClick={handleSignIn} />
+          </Flex>
+        </>
+      ) : (
+        <Flex height="500px" align="center" justify="center">
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="blue.500"
+            size="xl"
+          />
         </Flex>
-      </Flex>
-      <Flex justify="center">
-        <GoogleButton onClick={handleSignIn} />
-      </Flex>
+      )}
     </Flex>
   );
 };

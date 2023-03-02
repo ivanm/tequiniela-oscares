@@ -78,7 +78,7 @@ export const Header = () => {
           </>
         ) : (
           <>
-            <Image src="figure.svg" alt="Oscar Figure" mr={3}/>
+            <Image src="figure.svg" alt="Oscar Figure" mr={2} />
             <Menu>
               <MenuButton
                 pl={1}
@@ -174,10 +174,10 @@ export const Header = () => {
                     ) : null}
                   </Flex>
                 </MenuButton>
-                <MenuList>
+                <MenuList minW="0" w={"170px"}>
                   <MenuItem
-                    onClick={() => {
-                      auth.signOut();
+                    onClick={async () => {
+                      await auth.signOut();
                       window.location.replace("/");
                     }}
                   >

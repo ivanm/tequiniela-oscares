@@ -132,9 +132,10 @@ const BigCard = ({
       opacity={["not-selected-lost"].includes(status) ? ".5" : "1"}
       onClick={isClickable ? handleCardClick : undefined}
       className={`card${isClickable ? " card-clickable" : ""}`}
+      borderRadius="xl"
     >
       {imgSrc && (
-        <Image w="100%" borderTopRadius="sm" src={imgSrc} alt={title} />
+        <Image w="100%" borderTopRadius="xl" src={imgSrc} alt={title} />
       )}
       <Flex
         justify="center"
