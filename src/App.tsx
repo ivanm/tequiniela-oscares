@@ -28,7 +28,7 @@ export const App = () => {
           as="main"
           mt="72px"
           mb="80px"
-          w={{ base: "auto", sm: `calc(100vw - ${scrollbarWidth}px)` }}
+          w={`calc(100vw - ${scrollbarWidth}px)`}
         >
           <Routes>
             <Route path="/" element={<Nominations />} />
