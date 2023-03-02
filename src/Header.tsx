@@ -16,7 +16,7 @@ import {
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { useUser, useAuth } from "reactfire";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 
 import { hasNominationTimePassedState, userNominationsState } from "./atoms";
 
@@ -25,7 +25,8 @@ export const Header = () => {
     hasNominationTimePassedState
   );
 
-  const userNominations = useRecoilValue(userNominationsState);
+  const [userNominations, setUserNominations] =
+    useRecoilState(userNominationsState);
   const { pathname } = useLocation();
   const { data: user } = useUser();
   const auth = useAuth();
@@ -178,6 +179,7 @@ export const Header = () => {
                   <MenuItem
                     onClick={async () => {
                       await auth.signOut();
+                      setUserNominations({});
                       navigate("/", { replace: true });
                     }}
                   >
