@@ -21,7 +21,7 @@ import { useRecoilState } from "recoil";
 import { hasNominationTimePassedState, userNominationsState } from "./atoms";
 
 export const Header = () => {
-  const [, setHasNominationTimePassed] = useRecoilState(
+  const [hasNominationTimePassed, setHasNominationTimePassed] = useRecoilState(
     hasNominationTimePassedState
   );
 
@@ -145,7 +145,9 @@ export const Header = () => {
                     fontWeight="bold"
                     color="white"
                   >
-                    {Object.values(userNominations).length}/23
+                    {!hasNominationTimePassed
+                      ? `${Object.values(userNominations).length}/23`
+                      : "Votación cerrada"}
                   </TagLabel>
                   {Object.values(userNominations).length === 23 ? (
                     <Text ml={2} fontSize="xs">
