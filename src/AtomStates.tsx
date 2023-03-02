@@ -8,12 +8,16 @@ import {
   getDocs,
   updateDoc,
   doc,
+  onSnapshot,
+  query,
 } from "firebase/firestore";
 
 import {
   userNominationsState,
   allUsersNominationsState,
   documentIdState,
+  winnerNominationsState,
+  hasNominationTimePassedState,
 } from "./atoms";
 
 import useEffectOnce from "./hooks/useEffectOnce";
@@ -24,12 +28,26 @@ export const AtomStates = () => {
   const [allUsersNominations, setAllUsersNominations] = useRecoilState(
     allUsersNominationsState
   );
+  const [, setWinnerNominations] = useRecoilState(winnerNominationsState);
+  const [, setHasNominationTimePassed] = useRecoilState(
+    hasNominationTimePassedState
+  );
   const [documentId, setDocumentId] = useRecoilState(documentIdState);
 
   const db = useFirestore();
 
   useEffectOnce(() => {
+    let unsuscribeAllNominations: null | (() => void) = null;
     (async () => {
+      const q = query(collection(db, "tequiniela-user-nominations"));
+      unsuscribeAllNominations = onSnapshot(q, (querySnapshot) => {
+        const allNominations = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }));
+        setAllUsersNominations(allNominations);
+      });
+
       const querySnapshot = await getDocs(
         collection(db, "tequiniela-user-nominations")
       );
@@ -38,7 +56,6 @@ export const AtomStates = () => {
         id: doc.id,
         data: doc.data(),
       }));
-      setAllUsersNominations(allNominations);
 
       const auth = await getAuth();
       const user = auth.currentUser;
@@ -71,6 +88,25 @@ export const AtomStates = () => {
         setDocumentId(docRef.id);
       }
     })();
+
+    let unsuscribeWinners: null | (() => void) = null;
+    (async () => {
+      unsuscribeWinners = onSnapshot(doc(db, "config", "default"), (doc) => {
+        if (doc !== undefined) {
+          setWinnerNominations(doc.data()?.winners);
+          setHasNominationTimePassed(!doc.data()?.votingEnabled);
+        }
+      });
+    })();
+
+    return () => {
+      if (unsuscribeAllNominations !== null) {
+        unsuscribeAllNominations();
+      }
+      if (unsuscribeWinners !== null) {
+        unsuscribeWinners();
+      }
+    };
   });
 
   useEffect(() => {

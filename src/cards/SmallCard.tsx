@@ -69,9 +69,13 @@ const SmallCard = ({
     winnerNominations[nominationSlug] &&
     winnerNominations[nominationSlug][matchKey] &&
     winnerNominations[nominationSlug][matchKey] === matchTo;
+  const isWinnerPending =
+    winnerNominations[nominationSlug] &&
+    winnerNominations[nominationSlug][matchKey] &&
+    winnerNominations[nominationSlug][matchKey] === "";
 
   const calcStatus = useCallback(() => {
-    if (hasNominationTimePassed) {
+    if (hasNominationTimePassed && isWinnerPending === false) {
       if (isWinner) {
         if (isSelected) {
           setStatus("selected-won");

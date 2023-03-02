@@ -57,9 +57,12 @@ const MiniCard = ({
   const isWinner =
     winnerNominations[nominationSlug]?.movieSlug &&
     winnerNominations[nominationSlug].movieSlug === movieSlug;
+  const isWinnerPending =
+    winnerNominations[nominationSlug]?.movieSlug &&
+    winnerNominations[nominationSlug].movieSlug === "";
 
   const calcStatus = useCallback(() => {
-    if (hasNominationTimePassed) {
+    if (hasNominationTimePassed && isWinnerPending === false) {
       if (isWinner) {
         if (isSelected) {
           setStatus("selected-won");
@@ -114,7 +117,7 @@ const MiniCard = ({
         : { ...userNominations, [nominationSlug]: nomination }
     );
   };
-  
+
   const isClickable =
     user !== null && !hasNominationTimePassed && status !== "selected";
 
