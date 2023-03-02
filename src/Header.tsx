@@ -178,7 +178,7 @@ export const Header = () => {
                   <MenuItem
                     onClick={async () => {
                       await auth.signOut();
-                      window.location.replace("/");
+                      navigate("/", { replace: true });
                     }}
                   >
                     Logout
