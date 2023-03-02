@@ -20,7 +20,7 @@ const useResize = () => {
       window.removeEventListener("resize", resizeEffect);
     };
   });
-  return { scrollbarWidth, windowWidth };
+  return { scrollbarWidth, windowWidth, resizeEffect };
 };
 
 export default useResize;
