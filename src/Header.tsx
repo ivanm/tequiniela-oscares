@@ -15,7 +15,7 @@ import {
   CircularProgress,
   CircularProgressLabel,
 } from "@chakra-ui/react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, CheckIcon } from "@chakra-ui/icons";
 import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { useUser, useAuth } from "reactfire";
 import { useRecoilState, useRecoilValue } from "recoil";
@@ -115,54 +115,69 @@ export const Header = () => {
           </Button>
           {user ? (
             <>
-              <Flex align="center" >
-                <Tag
+              <Flex align="center">
+                <Flex
                   fontWeight={500}
                   borderRadius="lg"
                   bg="gray.300"
                   height="40px"
-                  mr={3}
-                  ml={3}
+                  mr={1}
+                  ml={2}
+                  pl={1}
+                  pr={0}
+                  minWidth={{ base: "auto", xs: "150px", sm: "200px" }}
                 >
                   {!hasNominationTimePassed ? (
-                    <Flex justify="center" align="center" width="">
+                    <Flex justify="center" align="center">
                       <CircularProgress
                         thickness="10px"
                         size="30px"
                         color="cards.selected"
+                        mr={1}
                         value={
                           (Object.values(userNominations).length * 100) / 23
                         }
                       >
-                        <CircularProgressLabel color="gray.800">{`${
-                          Math.round((Object.values(userNominations).length * 100) / 23)
-                        }%`}</CircularProgressLabel>
+                        <CircularProgressLabel color="gray.800">{`${Math.round(
+                          (Object.values(userNominations).length * 100) / 23
+                        )}%`}</CircularProgressLabel>
                       </CircularProgress>
-                      <TagLabel
-                        pl={1}
-                        pr={1}
-                        fontSize="xs"
-                        fontWeight="bold"
-                        color="white"
-                      ></TagLabel>
+
                       {Object.values(userNominations).length === 23 ? (
-                        <Text color="gray.600" ml={2} fontSize="xs">
-                          Votación completa
-                        </Text>
+                        <Flex align="center">
+                          <Text
+                            color="gray.600"
+                            fontSize="10px"
+                            display={{ base: "none", sm: "block" }}
+                          >
+                            Tequiniela completada
+                          </Text>
+                          <CheckIcon ml={2} boxSize="10px" color="cards.won" mr={2} />
+                        </Flex>
                       ) : (
-                        <Text color="gray.600" ml={2} fontSize="xs">
-                          {`${
-                            23 - Object.values(userNominations).length
-                          } ${Object.values(userNominations).length == 22? 'nominación faltante' : 'nominaciones faltantes'}`}
+                        <Text
+                          display={{ base: "none", sm: "block" }}
+                          color="gray.600"
+                          minWidth="120px"
+                          fontSize="10px"
+                        >
+                          {`${23 - Object.values(userNominations).length} ${
+                            Object.values(userNominations).length == 22
+                              ? "categoría por elegir"
+                              : "categorías por elegir"
+                          }`}
                         </Text>
                       )}
                     </Flex>
                   ) : (
-                    <Text color="gray.600" ml={3} mr={3} fontSize="xs">
-                      Votación completa
+                    
+                        <Flex align="center">
+                    <Text color="gray.600" ml={3} mr={3} fontSize="10px">
+                      Votación cerrada
                     </Text>
+                  </Flex>
                   )}
-                </Tag>
+                </Flex>
               </Flex>
 
               <Menu>
