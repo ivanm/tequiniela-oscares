@@ -12,6 +12,8 @@ import {
   MenuList,
   MenuItem,
   useBreakpointValue,
+  CircularProgress,
+  CircularProgressLabel,
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
@@ -113,35 +115,53 @@ export const Header = () => {
           </Button>
           {user ? (
             <>
-              <Flex align="center">
+              <Flex align="center" >
                 <Tag
-                  className="inactive"
                   fontWeight={500}
                   borderRadius="lg"
-                  bg={
-                    Object.values(userNominations).length === 23
-                      ? "cards.won"
-                      : "cards.selected"
-                  }
-                  height="30px"
+                  bg="gray.300"
+                  height="40px"
                   mr={3}
+                  ml={3}
                 >
-                  <TagLabel
-                    pl={1}
-                    pr={1}
-                    fontSize="xs"
-                    fontWeight="bold"
-                    color="white"
-                  >
-                    {!hasNominationTimePassed
-                      ? `${Object.values(userNominations).length}/23`
-                      : "Votación cerrada"}
-                  </TagLabel>
-                  {Object.values(userNominations).length === 23 ? (
-                    <Text ml={2} fontSize="xs">
-                      ✅
+                  {!hasNominationTimePassed ? (
+                    <Flex justify="center" align="center" width="">
+                      <CircularProgress
+                        thickness="10px"
+                        size="30px"
+                        color="cards.selected"
+                        value={
+                          (Object.values(userNominations).length * 100) / 23
+                        }
+                      >
+                        <CircularProgressLabel color="gray.800">{`${
+                          Math.round((Object.values(userNominations).length * 100) / 23)
+                        }%`}</CircularProgressLabel>
+                      </CircularProgress>
+                      <TagLabel
+                        pl={1}
+                        pr={1}
+                        fontSize="xs"
+                        fontWeight="bold"
+                        color="white"
+                      ></TagLabel>
+                      {Object.values(userNominations).length === 23 ? (
+                        <Text color="gray.600" ml={2} fontSize="xs">
+                          Votación completa
+                        </Text>
+                      ) : (
+                        <Text color="gray.600" ml={2} fontSize="xs">
+                          {`${
+                            23 - Object.values(userNominations).length
+                          } ${Object.values(userNominations).length == 22? 'nominación faltante' : 'nominaciones faltantes'}`}
+                        </Text>
+                      )}
+                    </Flex>
+                  ) : (
+                    <Text color="gray.600" ml={3} mr={3} fontSize="xs">
+                      Votación completa
                     </Text>
-                  ) : null}
+                  )}
                 </Tag>
               </Flex>
 
