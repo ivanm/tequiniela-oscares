@@ -118,7 +118,7 @@ export const RankingTable = () => {
                 </Text>
               </Flex>
               <Text w="100px" pl={4}>
-                {uidPointsMap?.[uid] ? uidPointsMap[uid] : 0}
+                { hasNominationTimePassed? uidPointsMap?.[uid] ? uidPointsMap[uid] : 0 : ""}
               </Text>
             </Flex>
           )
