@@ -255,6 +255,20 @@ export interface SelectedNominations {
 export type UserNominations = SelectedNominations;
 export type WinnerNominations = SelectedNominations;
 
+export interface UserDocumentData {
+  created: string;
+  displayName: string;
+  emai: string;
+  nominations: UserNominations;
+  photoURL:string;
+  uid: string;
+}
+
+export interface UserDocument {
+  id: string;
+  data: UserDocumentData;
+}
+
 const nominees: Nominees = {
   bestPicture: [
     {

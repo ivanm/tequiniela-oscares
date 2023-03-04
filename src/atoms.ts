@@ -1,5 +1,9 @@
 import { atom, type RecoilState } from "recoil";
-import { type UserNominations, WinnerNominations } from "./nominees";
+import {
+  type UserNominations,
+  type WinnerNominations,
+  type UserDocumentData,
+} from "./nominees";
 
 export const hasNominationTimePassedState: RecoilState<boolean> = atom<boolean>(
   {
@@ -54,7 +58,9 @@ export const documentIdState: RecoilState<string | undefined> = atom<
   default: undefined,
 });
 
-export const allUsersNominationsState : RecoilState<UserNominations[]> = atom<UserNominations[]>({
+export const allUsersNominationsState: RecoilState<
+  { id: string; data: UserDocumentData }[]
+> = atom<{ id: string; data: UserDocumentData }[]>({
   key: "allUsersNominations",
   default: [],
 });

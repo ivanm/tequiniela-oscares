@@ -3,7 +3,6 @@ import { useRecoilState } from "recoil";
 import { useFirestore } from "reactfire";
 import { getAuth } from "firebase/auth";
 import {
-  addDoc,
   collection,
   getDocs,
   updateDoc,
@@ -20,6 +19,7 @@ import {
   winnerNominationsState,
   hasNominationTimePassedState,
 } from "./atoms";
+import { type UserDocumentData } from './nominees';
 
 import useEffectOnce from "./hooks/useEffectOnce";
 
@@ -44,7 +44,7 @@ export const AtomStates = () => {
       unsuscribeAllNominations = onSnapshot(q, (querySnapshot) => {
         const allNominations = querySnapshot.docs.map((doc) => ({
           id: doc.id,
-          data: doc.data(),
+          data: doc.data() as UserDocumentData,
         }));
         setAllUsersNominations(allNominations);
       });

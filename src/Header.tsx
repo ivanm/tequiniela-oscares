@@ -4,8 +4,6 @@ import {
   Flex,
   Heading,
   Image,
-  Tag,
-  TagLabel,
   Text,
   Menu,
   MenuButton,
@@ -130,15 +128,18 @@ export const Header = () => {
                   {!hasNominationTimePassed ? (
                     <Flex justify="center" align="center">
                       <CircularProgress
-                        thickness="10px"
-                        size="30px"
+                        thickness="18px"
+                        size="34px"
                         color="cards.selected"
                         mr={1}
                         value={
                           (Object.values(userNominations).length * 100) / 23
                         }
                       >
-                        <CircularProgressLabel color="gray.800">{`${Math.round(
+                        <CircularProgressLabel
+                          color="gray.800"
+                          fontSize="8px"
+                        >{`${Math.round(
                           (Object.values(userNominations).length * 100) / 23
                         )}%`}</CircularProgressLabel>
                       </CircularProgress>
@@ -146,16 +147,24 @@ export const Header = () => {
                       {Object.values(userNominations).length === 23 ? (
                         <Flex align="center">
                           <Text
+                            minWidth="107px"
+                            ml={1}
                             color="gray.600"
                             fontSize="10px"
                             display={{ base: "none", sm: "block" }}
                           >
                             Tequiniela completada
                           </Text>
-                          <CheckIcon ml={2} boxSize="10px" color="cards.won" mr={2} />
+                          <CheckIcon
+                            ml={2}
+                            boxSize="10px"
+                            color="cards.won"
+                            mr={2}
+                          />
                         </Flex>
                       ) : (
                         <Text
+                          ml={1}
                           display={{ base: "none", sm: "block" }}
                           color="gray.600"
                           minWidth="120px"
@@ -170,12 +179,11 @@ export const Header = () => {
                       )}
                     </Flex>
                   ) : (
-                    
-                        <Flex align="center">
-                    <Text color="gray.600" ml={3} mr={3} fontSize="10px">
-                      Votación cerrada
-                    </Text>
-                  </Flex>
+                    <Flex align="center">
+                      <Text color="gray.600" ml={3} mr={3} fontSize="10px">
+                        Votación cerrada
+                      </Text>
+                    </Flex>
                   )}
                 </Flex>
               </Flex>
@@ -188,16 +196,28 @@ export const Header = () => {
                   background="transparent"
                   rightIcon={<ChevronDownIcon />}
                 >
-                  <Flex align="center" ml={3}>
+                  <Flex  minWidth="25px" align="center" ml={3}>
                     <Image
                       boxSize="20px"
                       src={user?.photoURL ? user.photoURL : undefined}
+                      width="20px"
                     />
-                    {!isMobileMenu ? (
-                      <Flex height={26} ml={1} maxWidth="300px" align="center">
-                        <Text>{user.displayName}</Text>
-                      </Flex>
-                    ) : null}
+                    <Flex
+                      display={{ base: "none", lg: "flex" }}
+                      height={26}
+                      ml={1}
+                      align="center"
+                    >
+                      <Text
+                        pr={{ base: "12px", lg: "0px" }}
+                        fontSize={{ base: "5px", md: "14px" }}
+                        maxWidth="170px"
+                        textOverflow="ellipsis"
+                        overflow="hidden"
+                      >
+                        {user.displayName}
+                      </Text>
+                    </Flex>
                   </Flex>
                 </MenuButton>
                 <MenuList minW="0" w={"170px"}>
