@@ -1,4 +1,11 @@
-import { Flex, Heading, Image, Text } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  Image,
+  Text,
+  UnorderedList,
+  ListItem,
+} from "@chakra-ui/react";
 export const Rules = () => (
   <Flex
     direction="column"
@@ -43,6 +50,50 @@ export const Rules = () => (
         Prepárate para disfrutar de una noche llena de sorpresas, celebridades y
         grandes premios, ¡y demuestra tus habilidades para elegir a los
         ganadores de los Oscars en la Tequiniela!
+      </Text>
+    </Flex>
+    <Flex pl={3} pr={3} pt={3} pb={3} mt={2}>
+      <Image src="ranking.svg" alt="Ranking Figure" />
+      <Flex align="center" minHeight="45px">
+        <Heading
+          fontWeight="extrabold"
+          as="h1"
+          fontSize={{
+            base: "19px",
+            lg: "20px",
+          }}
+          mr={2}
+          ml={2}
+        >
+          Premios
+        </Heading>
+      </Flex>
+    </Flex>
+    <Flex pl={2} pr={2} direction="column" gap={2}>
+      <Text>
+        Compite con otros fanáticos del cine para ganar alguno de estos
+        increíbles premios*:{" "}
+      </Text>
+      <UnorderedList spacing={3}>
+        <ListItem>
+          Para el <b>primer lugar:</b> Libro de Pinocchio de Guillermo del Toro,
+          A Timeless Tale Told Anew.
+        </ListItem>
+        <ListItem>
+          {" "}
+          Para el <b>segundo lugar</b>: Una tarjeta de regalo de Amazon por $500
+          mxn.
+        </ListItem>
+        <ListItem>
+          Para el <b>tercer lugar</b>: Una taza de Top Gun Maverick.
+        </ListItem>
+        <ListItem>
+          Para el <b>último lugar</b> con un solo acierto y que haya llenado
+          totalmente su quiniela: Una recarga Telcel de $20 pesos.
+        </ListItem>
+      </UnorderedList>
+      <Text>
+        *Premios válidos dentro de México y sujetos a disponibilidad de Amazon.
       </Text>
     </Flex>
   </Flex>

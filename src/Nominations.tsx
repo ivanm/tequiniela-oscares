@@ -1,6 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 
 import NominationCards from "./NominationCards";
+import { Welcome } from "./Welcome"
 import nominees from "./nominees";
 
 export const Nominations = () => (
@@ -16,6 +17,7 @@ export const Nominations = () => (
       "2xl": "0 150px",
     }}
   >
+    <Welcome/>
     <NominationCards
       containerDirection="column"
       cardsDirection="row"
