@@ -1,4 +1,4 @@
-import { Box, CSSReset } from "@chakra-ui/react";
+import { Box, CSSReset, Image, Flex, Text, Link } from "@chakra-ui/react";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider, FirestoreProvider, useFirebaseApp } from "reactfire";
 import { getAuth } from "firebase/auth";
@@ -36,6 +36,12 @@ export const App = () => {
             <Route path="/rules" element={<Rules />} />
             <Route path="/login" element={<Login />} />
           </Routes>
+        </Box>
+        <Box as="footer" width="100%" p={5}>
+          <Flex align="center" justify="center">
+            <Text fontSize="sm">Powered by <Link href="https://efectotequila.com/" isExternal={true}>Efecto Tequila </Link></Text>
+            <Image ml={1} boxSize="24px" src="et.svg" />
+          </Flex>
         </Box>
       </FirestoreProvider>
     </AuthProvider>
