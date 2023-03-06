@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Flex, Heading, Spinner } from "@chakra-ui/react";
+import { Flex, Heading, Spinner, Text } from "@chakra-ui/react";
 import { useAuth, useUser } from "reactfire";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import GoogleButton from "react-google-button";
@@ -30,6 +30,7 @@ export const Login = () => {
   return (
     <Flex
       direction="column"
+      align="center" 
       className="rules-container"
       m={{
         base: "0 10px",
@@ -58,7 +59,8 @@ export const Login = () => {
               </Heading>
             </Flex>
           </Flex>
-          <Flex justify="center">
+          <Text textAlign="center" maxWidth="400px" fontSize="sm">Para registrar tus votos, inica sesión con tu cuenta de Google. Nombre y foto de perfil serán mostrados publicamente.</Text>
+          <Flex mt={20} justify="center">
             <GoogleButton onClick={handleSignIn} />
           </Flex>
         </>
