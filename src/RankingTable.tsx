@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Box, Card, Flex, Text, Image } from "@chakra-ui/react";
+import { CheckIcon } from "@chakra-ui/icons";
 import { useRecoilValue } from "recoil";
 
 import {
@@ -106,7 +107,7 @@ export const RankingTable = () => {
       </Flex>
       {sortedAllUserNominations != null &&
         sortedAllUserNominations.map(
-          ({ data: { displayName, photoURL, uid } }, index) => (
+          ({ data: { displayName, photoURL, uid, nominations } }, index) => (
             <Flex key={index} pb={3} pt={3} borderTop="1px solid #ddd">
               <Text w="10%" pl={4}>
                 {hasNominationTimePassed ? index + 1 : ""}
@@ -115,10 +116,17 @@ export const RankingTable = () => {
                 <Image boxSize="20px" src={photoURL} />
                 <Text fontSize={{ base: "xs", md: "sm" }} w="60%" pl={2}>
                   {displayName}
+                  {Object.keys(nominations).length >= 23 ? (
+                    <CheckIcon ml={2} boxSize="10px" color="cards.won" mr={2} />
+                  ) : null}
                 </Text>
               </Flex>
               <Text w="100px" pl={4}>
-                { hasNominationTimePassed? uidPointsMap?.[uid] ? uidPointsMap[uid] : 0 : ""}
+                {hasNominationTimePassed
+                  ? uidPointsMap?.[uid]
+                    ? uidPointsMap[uid]
+                    : 0
+                  : ""}
               </Text>
             </Flex>
           )
