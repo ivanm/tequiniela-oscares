@@ -37,7 +37,7 @@ export const Nominations = () => {
       }
     };
 
-    document.addEventListener("keydown", listener);
+    window.addEventListener("keydown", listener);
 
     return () => {
       window.removeEventListener("keydown", listener);
