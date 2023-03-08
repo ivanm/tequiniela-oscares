@@ -60,8 +60,11 @@ export const Login = () => {
             </Flex>
           </Flex>
           <Text textAlign="center" maxWidth="480px" fontSize="sm">
-            Para registrar tus votos, inica sesión con tu cuenta de Google. El
-            nombre y foto de perfil de tu cuenta serán mostrados publicamente.
+            Para registrar tus votos, inica sesión con tu cuenta de Google.
+          </Text>
+          <Text textAlign="center" maxWidth="480px" fontSize="sm">
+            El nombre y foto de perfil de tu cuenta serán mostrados
+            publicamente.
           </Text>
           <Flex mt={20} justify="center">
             <GoogleButton onClick={handleSignIn} />

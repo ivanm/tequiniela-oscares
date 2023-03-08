@@ -136,12 +136,6 @@ export const Rules = () => {
           </Link>
         </Text>
         <Text>
-          <b>Diseño/UX</b>:{" "}
-          <Link href="https://twitter.com/chrispulze" isExternal>
-            @chrispulze
-          </Link>
-        </Text>
-        <Text>
           <b>Contenido</b>:{" "}
           <Link href="https://twitter.com/Crater_ae" isExternal>
             @Crater_ae
@@ -151,17 +145,21 @@ export const Rules = () => {
           <b>Dirección</b>: Enrique Segoviano
         </Text>
         <Text>
-          <b>Premios:</b>{" "}
-          <Link href="https://twitter.com/Dulce_Angel_23" isExternal>
-            @Dulce_Angel_23
+          <b>Diseño/UX</b>:{" "}
+          <Link href="https://twitter.com/chrispulze" isExternal>
+            @chrispulze
           </Link>
-          ,{" "}
+        </Text>
+        <Text>
+          <b>Premios:</b>{" "}
           <Link href="https://twitter.com/canitoy" isExternal>
             @canitoy
-          </Link>
-          ,{" "}
+          </Link>,{" "}
           <Link href="https://twitter.com/Crater_ae" isExternal>
             @Crater_ae
+          </Link>,{" "}
+          <Link href="https://twitter.com/Dulce_Angel_23" isExternal>
+            @Dulce_Angel_23
           </Link>
         </Text>
       </Flex>
