@@ -90,7 +90,7 @@ export const Header = () => {
           </>
         ) : (
           <>
-            <Image src="figure.svg" alt="Oscar Figure" mr={2} />
+            <Image filter={iconFilter} src="figure.svg" alt="Oscar Figure" mr={2} />
             <Menu>
               <MenuButton
                 pl={1}
