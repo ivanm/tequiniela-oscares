@@ -147,7 +147,6 @@ export const Header = () => {
                         }
                       >
                         <CircularProgressLabel
-                          color="gray.800"
                           fontSize="8px"
                         >{`${Math.round(
                           (Object.values(userNominations).length * 100) / 23
@@ -175,7 +174,6 @@ export const Header = () => {
                         <Text
                           ml={1}
                           display={{ base: "none", sm: "block" }}
-                          color="gray.600"
                           minWidth="120px"
                           fontSize="10px"
                         >
