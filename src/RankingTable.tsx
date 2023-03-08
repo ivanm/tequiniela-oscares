@@ -1,5 +1,12 @@
 import { useMemo } from "react";
-import { Box, Card, Flex, Text, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Card,
+  Flex,
+  Text,
+  Image,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import { useRecoilValue } from "recoil";
 
@@ -92,13 +99,15 @@ export const RankingTable = () => {
     uidPointsMap,
   ]);
 
+  const borderColor = useColorModeValue("1px solid #aaa", "1px solid #222");
+
   return (
     <Card mt={4}>
-      <Flex justify="flex-start" borderBottom="1px solid #aaa">
-        <Box w="10%" fontSize="md" pl={4} pt={3} pb={3}>
+      <Flex justify="space-between" borderBottom={borderColor}>
+        <Box w="60px" fontSize="md" pl={4} pt={3} pb={3}>
           #
         </Box>
-        <Box w="66%" fontSize="md" pl={4} pt={3} pb={3}>
+        <Box flex={1} w="66%" fontSize="md" pl={4} pt={3} pb={3}>
           Usuario
         </Box>
         <Box w="100px" fontSize="md" pl={4} pr={2} pt={3} pb={3}>
@@ -108,20 +117,36 @@ export const RankingTable = () => {
       {sortedAllUserNominations != null &&
         sortedAllUserNominations.map(
           ({ data: { displayName, photoURL, uid, nominations } }, index) => (
-            <Flex key={index} pb={3} pt={3} borderTop="1px solid #ddd">
-              <Text w="10%" pl={4}>
+            <Flex key={index} pb={3} pt={3} borderTop={borderColor} justify="space-between">
+              <Text
+                w="60px"
+                pl={4}
+                fontSize={{ base: "xs", sm: "sm", md: "md" }}
+              >
                 {hasNominationTimePassed ? index + 1 : ""}
               </Text>
-              <Flex w="66%" pl={4}>
+              <Flex w="auto" pl={4} flex={1}>
                 <Image boxSize="20px" src={photoURL} />
-                <Text fontSize={{ base: "xs", md: "sm" }} w="60%" pl={2}>
+                <Text
+                  fontSize={{ base: "xs", md: "sm" }}
+                  pl={2}
+                  textOverflow="ellipsis"
+                  whiteSpace="nowrap"
+                  overflow="hidden"
+                  display="inline"
+                  w="auto"
+                >
                   {displayName}
-                  {Object.keys(nominations).length >= 23 ? (
-                    <CheckIcon ml={2} boxSize="10px" color="cards.won" mr={2} />
-                  ) : null}
                 </Text>
+                {Object.keys(nominations).length >= 23 ? (
+                  <CheckIcon ml={2} boxSize="10px" color="cards.won" mr={2} />
+                ) : null}
               </Flex>
-              <Text w="100px" pl={4}>
+              <Text
+                w="100px"
+                pl={10}
+                fontSize={{ base: "xs", sm: "sm", md: "md" }}
+              >
                 {hasNominationTimePassed
                   ? uidPointsMap?.[uid]
                     ? uidPointsMap[uid]

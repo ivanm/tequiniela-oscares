@@ -12,8 +12,15 @@ import {
   useBreakpointValue,
   CircularProgress,
   CircularProgressLabel,
+  useColorModeValue,
+  useColorMode,
 } from "@chakra-ui/react";
-import { ChevronDownIcon, CheckIcon } from "@chakra-ui/icons";
+import {
+  ChevronDownIcon,
+  CheckIcon,
+  MoonIcon,
+  SunIcon,
+} from "@chakra-ui/icons";
 import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { useUser, useAuth } from "reactfire";
 import { useRecoilState, useRecoilValue } from "recoil";
@@ -42,22 +49,27 @@ export const Header = () => {
   const menuTitle =
     menuSelected != null && menuSelected.title ? menuSelected.title : "";
 
+  const bgHeader = useColorModeValue("#fff", "gray.700");
+  const iconFilter = useColorModeValue(undefined, "invert(1)");
+  const selectedColor = useColorModeValue("gray.200", "gray.800");
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Box
       as="header"
       position="fixed"
       w="100%"
-      background="#fff"
+      background={bgHeader}
       boxShadow="0px 2px 2px rgba(0, 0, 0, 0.1)"
       zIndex={2}
     >
-      <Flex align="center" p={4} bg="transparent" color="black">
+      <Flex align="center" p={4} bg="transparent">
         {!isMobileMenu ? (
           <>
             <Heading as="h1" size="lg" fontWeight={400}>
               TEQU
             </Heading>
-            <Image src="figure.svg" alt="Oscar Figure" />
+            <Image filter={iconFilter} src="figure.svg" alt="Oscar Figure" />
             <Heading as="h1" size="lg" mr={5} fontWeight={400}>
               NIELA
             </Heading>
@@ -68,8 +80,9 @@ export const Header = () => {
                 as={RouterLink}
                 to={to}
                 mr={2}
-                bg={pathname === to ? "gray.200" : "transparent"}
+                bg={pathname === to ? selectedColor : "transparent"}
                 fontWeight={500}
+                fontSize={{ md: "12px", lg: "md" }}
               >
                 {title}
               </Button>
@@ -107,17 +120,14 @@ export const Header = () => {
           </>
         )}
 
-        <Flex ml="auto">
-          <Button className="inactive" fontWeight={500} display="none">
-            Compartir
-          </Button>
+        <Flex ml="auto" align="center">
           {user ? (
             <>
               <Flex align="center">
                 <Flex
                   fontWeight={500}
                   borderRadius="lg"
-                  bg="gray.300"
+                  bg={selectedColor}
                   height="40px"
                   mr={1}
                   ml={2}
@@ -128,7 +138,7 @@ export const Header = () => {
                   {!hasNominationTimePassed ? (
                     <Flex justify="center" align="center">
                       <CircularProgress
-                        thickness="18px"
+                        thickness="15px"
                         size="34px"
                         color="cards.selected"
                         mr={1}
@@ -149,7 +159,6 @@ export const Header = () => {
                           <Text
                             minWidth="107px"
                             ml={1}
-                            color="gray.600"
                             fontSize="10px"
                             display={{ base: "none", sm: "block" }}
                           >
@@ -196,7 +205,7 @@ export const Header = () => {
                   background="transparent"
                   rightIcon={<ChevronDownIcon />}
                 >
-                  <Flex  minWidth="25px" align="center" ml={3}>
+                  <Flex minWidth="25px" align="center" ml={3}>
                     <Image
                       boxSize="20px"
                       src={user?.photoURL ? user.photoURL : undefined}
@@ -239,12 +248,25 @@ export const Header = () => {
               to="/login"
               className="inactive"
               mr={2}
-              bg={pathname === "/login" ? "gray.200" : "transparent"}
+              bg={pathname === "/login" ? selectedColor : "transparent"}
               fontWeight={500}
+              fontSize={{ md: "12px", lg: "md" }}
             >
               Iniciar Sesión
             </Button>
           )}
+          <Button
+            p={0}
+            borderRadius="full"
+            onClick={toggleColorMode}
+            bg="transparent"
+          >
+            {colorMode == "dark" ? (
+              <MoonIcon boxSize="15px" />
+            ) : (
+              <SunIcon boxSize="15px" />
+            )}
+          </Button>
         </Flex>
       </Flex>
     </Box>

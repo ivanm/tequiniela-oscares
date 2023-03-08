@@ -3,6 +3,10 @@ body {
   display: flex;
 }
 
+body.chakra-ui-light {
+  background: #E5E5E5;
+}
+
 .card{
   transition: opacity 0.1s, background 0.2s, border 0.1s, color 0.2s, filter 0.2s, box-shadow 0.2s;
 }

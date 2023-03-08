@@ -1,6 +1,6 @@
 import "./index.css";
 
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RecoilRoot } from "recoil";
@@ -17,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <ChakraProvider theme={theme}>
         <BrowserRouter>
           <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+            <ColorModeScript initialColorMode={theme.config.initialColorMode} />
             <App />
           </FirebaseAppProvider>
         </BrowserRouter>
