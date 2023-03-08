@@ -1,28 +1,35 @@
-import { useState } from "react";
+import { useRecoilState } from "recoil";
 import useEffectOnce from "./useEffectOnce";
 
+import { windowResizeState } from "../atoms";
+
 const useResize = () => {
-  const [scrollbarWidth, setScrollbarWidth] = useState<number | undefined>();
-  const [windowWidth, setWindowWidth] = useState<number | undefined>();
+  const [windowResize, setWindowResize] = useRecoilState(windowResizeState);
 
   const resizeEffect = () => {
-    setScrollbarWidth(window.innerWidth - document.body.clientWidth + 1);
-    setWindowWidth(window.innerWidth);
+    setWindowResize({
+      scrollbarWidth: window.innerWidth - document.body.clientWidth + 1,
+      windowWidth: window.innerWidth,
+    });
   };
 
   useEffectOnce(() => {
-    resizeEffect();
-
+    
     const listener = () => {
       resizeEffect();
     };
     window.addEventListener("resize", listener);
+    resizeEffect();
 
     return () => {
       window.removeEventListener("resize", listener);
     };
   });
-  return { scrollbarWidth, windowWidth };
+  return {
+    scrollbarWidth: windowResize.scrollbarWidth,
+    windowWidth: windowResize.windowWidth,
+    resizeEffect,
+  };
 };
 
 export default useResize;

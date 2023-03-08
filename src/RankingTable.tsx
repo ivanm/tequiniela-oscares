@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 import {
   Box,
   Card,
@@ -15,6 +15,7 @@ import {
   winnerNominationsState,
   hasNominationTimePassedState,
 } from "./atoms";
+import useResize from "./hooks/useResize";
 
 export const RankingTable = () => {
   const allUserNominations = useRecoilValue(allUsersNominationsState);
@@ -28,6 +29,12 @@ export const RankingTable = () => {
     "leadingActress",
     "leadingActor",
   ];
+
+  const { resizeEffect } = useResize();
+
+  useEffect(() => {
+    resizeEffect();
+  }, [allUserNominations]);
 
   const uidPointsMap = useMemo(() => {
     let uidPointsMap: { [key: string]: number } = {};
@@ -117,7 +124,13 @@ export const RankingTable = () => {
       {sortedAllUserNominations != null &&
         sortedAllUserNominations.map(
           ({ data: { displayName, photoURL, uid, nominations } }, index) => (
-            <Flex key={index} pb={3} pt={3} borderTop={borderColor} justify="space-between">
+            <Flex
+              key={index}
+              pb={3}
+              pt={3}
+              borderTop={borderColor}
+              justify="space-between"
+            >
               <Text
                 w="60px"
                 pl={4}

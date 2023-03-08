@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Box,
   Button,
@@ -26,6 +27,7 @@ import { useUser, useAuth } from "reactfire";
 import { useRecoilState, useRecoilValue } from "recoil";
 
 import { hasNominationTimePassedState, userNominationsState } from "./atoms";
+import useResize from "./hooks/useResize";
 
 export const Header = () => {
   const hasNominationTimePassed = useRecoilValue(hasNominationTimePassedState);
@@ -53,6 +55,11 @@ export const Header = () => {
   const iconFilter = useColorModeValue(undefined, "invert(1)");
   const selectedColor = useColorModeValue("gray.200", "gray.800");
   const { colorMode, toggleColorMode } = useColorMode();
+  const { resizeEffect } = useResize();
+
+  useEffect(() => {
+    resizeEffect();
+  }, [pathname]);
 
   return (
     <Box
@@ -90,7 +97,12 @@ export const Header = () => {
           </>
         ) : (
           <>
-            <Image filter={iconFilter} src="figure.svg" alt="Oscar Figure" mr={2} />
+            <Image
+              filter={iconFilter}
+              src="figure.svg"
+              alt="Oscar Figure"
+              mr={2}
+            />
             <Menu>
               <MenuButton
                 pl={1}
@@ -146,9 +158,7 @@ export const Header = () => {
                           (Object.values(userNominations).length * 100) / 23
                         }
                       >
-                        <CircularProgressLabel
-                          fontSize="8px"
-                        >{`${Math.round(
+                        <CircularProgressLabel fontSize="8px">{`${Math.round(
                           (Object.values(userNominations).length * 100) / 23
                         )}%`}</CircularProgressLabel>
                       </CircularProgress>

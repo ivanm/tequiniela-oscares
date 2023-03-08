@@ -24,31 +24,7 @@ export const userNominationsState: RecoilState<UserNominations> =
 export const winnerNominationsState: RecoilState<WinnerNominations> =
   atom<WinnerNominations>({
     key: "winnerNominations",
-    default: {
-      // bestPicture: { movieSlug: "avatar" },
-      // directing: { nameSlug: "todd-field" },
-      // leadingActor: { nameSlug: "paul-mescal" },
-      // leadingActress: { nameSlug: "ana-de-armas" },
-      // supportingActor: { nameSlug: "barry-keoghan" },
-      // supportingActress: { nameSlug: "hong-chau" },
-      // animatedFeature: { movieSlug: "guillermo-del-toros-pinocchio" },
-      // originalScreenplay: { movieSlug: "the-fabelmans" },
-      // adaptedScreenplay: { movieSlug: "living" },
-      // internationalFeature: { movieSlug: "close" },
-      // documentaryFeature: { movieSlug: "fire-of-love" },
-      // documentaryShort: { movieSlug: "the-elephant-whisperers" },
-      // liveActionShort: { movieSlug: "ivalu" },
-      // animatedShort: { movieSlug: "ice-merchants" },
-      // originalScore: { movieSlug: "the-fabelmans" },
-      // originalSong: { movieSlug: "top-gun" },
-      // sound: { movieSlug: "the-batman" },
-      // productionDesign: { movieSlug: "the-fabelmans" },
-      // cinematography: { movieSlug: "tar" },
-      // makeup: { movieSlug: "the-batman" },
-      // costumeDesign: { movieSlug: "babylon" },
-      // filmEditing: { movieSlug: "top-gun" },
-      // visualEffects: { movieSlug: "avatar" },
-    },
+    default: {},
   });
 
 export const documentIdState: RecoilState<string | undefined> = atom<
@@ -63,4 +39,11 @@ export const allUsersNominationsState: RecoilState<
 > = atom<{ id: string; data: UserDocumentData }[]>({
   key: "allUsersNominations",
   default: [],
+});
+
+export const windowResizeState: RecoilState<
+  { scrollbarWidth?: number| undefined; windowWidth?: number| undefined }
+> = atom<{ scrollbarWidth?: number| undefined; windowWidth?: number| undefined }>({
+  key: "windowResize",
+  default: {},
 });
