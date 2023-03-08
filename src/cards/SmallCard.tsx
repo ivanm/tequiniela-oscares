@@ -19,6 +19,7 @@ export interface SmallCardProps {
   title: string | undefined;
   imgSrc: string | undefined;
   name: string | undefined;
+  transform: string | undefined;
   movieSlug: string | undefined;
   nameSlug: string | undefined;
   nominationSlug: string;
@@ -36,6 +37,7 @@ type Status =
 
 const SmallCard = ({
   title,
+  transform,
   imgSrc,
   name,
   movieSlug,
@@ -163,6 +165,7 @@ const SmallCard = ({
           height="100px"
           width="100px"
           minWidth="100px"
+          transform={transform}
         />
       )}
       <Flex pl={4} pr={4} justify="center" pt={2} pb={2} direction="column">

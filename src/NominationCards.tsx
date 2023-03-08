@@ -20,6 +20,7 @@ export interface NominationCardsProps {
   nominationSlug: string;
   size: "big" | "small" | "mini";
   title: string;
+  transform?: string | undefined;
   mt?: number | string;
   mr?: number | string;
   mb?: number | string;
@@ -36,6 +37,7 @@ const NominationCards = ({
   nominationSlug,
   size,
   title,
+  transform,
   mt,
   mr,
   mb,
@@ -114,6 +116,7 @@ const NominationCards = ({
                     ...(name ? { name } : {}),
                     ...(nameSlug ? { nameSlug } : {}),
                   }}
+                  transform={transform}
                 />
               ) : (
                 ""
@@ -128,6 +131,7 @@ const NominationCards = ({
                     movie,
                     movieSlug,
                   }}
+                  transform={transform}
                 />
               ) : (
                 ""

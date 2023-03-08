@@ -19,6 +19,7 @@ export interface BigCardProps {
   title: string | undefined;
   imgSrc: string | undefined;
   movieSlug: string | undefined;
+  transform: string | undefined;
   nominationSlug: string;
   nomination: Nomination;
 }
@@ -37,6 +38,7 @@ const BigCard = ({
   nominationSlug,
   nomination,
   movieSlug,
+  transform,
 }: BigCardProps) => {
   const [userNominations, setUserNominations] =
     useRecoilState<UserNominations>(userNominationsState);
@@ -138,7 +140,7 @@ const BigCard = ({
       borderRadius="xl"
     >
       {imgSrc && (
-        <Image w="100%" borderTopRadius="xl" src={imgSrc} alt={title} />
+        <Image w="100%" borderTopRadius="xl" transform={transform} src={imgSrc} alt={title} />
       )}
       <Flex
         justify="center"
