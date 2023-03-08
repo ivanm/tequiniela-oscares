@@ -39,7 +39,7 @@ export const App = () => {
         </Box>
         <Box as="footer" width="100%" p={5}>
           <Flex align="center" justify="center">
-            <Text fontSize="sm">Powered by <Link href="https://efectotequila.com/" isExternal={true}>Efecto Tequila </Link></Text>
+            <Text fontSize="sm">2023 | Powered by <Link href="https://efectotequila.com/" isExternal={true}>Efecto Tequila </Link></Text>
             <Image ml={1} boxSize="24px" src="et.svg" />
           </Flex>
         </Box>

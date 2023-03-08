@@ -5,8 +5,10 @@ import {
   Text,
   UnorderedList,
   ListItem,
+  Link,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { AtSignIcon } from "@chakra-ui/icons";
 export const Rules = () => {
   const iconFilter = useColorModeValue(undefined, "invert(1)");
 
@@ -57,7 +59,7 @@ export const Rules = () => {
         </Text>
       </Flex>
       <Flex pl={3} pr={3} pt={3} pb={3} mt={2}>
-        <Image  filter={iconFilter} src="ranking.svg" alt="Ranking Figure" />
+        <Image filter={iconFilter} src="ranking.svg" alt="Ranking Figure" />
         <Flex align="center" minHeight="45px">
           <Heading
             fontWeight="extrabold"
@@ -99,6 +101,68 @@ export const Rules = () => {
         <Text>
           *Premios válidos dentro de México y sujetos a disponibilidad de
           Amazon.
+        </Text>
+      </Flex>
+      <Flex pl={3} pr={3} pt={3} pb={3} mt={2}>
+        <AtSignIcon boxSize="20px" mt={11} />
+        <Flex align="center" minHeight="45px">
+          <Heading
+            fontWeight="extrabold"
+            as="h1"
+            fontSize={{
+              base: "19px",
+              lg: "20px",
+            }}
+            mr={2}
+            ml={2}
+          >
+            Equipo
+          </Heading>
+        </Flex>
+      </Flex>
+      <Flex pl={2} pr={2} direction="column" gap={2}>
+        <Text>
+          <b>Código:</b>{" "}
+          <Link href="https://twitter.com/canitoy" isExternal>
+            @canitoy
+          </Link>
+          ,{" "}
+          <Link href="https://mstdn.social/@Masiosare" isExternal>
+            @Masiosare
+          </Link>
+          ,{" "}
+          <Link href="https://twitter.com/vaan" isExternal>
+            @vaan
+          </Link>
+        </Text>
+        <Text>
+          <b>Diseño/UX</b>:{" "}
+          <Link href="https://twitter.com/chrispulze" isExternal>
+            @chrispulze
+          </Link>
+        </Text>
+        <Text>
+          <b>Contenido</b>:{" "}
+          <Link href="https://twitter.com/Crater_ae" isExternal>
+            @Crater_ae
+          </Link>
+        </Text>
+        <Text>
+          <b>Dirección</b>: Enrique Segoviano
+        </Text>
+        <Text>
+          <b>Premios:</b>{" "}
+          <Link href="https://twitter.com/Dulce_Angel_23" isExternal>
+            @Dulce_Angel_23
+          </Link>
+          ,{" "}
+          <Link href="https://twitter.com/canitoy" isExternal>
+            @canitoy
+          </Link>
+          ,{" "}
+          <Link href="https://twitter.com/Crater_ae" isExternal>
+            @Crater_ae
+          </Link>
         </Text>
       </Flex>
     </Flex>
