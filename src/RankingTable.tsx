@@ -125,7 +125,7 @@ export const RankingTable = () => {
               >
                 {hasNominationTimePassed ? index + 1 : ""}
               </Text>
-              <Flex w="auto" pl={4} flex={1}>
+              <Flex w="auto" pl={4} flex={1} align="center">
                 <Image boxSize="20px" src={photoURL} />
                 <Text
                   fontSize={{ base: "xs", md: "sm" }}
