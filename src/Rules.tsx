@@ -25,8 +25,8 @@ export const Rules = () => {
         "2xl": "0 250px",
       }}
     >
-      <Flex pl={3} pr={3} pt={3} pb={3} mt={2}>
-        <Image filter={iconFilter} src="rules.svg" alt="Rules Figure" />
+      <Flex pl={3} pr={3} pt={3} pb={3} mt={2} align="center">
+        <Image filter={iconFilter} src="rules.svg" boxSize="25px" alt="Rules Figure" />
         <Flex align="center" minHeight="45px">
           <Heading
             fontWeight="extrabold"
@@ -58,8 +58,8 @@ export const Rules = () => {
           ganadores de los Oscars en la Tequiniela!
         </Text>
       </Flex>
-      <Flex pl={3} pr={3} pt={3} pb={3} mt={2}>
-        <Image filter={iconFilter} src="ranking.svg" alt="Ranking Figure" />
+      <Flex pl={3} pr={3} pt={3} pb={3} mt={2} align="center">
+        <Image filter={iconFilter} src="ranking.svg" boxSize="25px" alt="Ranking Figure" />
         <Flex align="center" minHeight="45px">
           <Heading
             fontWeight="extrabold"
@@ -78,7 +78,7 @@ export const Rules = () => {
       <Flex pl={2} pr={2} direction="column" gap={2}>
         <Text>
           Compite con otros fanáticos del cine para ganar alguno de estos
-          increíbles premios*:{" "}
+          increíbles premios<b>*</b>:{" "}
         </Text>
         <UnorderedList spacing={3}>
           <ListItem>
@@ -99,12 +99,12 @@ export const Rules = () => {
           </ListItem>
         </UnorderedList>
         <Text>
-          *Premios válidos dentro de México y sujetos a disponibilidad de
+          <b>*</b>Premios válidos dentro de México y sujetos a disponibilidad de
           Amazon.
         </Text>
       </Flex>
-      <Flex pl={3} pr={3} pt={3} pb={3} mt={2}>
-        <AtSignIcon boxSize="20px" mt={11} />
+      <Flex pl={3} pr={3} pt={3} pb={3} mt={2} align="center">
+        <AtSignIcon boxSize="25px"/>
         <Flex align="center" minHeight="45px">
           <Heading
             fontWeight="extrabold"

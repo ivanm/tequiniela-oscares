@@ -5,6 +5,7 @@ import {
   Flex,
   Text,
   Image,
+  Spinner,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
@@ -108,7 +109,7 @@ export const RankingTable = () => {
 
   const borderColor = useColorModeValue("1px solid #aaa", "1px solid #222");
 
-  return (
+  return allUserNominations.length !== 0 ? (
     <Card mt={4}>
       <Flex justify="space-between" borderBottom={borderColor}>
         <Box w="60px" fontSize="md" pl={4} pt={3} pb={3}>
@@ -141,7 +142,7 @@ export const RankingTable = () => {
               <Flex w="auto" pl={4} flex={1} align="center">
                 <Image boxSize="20px" src={photoURL} />
                 <Text
-                  fontSize={{ base: "xs", md: "sm" }}
+                  fontSize={{ base: "xs", md: "md" }}
                   pl={2}
                   textOverflow="ellipsis"
                   whiteSpace="nowrap"
@@ -170,5 +171,9 @@ export const RankingTable = () => {
           )
         )}
     </Card>
+  ) : (
+    <Flex align="center" justify="center" w="100%" h="400px">
+      <Spinner size="xl"/>
+    </Flex>
   );
 };
