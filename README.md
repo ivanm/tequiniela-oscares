@@ -1,6 +1,5 @@
 # Tequiniela Oscares 2023
-
-![image](https://user-images.githubusercontent.com/32628/222035770-a1f3aae2-fef5-4071-8aa9-3c8b13de86ff.png)
+![image](https://user-images.githubusercontent.com/32628/223587651-29aa841b-90e5-4f75-80cb-3757bb48d5f5.png)
 
 # Deploy instrucitions
 
