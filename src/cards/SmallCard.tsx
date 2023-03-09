@@ -165,6 +165,7 @@ const SmallCard = ({
           height="100px"
           width="100px"
           minWidth="100px"
+          transition="transform 1s ease-in-out"
           transform={transform}
         />
       )}

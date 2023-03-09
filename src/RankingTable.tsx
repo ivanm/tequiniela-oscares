@@ -112,13 +112,33 @@ export const RankingTable = () => {
   return allUserNominations.length !== 0 ? (
     <Card mt={4}>
       <Flex justify="space-between" borderBottom={borderColor}>
-        <Box w="60px" fontSize="md" pl={4} pt={3} pb={3}>
+        <Box
+          w="60px"
+          fontSize={{ base: "sm", sm: "md" }}
+          pl={4}
+          pt={3}
+          pb={3}
+        >
           #
         </Box>
-        <Box flex={1} w="66%" fontSize="md" pl={4} pt={3} pb={3}>
+        <Box
+          flex={1}
+          w="66%"
+          fontSize={{ base: "sm", sm: "md" }}
+          pl={4}
+          pt={3}
+          pb={3}
+        >
           Usuario
         </Box>
-        <Box w="100px" fontSize="md" pl={4} pr={2} pt={3} pb={3}>
+        <Box
+          w="90px"
+          fontSize={{ base: "sm", sm: "md" }}
+          pl={4}
+          pr={2}
+          pt={3}
+          pb={3}
+        >
           Aciertos
         </Box>
       </Flex>
@@ -139,16 +159,17 @@ export const RankingTable = () => {
               >
                 {hasNominationTimePassed ? index + 1 : ""}
               </Text>
-              <Flex w="auto" pl={4} flex={1} align="center">
+              <Flex w="auto" flex={1} align="center">
                 <Image boxSize="20px" src={photoURL} />
                 <Text
-                  fontSize={{ base: "xs", md: "md" }}
+                  fontSize={{ base: "sm", sm: "md" }}
                   pl={2}
                   textOverflow="ellipsis"
                   whiteSpace="nowrap"
                   overflow="hidden"
                   display="inline"
                   w="auto"
+                  maxWidth={{base: '187px', md: 'none'}}
                 >
                   {displayName}
                 </Text>
@@ -157,7 +178,7 @@ export const RankingTable = () => {
                 ) : null}
               </Flex>
               <Text
-                w="100px"
+                w="90px"
                 pl={10}
                 fontSize={{ base: "xs", sm: "sm", md: "md" }}
               >
@@ -173,7 +194,7 @@ export const RankingTable = () => {
     </Card>
   ) : (
     <Flex align="center" justify="center" w="100%" h="400px">
-      <Spinner size="xl"/>
+      <Spinner size="xl" />
     </Flex>
   );
 };

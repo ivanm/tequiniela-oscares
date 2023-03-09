@@ -140,7 +140,7 @@ const BigCard = ({
       borderRadius="xl"
     >
       {imgSrc && (
-        <Image w="100%" borderTopRadius="xl" transform={transform} src={imgSrc} alt={title} />
+        <Image w="100%" borderTopRadius="xl" transform={transform} transition="transform 1s ease-in-out;" src={imgSrc} alt={title} />
       )}
       <Flex
         justify="center"

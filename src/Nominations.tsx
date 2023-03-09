@@ -66,7 +66,7 @@ export const Nominations = () => {
         title="Best Picture"
         nominationSlug="bestPicture"
         mt={2}
-        transform={konami ? "scaleY(-1)" : undefined}
+        transform={konami ? "rotate(180deg)" : undefined}
       />
       <Flex
         mt={{ base: 8, lg: 5 }}
@@ -81,7 +81,7 @@ export const Nominations = () => {
           size="small"
           title="Best Director"
           nominationSlug="directing"
-          transform={konami ? "scaleY(-1)" : undefined}
+          transform={konami ? "rotate(180deg)" : undefined}
         />
         <NominationCards
           containerDirection="column"
@@ -90,7 +90,7 @@ export const Nominations = () => {
           size="small"
           title="Best Actor"
           nominationSlug="leadingActor"
-          transform={konami ? "scaleY(-1)" : undefined}
+          transform={konami ? "rotate(180deg)" : undefined}
         />
         <NominationCards
           containerDirection="column"
@@ -99,7 +99,7 @@ export const Nominations = () => {
           size="small"
           title="Best Actress"
           nominationSlug="leadingActress"
-          transform={konami ? "scaleY(-1)" : undefined}
+          transform={konami ? "rotate(180deg)" : undefined}
         />
       </Flex>
       <Flex
@@ -115,7 +115,7 @@ export const Nominations = () => {
           size="small"
           title="Best Supporting Actor"
           nominationSlug="supportingActor"
-          transform={konami ? "scaleY(-1)" : undefined}
+          transform={konami ? "rotate(180deg)" : undefined}
         />
         <NominationCards
           containerDirection="column"
@@ -124,7 +124,7 @@ export const Nominations = () => {
           size="small"
           title="Best Supporting Actress"
           nominationSlug="supportingActress"
-          transform={konami ? "scaleY(-1)" : undefined}
+          transform={konami ? "rotate(180deg)" : undefined}
         />
         <NominationCards
           containerDirection="column"
@@ -133,7 +133,7 @@ export const Nominations = () => {
           size="small"
           title="Best Animated Feature Film"
           nominationSlug="animatedFeature"
-          transform={konami ? "scaleY(-1)" : undefined}
+          transform={konami ? "rotate(180deg)" : undefined}
         />
       </Flex>
       <Flex
