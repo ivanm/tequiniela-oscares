@@ -162,7 +162,7 @@ export const RankingTable = () => {
               <Flex w="auto" flex={1} align="center">
                 <Image boxSize="20px" src={photoURL} />
                 <Text
-                  fontSize={{ base: "sm", sm: "md" }}
+                  fontSize="md"
                   pl={2}
                   textOverflow="ellipsis"
                   whiteSpace="nowrap"
