@@ -1,8 +1,8 @@
 import { Box, CSSReset, Image, Flex, Text, Link } from "@chakra-ui/react";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider, FirestoreProvider, useFirebaseApp } from "reactfire";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getAuth, connectAuthEmulator } from "firebase/auth";
+import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";
 
 import { Nominations } from "./Nominations";
 import { Ranking } from "./Ranking";
@@ -18,6 +18,14 @@ export const App = () => {
   const auth = getAuth();
   const firestoreInstance = getFirestore(app);
 
+  if (process.env.NODE_ENV === "development") {
+    try {
+      connectFirestoreEmulator(firestoreInstance, "localhost", 8080);
+      connectAuthEmulator(auth, "http://localhost:9099");
+    } catch (e) {
+      // No-Op
+    }
+  }
   return (
     <AuthProvider sdk={auth}>
       <FirestoreProvider sdk={firestoreInstance}>
@@ -39,7 +47,12 @@ export const App = () => {
         </Box>
         <Box as="footer" width="100%" p={5}>
           <Flex align="center" justify="center">
-            <Text fontSize="sm">2023 | Powered by <Link href="https://efectotequila.com/" isExternal={true}>Efecto Tequila </Link></Text>
+            <Text fontSize="sm">
+              2023 | Powered by{" "}
+              <Link href="https://efectotequila.com/" isExternal={true}>
+                Efecto Tequila{" "}
+              </Link>
+            </Text>
             <Image ml={1} boxSize="24px" src="et.svg" />
           </Flex>
         </Box>
