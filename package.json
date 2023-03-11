@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "eslint": "eslint src",
     "eslint:fix": "eslint src --fix",
-    "firebase:emulators": "firebase emulators:start --import=./seed --export-on-exit"
+    "emulators:start": "firebase emulators:start --import=./seed --export-on-exit",
+    "emulators:seed:testing": "rm -rf ./seed && cp -r seed.testing seed"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.17",
