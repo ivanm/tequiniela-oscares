@@ -1,4 +1,10 @@
-import { Flex, Heading, Image, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Flex,
+  Heading,
+  Image,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { RankingTable } from "./RankingTable";
 
 export const Ranking = () => {
@@ -18,7 +24,12 @@ export const Ranking = () => {
       }}
     >
       <Flex pl={3} pr={3} pt={3} pb={3} mt={2} align="center">
-        <Image filter={iconFilter} src="ranking.svg" boxSize="25px" alt="Ranking Figure" />
+        <Image
+          filter={iconFilter}
+          src="ranking.svg"
+          boxSize="25px"
+          alt="Ranking Figure"
+        />
         <Flex align="center" minHeight="45px">
           <Heading
             fontWeight="extrabold"
@@ -34,12 +45,17 @@ export const Ranking = () => {
           </Heading>
         </Flex>
       </Flex>
-      <Flex pl={2} pr={2} mb={3}>
+      <Flex pl={2} pr={2} mb={3} direction="column">
         <Text>
-          La ceremonia de los Premios Óscar se llevará a cabo el <b>domingo 12 de
-            marzo de 2023</b>. Durante el evento, actualizaremos los resultados tan
-          pronto como se vayan anunciando, y este ranking se actualizará
-          conforme a los resultados de los participantes.
+          La ceremonia de los Premios Óscar se llevará a cabo el{" "}
+          <b>domingo 12 de marzo de 2023</b>. Durante el evento, actualizaremos
+          los resultados tan pronto como se vayan anunciando, y este ranking se
+          actualizará conforme a los resultados de los participantes.
+        </Text>
+        <Text mt={2}>
+          Cada acierto de cada categoría equivale a <b>1 punto</b>. El ranking ordenará
+          a los usuarios según el numero de puntos acumulados. En caso de
+          existir un empate, el usuario que se registró primero será el ganador.
         </Text>
       </Flex>
       <RankingTable />

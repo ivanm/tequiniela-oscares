@@ -4,6 +4,7 @@ import { useFirestore } from "reactfire";
 import { getAuth } from "firebase/auth";
 import {
   collection,
+  getDoc,
   getDocs,
   updateDoc,
   setDoc,
@@ -19,7 +20,7 @@ import {
   winnerNominationsState,
   hasNominationTimePassedState,
 } from "./atoms";
-import { type UserDocumentData } from './nominees';
+import { type UserDocumentData } from "./nominees";
 
 import useEffectOnce from "./hooks/useEffectOnce";
 
@@ -58,6 +59,12 @@ export const AtomStates = () => {
         data: doc.data(),
       }));
 
+      const configSnapshot = await getDoc(doc(db, "config", "default"));
+      let votingEnabled = false;
+      if (configSnapshot.exists()) {
+        votingEnabled = configSnapshot.data().votingEnabled;
+      }
+
       const auth = await getAuth();
       const user = auth.currentUser;
 
@@ -74,7 +81,7 @@ export const AtomStates = () => {
       ) {
         setDocumentId(userNominationsServer.data.uid);
         setUserNominations(userNominationsServer.data.nominations);
-      } else if (user != null && documentId === undefined) {
+      } else if (user != null && documentId === undefined && votingEnabled) {
         await setDoc(doc(db, "tequiniela-user-nominations", user.uid), {
           displayName: user.displayName,
           email: user.email,

@@ -26,7 +26,12 @@ export const Rules = () => {
       }}
     >
       <Flex pl={3} pr={3} pt={3} pb={3} mt={2} align="center">
-        <Image filter={iconFilter} src="rules.svg" boxSize="25px" alt="Rules Figure" />
+        <Image
+          filter={iconFilter}
+          src="rules.svg"
+          boxSize="25px"
+          alt="Rules Figure"
+        />
         <Flex align="center" minHeight="45px">
           <Heading
             fontWeight="extrabold"
@@ -59,7 +64,12 @@ export const Rules = () => {
         </Text>
       </Flex>
       <Flex pl={3} pr={3} pt={3} pb={3} mt={2} align="center">
-        <Image filter={iconFilter} src="ranking.svg" boxSize="25px" alt="Ranking Figure" />
+        <Image
+          filter={iconFilter}
+          src="ranking.svg"
+          boxSize="25px"
+          alt="Ranking Figure"
+        />
         <Flex align="center" minHeight="45px">
           <Heading
             fontWeight="extrabold"
@@ -94,6 +104,16 @@ export const Rules = () => {
             Para el <b>tercer lugar</b>: Una taza de Top Gun Maverick.
           </ListItem>
           <ListItem>
+            Para el <b>cuarto lugar</b>: $300 mxn para comer en{" "}
+            <Link href="https://www.instagram.com/tacoscocuyos/" isExternal>
+              Taquería Los Cocuyos
+            </Link>{" "}
+            (CDMX).
+          </ListItem>
+          <ListItem>
+            Para el <b>quinto lugar</b>: Funko de Black Panther: Wakanda Forever{" "}
+          </ListItem>
+          <ListItem>
             Para el <b>último lugar</b> con un solo acierto y que haya llenado
             totalmente su quiniela: Una recarga Telcel de $20 pesos.
           </ListItem>
@@ -104,7 +124,7 @@ export const Rules = () => {
         </Text>
       </Flex>
       <Flex pl={3} pr={3} pt={3} pb={3} mt={2} align="center">
-        <AtSignIcon boxSize="25px"/>
+        <AtSignIcon boxSize="25px" />
         <Flex align="center" minHeight="45px">
           <Heading
             fontWeight="extrabold"
@@ -154,12 +174,22 @@ export const Rules = () => {
           <b>Premios:</b>{" "}
           <Link href="https://twitter.com/canitoy" isExternal>
             @canitoy
-          </Link>,{" "}
+          </Link>
+          ,{" "}
           <Link href="https://twitter.com/Crater_ae" isExternal>
             @Crater_ae
-          </Link>,{" "}
+          </Link>
+          ,{" "}
           <Link href="https://twitter.com/Dulce_Angel_23" isExternal>
             @Dulce_Angel_23
+          </Link>
+          ,{" "}
+          <Link href="https://twitter.com/thewarpaint" isExternal>
+            @thewarpaint
+          </Link>
+          ,{" "}
+          <Link href="https://twitter.com/vaan" isExternal>
+            @vaan
           </Link>
         </Text>
       </Flex>

@@ -95,8 +95,21 @@ export const RankingTable = () => {
     ) {
       const sorted = [...allUserNominations];
       sorted.sort(
-        (a: { data: { uid: string } }, b: { data: { uid: string } }) =>
-          uidPointsMap[b.data.uid] - uidPointsMap[a.data.uid]
+        (
+          a: { data: { uid: string; created: string } },
+          b: { data: { uid: string; created: string } }
+        ) => {
+          const pointsCompare =
+            uidPointsMap[b.data.uid] - uidPointsMap[a.data.uid];
+          if (pointsCompare !== 0) {
+            return pointsCompare;
+          } else {
+            // If both users have the same points sort by Date
+            const aDate = new Date(a.data.created);
+            const bDate = new Date(b.data.created);
+            return aDate.getTime() - bDate.getTime();
+          }
+        }
       );
       return sorted;
     }
@@ -112,13 +125,7 @@ export const RankingTable = () => {
   return allUserNominations.length !== 0 ? (
     <Card mt={4}>
       <Flex justify="space-between" borderBottom={borderColor}>
-        <Box
-          w="60px"
-          fontSize={{ base: "sm", sm: "md" }}
-          pl={4}
-          pt={3}
-          pb={3}
-        >
+        <Box w="60px" fontSize={{ base: "sm", sm: "md" }} pl={4} pt={3} pb={3}>
           #
         </Box>
         <Box
@@ -169,7 +176,7 @@ export const RankingTable = () => {
                   overflow="hidden"
                   display="inline"
                   w="auto"
-                  maxWidth={{base: '187px', md: 'none'}}
+                  maxWidth={{ base: "187px", md: "none" }}
                 >
                   {displayName}
                 </Text>

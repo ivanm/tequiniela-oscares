@@ -6,6 +6,33 @@ export interface Nomination {
   imgSrc?: string;
 }
 
+export interface AdaptedScreenplayNomination extends Nomination {
+  movieSlug:
+    | "all-quiet"
+    | "glass-onion"
+    | "living"
+    | "top-gun"
+    | "women-talking";
+}
+
+export interface AnimatedFeatureNomination extends Nomination {
+  movieSlug:
+    | "guillermo-del-toros-pinocchio"
+    | "marcel"
+    | "puss-in-boots"
+    | "the-sea-beast"
+    | "turning-red";
+}
+
+export interface AnimatedShortNomination extends Nomination {
+  movieSlug:
+    | "the-boy-the-mole-the-fox-and-the-horse"
+    | "the-flying-sailor"
+    | "ice-merchants"
+    | "my-year-of-dicks"
+    | "an-ostrich-told-me";
+}
+
 export interface BestPictureNomination extends Nomination {
   movieSlug:
     | "all-quiet"
@@ -20,6 +47,19 @@ export interface BestPictureNomination extends Nomination {
     | "women-talking";
 }
 
+export interface CinematographyNomination extends Nomination {
+  movieSlug: "all-quiet" | "bardo" | "elvis" | "empire-of-light" | "tar";
+}
+
+export interface CostumeDesignNomination extends Nomination {
+  movieSlug:
+    | "babylon"
+    | "black-panther"
+    | "elvis"
+    | "everything-everywhere"
+    | "mrs-harris";
+}
+
 export interface DirectingNomination extends Nomination {
   nameSlug:
     | "martin-mcdonag"
@@ -27,73 +67,6 @@ export interface DirectingNomination extends Nomination {
     | "steven-spielberg"
     | "todd-field"
     | "ruben-ostlund";
-}
-
-export interface LeadingActorNomination extends Nomination {
-  nameSlug:
-    | "austin-butler"
-    | "colin-farrell"
-    | "brendan-fraser"
-    | "paul-mescal"
-    | "bill-nighy";
-}
-
-export interface LeadingActressNomination extends Nomination {
-  nameSlug:
-    | "cate-blanchett"
-    | "ana-de-armas"
-    | "andrea-riseborough"
-    | "michelle-williams"
-    | "michelle-yeoh";
-}
-
-export interface SupportingActorNomination extends Nomination {
-  nameSlug:
-    | "brendan-gleeson"
-    | "brian-tyree-henry"
-    | "judd-hirsch"
-    | "barry-keoghan"
-    | "ke-huy-quan";
-}
-
-export interface SupportingActressNomination extends Nomination {
-  nameSlug:
-    | "angela-bassett"
-    | "hong-chau"
-    | "kerry-condon"
-    | "jamie-lee-curtis"
-    | "stephanie-hsu";
-}
-
-export interface AnimatedFeatureNomination extends Nomination {
-  movieSlug:
-    | "guillermo-del-toros-pinocchio"
-    | "marcel"
-    | "puss-in-boots"
-    | "the-sea-beast"
-    | "turning-red";
-}
-
-export interface OriginalScreenplayNomination extends Nomination {
-  movieSlug:
-    | "the-banshees"
-    | "everything-everywhere"
-    | "the-fabelmans"
-    | "tar"
-    | "triangle-of-sadness";
-}
-
-export interface AdaptedScreenplayNomination extends Nomination {
-  movieSlug:
-    | "all-quiet"
-    | "glass-onion"
-    | "living"
-    | "top-gun"
-    | "women-talking";
-}
-
-export interface InternationalFeatureNomination extends Nomination {
-  movieSlug: "all-quiet" | "argentina-1985" | "close" | "eo" | "the-quiet-girl";
 }
 
 export interface DocumentaryFeatureNomination extends Nomination {
@@ -114,6 +87,37 @@ export interface DocumentaryShortNomination extends Nomination {
     | "stranger-at-the-gate";
 }
 
+export interface FilmEditingNomination extends Nomination {
+  movieSlug:
+    | "the-banshees"
+    | "elvis"
+    | "everything-everywhere"
+    | "tar"
+    | "top-gun";
+}
+
+export interface InternationalFeatureNomination extends Nomination {
+  movieSlug: "all-quiet" | "argentina-1985" | "close" | "eo" | "the-quiet-girl";
+}
+
+export interface LeadingActorNomination extends Nomination {
+  nameSlug:
+    | "austin-butler"
+    | "colin-farrell"
+    | "brendan-fraser"
+    | "paul-mescal"
+    | "bill-nighy";
+}
+
+export interface LeadingActressNomination extends Nomination {
+  nameSlug:
+    | "cate-blanchett"
+    | "ana-de-armas"
+    | "andrea-riseborough"
+    | "michelle-williams"
+    | "michelle-yeoh";
+}
+
 export interface LiveActionShortNomination extends Nomination {
   movieSlug:
     | "an-irish-goodbye"
@@ -121,45 +125,6 @@ export interface LiveActionShortNomination extends Nomination {
     | "le-pupille"
     | "night-ride"
     | "the-red-suitcase";
-}
-
-export interface AnimatedShortNomination extends Nomination {
-  movieSlug:
-    | "the-boy-the-mole-the-fox-and-the-horse"
-    | "the-flying-sailor"
-    | "ice-merchants"
-    | "my-year-of-dicks"
-    | "an-ostrich-told-me";
-}
-
-export interface OriginalScoreNomination extends Nomination {
-  movieSlug:
-    | "all-quiet"
-    | "babylon"
-    | "the-banshees"
-    | "everything-everywhere"
-    | "the-fabelmans";
-}
-
-export interface OriginalSongNomination extends Nomination {
-  movieSlug:
-    | "tell-it-like-a-woman"
-    | "top-gun"
-    | "black-panther"
-    | "rrr"
-    | "everything-everywhere";
-}
-
-export interface SoundNomination extends Nomination {
-  movieSlug: "all-quiet" | "avatar" | "the-batman" | "elvis" | "top-gun";
-}
-
-export interface ProductionDesignNomination extends Nomination {
-  movieSlug: "all-quiet" | "avatar" | "babylon" | "elvis" | "the-fabelmans";
-}
-
-export interface CinematographyNomination extends Nomination {
-  movieSlug: "all-quiet" | "bardo" | "elvis" | "empire-of-light" | "tar";
 }
 
 export interface MakeupNomination extends Nomination {
@@ -171,22 +136,57 @@ export interface MakeupNomination extends Nomination {
     | "the-whale";
 }
 
-export interface CostumeDesignNomination extends Nomination {
+export interface OriginalScoreNomination extends Nomination {
   movieSlug:
+    | "all-quiet"
     | "babylon"
-    | "black-panther"
-    | "elvis"
+    | "the-banshees"
     | "everything-everywhere"
-    | "mrs-harris";
+    | "the-fabelmans";
 }
 
-export interface FilmEditingNomination extends Nomination {
+export interface OriginalScreenplayNomination extends Nomination {
   movieSlug:
     | "the-banshees"
-    | "elvis"
     | "everything-everywhere"
+    | "the-fabelmans"
     | "tar"
-    | "top-gun";
+    | "triangle-of-sadness";
+}
+
+export interface OriginalSongNomination extends Nomination {
+  movieSlug:
+    | "tell-it-like-a-woman"
+    | "top-gun"
+    | "black-panther"
+    | "rrr"
+    | "everything-everywhere";
+}
+
+export interface ProductionDesignNomination extends Nomination {
+  movieSlug: "all-quiet" | "avatar" | "babylon" | "elvis" | "the-fabelmans";
+}
+
+export interface SoundNomination extends Nomination {
+  movieSlug: "all-quiet" | "avatar" | "the-batman" | "elvis" | "top-gun";
+}
+
+export interface SupportingActorNomination extends Nomination {
+  nameSlug:
+    | "brendan-gleeson"
+    | "brian-tyree-henry"
+    | "judd-hirsch"
+    | "barry-keoghan"
+    | "ke-huy-quan";
+}
+
+export interface SupportingActressNomination extends Nomination {
+  nameSlug:
+    | "angela-bassett"
+    | "hong-chau"
+    | "kerry-condon"
+    | "jamie-lee-curtis"
+    | "stephanie-hsu";
 }
 
 export interface VisualEffectsNomination extends Nomination {
@@ -260,7 +260,7 @@ export interface UserDocumentData {
   displayName: string;
   emai: string;
   nominations: UserNominations;
-  photoURL:string;
+  photoURL: string;
   uid: string;
 }
 
