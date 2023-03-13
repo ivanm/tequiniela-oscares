@@ -13,13 +13,14 @@ export const Welcome = () => (
       />
       <Flex direction="column">
         <Text fontSize={{ base: "20px", md: "30px" }}>
-          Bienvenido a Tequiniela
+          ¡Tequiniela finalizada!
         </Text>
-        <Text fontSize={{ base: 'xs', md: "md"}}>
-          Tequiniela es una quiniela organizada entre amigos para la entrega de
-          los Premios Óscar 2023. Para participar, inicia sesión con tu cuenta
-          de Google, selecciona tus candidatos, y no te olvides de revisar el
-          reglamento.
+        <Text fontSize={{ base: "xs", md: "md" }}>
+          Muchas felicitaciones a nuestros ganadores, nos podremos en contacto
+          por correo para confirmar la entrega de los premios. 👀
+        </Text>
+        <Text fontSize={{ base: "xs", md: "md" }} mt={2}>
+          Gracias a todos por haber participado.{" "}
         </Text>
       </Flex>
     </Flex>
