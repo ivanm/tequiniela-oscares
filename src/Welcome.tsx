@@ -13,7 +13,7 @@ export const Welcome = () => (
       />
       <Flex direction="column">
         <Text fontSize={{ base: "20px", md: "30px" }}>
-          ¡Tequiniela finalizada!
+          ¡Tequiniela finalizada??
         </Text>
         <Text fontSize={{ base: "xs", md: "md" }}>
           Muchas felicitaciones a nuestros ganadores, nos podremos en contacto
