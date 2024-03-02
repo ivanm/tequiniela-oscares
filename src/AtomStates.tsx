@@ -24,15 +24,23 @@ import { type UserDocumentData } from "./nominees";
 
 import useEffectOnce from "./hooks/useEffectOnce";
 
+// 2023
+const nominationsCollection = 'tequiniela-user-nominations';
+const configCollection = 'config';
+
+// const nominationsCollection = "user-nominations-2024";
+// const configCollection = "config-2024";
+// 2023
+
 export const AtomStates = () => {
   const [userNominations, setUserNominations] =
     useRecoilState(userNominationsState);
   const [allUsersNominations, setAllUsersNominations] = useRecoilState(
-    allUsersNominationsState
+    allUsersNominationsState,
   );
   const [, setWinnerNominations] = useRecoilState(winnerNominationsState);
   const [, setHasNominationTimePassed] = useRecoilState(
-    hasNominationTimePassedState
+    hasNominationTimePassedState,
   );
   const [documentId, setDocumentId] = useRecoilState(documentIdState);
 
@@ -41,7 +49,7 @@ export const AtomStates = () => {
   useEffectOnce(() => {
     let unsuscribeAllNominations: null | (() => void) = null;
     (async () => {
-      const q = query(collection(db, "tequiniela-user-nominations"));
+      const q = query(collection(db, nominationsCollection));
       unsuscribeAllNominations = onSnapshot(q, (querySnapshot) => {
         const allNominations = querySnapshot.docs.map((doc) => ({
           id: doc.id,
@@ -51,7 +59,7 @@ export const AtomStates = () => {
       });
 
       const querySnapshot = await getDocs(
-        collection(db, "tequiniela-user-nominations")
+        collection(db, nominationsCollection),
       );
 
       const allNominations = querySnapshot.docs.map((doc) => ({
@@ -59,7 +67,7 @@ export const AtomStates = () => {
         data: doc.data(),
       }));
 
-      const configSnapshot = await getDoc(doc(db, "config", "default"));
+      const configSnapshot = await getDoc(doc(db, configCollection, "default"));
       let votingEnabled = false;
       if (configSnapshot.exists()) {
         votingEnabled = configSnapshot.data().votingEnabled;
@@ -82,7 +90,7 @@ export const AtomStates = () => {
         setDocumentId(userNominationsServer.data.uid);
         setUserNominations(userNominationsServer.data.nominations);
       } else if (user != null && documentId === undefined && votingEnabled) {
-        await setDoc(doc(db, "tequiniela-user-nominations", user.uid), {
+        await setDoc(doc(db, nominationsCollection, user.uid), {
           displayName: user.displayName,
           email: user.email,
           photoURL: user.photoURL,
@@ -96,7 +104,7 @@ export const AtomStates = () => {
 
     let unsuscribeWinners: null | (() => void) = null;
     (async () => {
-      unsuscribeWinners = onSnapshot(doc(db, "config", "default"), (doc) => {
+      unsuscribeWinners = onSnapshot(doc(db, configCollection, "default"), (doc) => {
         if (doc !== undefined) {
           setWinnerNominations(doc.data()?.winners);
           setHasNominationTimePassed(!doc.data()?.votingEnabled);
@@ -123,7 +131,7 @@ export const AtomStates = () => {
         documentId != null &&
         Object.keys(userNominations).length > 0
       ) {
-        updateDoc(doc(db, "tequiniela-user-nominations", documentId), {
+        updateDoc(doc(db, nominationsCollection, documentId), {
           nominations: userNominations,
         });
         const found = allUsersNominations.find(({ id }) => id === documentId);

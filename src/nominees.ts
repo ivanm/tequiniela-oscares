@@ -8,194 +8,214 @@ export interface Nomination {
 
 export interface AdaptedScreenplayNomination extends Nomination {
   movieSlug:
-    | "all-quiet"
-    | "glass-onion"
-    | "living"
-    | "top-gun"
-    | "women-talking";
+    | "american-fiction"
+    | "barbie"
+    | "oppenheimer"
+    | "poor-things"
+    | "the-zone-of-interest";
 }
 
 export interface AnimatedFeatureNomination extends Nomination {
   movieSlug:
-    | "guillermo-del-toros-pinocchio"
-    | "marcel"
-    | "puss-in-boots"
-    | "the-sea-beast"
-    | "turning-red";
+    | "the-boy-and-the-heron"
+    | "elemental"
+    | "nimona"
+    | "robot-dreams"
+    | "spider-man-across-the-spider-verse";
 }
 
 export interface AnimatedShortNomination extends Nomination {
   movieSlug:
-    | "the-boy-the-mole-the-fox-and-the-horse"
-    | "the-flying-sailor"
-    | "ice-merchants"
-    | "my-year-of-dicks"
-    | "an-ostrich-told-me";
+    | "letter-to-a-pig"
+    | "ninety-five-senses"
+    | "our-uniform"
+    | "pachyderme"
+    | "war-is-over";
 }
 
 export interface BestPictureNomination extends Nomination {
   movieSlug:
-    | "all-quiet"
-    | "avatar"
-    | "the-banshees"
-    | "elvis"
-    | "everything-everywhere"
-    | "the-fabelmans"
-    | "tar"
-    | "top-gun"
-    | "triangle-of-sadness"
-    | "women-talking";
+    | "american-fiction"
+    | "anatomy-of-a-fall"
+    | "barbie"
+    | "the-holdovers"
+    | "killers-of-the-flower-moon"
+    | "maestro"
+    | "oppenheimer"
+    | "past-lives"
+    | "poor-things"
+    | "the-zone-of-interest";
 }
 
 export interface CinematographyNomination extends Nomination {
-  movieSlug: "all-quiet" | "bardo" | "elvis" | "empire-of-light" | "tar";
+  movieSlug:
+    | "el-conde"
+    | "killers-of-the-flower-moon"
+    | "maestro"
+    | "oppenheimer"
+    | "poor-things";
 }
 
 export interface CostumeDesignNomination extends Nomination {
   movieSlug:
-    | "babylon"
-    | "black-panther"
-    | "elvis"
-    | "everything-everywhere"
-    | "mrs-harris";
+    | "barbie"
+    | "killers-of-the-flower-moon"
+    | "napoleon"
+    | "oppenheimer"
+    | "poor-things";
 }
 
 export interface DirectingNomination extends Nomination {
   nameSlug:
-    | "martin-mcdonag"
-    | "daniel-kwan-daniel-scheinert"
-    | "steven-spielberg"
-    | "todd-field"
-    | "ruben-ostlund";
+    | "justine-triet"
+    | "martin-scorsese"
+    | "christopher-nolan"
+    | "yorgos-lanthimos"
+    | "jonathan-glazer";
 }
 
 export interface DocumentaryFeatureNomination extends Nomination {
   movieSlug:
-    | "all-that-breathes"
-    | "all-the-beauty"
-    | "fire-of-love"
-    | "a-house-made-of-splinters"
-    | "navalny";
+    | "bobi-wine"
+    | "the-eternal-memory"
+    | "four-daughters"
+    | "to-kill-a-tiger"
+    | "20-days-in-mariupol";
 }
 
 export interface DocumentaryShortNomination extends Nomination {
   movieSlug:
-    | "the-elephant-whisperers"
-    | "haulout"
-    | "how-do-you-measure-a-year"
-    | "the-martha-mitchell-effect"
-    | "stranger-at-the-gate";
+    | "the-abcs-of-book-banning"
+    | "the-barber-of-little-rock"
+    | "island-in-between"
+    | "the-last-repair-shop"
+    | "nai-nai-and-wai-po";
 }
 
 export interface FilmEditingNomination extends Nomination {
   movieSlug:
-    | "the-banshees"
-    | "elvis"
-    | "everything-everywhere"
-    | "tar"
-    | "top-gun";
+    | "anatomy-of-a-fall"
+    | "the-holdovers"
+    | "killers-of-the-flower-moon"
+    | "oppenheimer"
+    | "poor-things";
 }
 
 export interface InternationalFeatureNomination extends Nomination {
-  movieSlug: "all-quiet" | "argentina-1985" | "close" | "eo" | "the-quiet-girl";
+  movieSlug:
+    | "io-capitano"
+    | "perfect-days"
+    | "society-of-the-snow"
+    | "the-teachers-lounge"
+    | "the-zone-of-interest";
 }
 
 export interface LeadingActorNomination extends Nomination {
   nameSlug:
-    | "austin-butler"
-    | "colin-farrell"
-    | "brendan-fraser"
-    | "paul-mescal"
-    | "bill-nighy";
+    | "bradley-cooper"
+    | "colman-domingo"
+    | "paul-giamatti"
+    | "cillian-murphy"
+    | "jeffrey-wright";
 }
 
 export interface LeadingActressNomination extends Nomination {
   nameSlug:
-    | "cate-blanchett"
-    | "ana-de-armas"
-    | "andrea-riseborough"
-    | "michelle-williams"
-    | "michelle-yeoh";
+    | "annette-bening"
+    | "lily-gladstone"
+    | "sandra-huller"
+    | "carey-mulligan"
+    | "emma-stone";
 }
 
 export interface LiveActionShortNomination extends Nomination {
   movieSlug:
-    | "an-irish-goodbye"
-    | "ivalu"
-    | "le-pupille"
-    | "night-ride"
-    | "the-red-suitcase";
+    | "the-after"
+    | "invincible"
+    | "knight-of-fortune"
+    | "red-white-and-blue"
+    | "the-wonderful-story-of-henry-sugar";
 }
 
 export interface MakeupNomination extends Nomination {
   movieSlug:
-    | "all-quiet"
-    | "the-batman"
-    | "black-panther"
-    | "elvis"
-    | "the-whale";
+    | "golda"
+    | "maestro"
+    | "oppenheimer"
+    | "poor-things"
+    | "society-of-the-snow";
 }
 
 export interface OriginalScoreNomination extends Nomination {
   movieSlug:
-    | "all-quiet"
-    | "babylon"
-    | "the-banshees"
-    | "everything-everywhere"
-    | "the-fabelmans";
+    | "american-fiction"
+    | "indiana-jones-and-the-dial-of-destiny"
+    | "killers-of-the-flower-moon"
+    | "oppenheimer"
+    | "poor-things";
 }
 
 export interface OriginalScreenplayNomination extends Nomination {
   movieSlug:
-    | "the-banshees"
-    | "everything-everywhere"
-    | "the-fabelmans"
-    | "tar"
-    | "triangle-of-sadness";
+    | "anatomy-of-a-fall"
+    | "the-holdovers"
+    | "maestro"
+    | "may-december"
+    | "past-lives";
 }
 
 export interface OriginalSongNomination extends Nomination {
-  movieSlug:
-    | "tell-it-like-a-woman"
-    | "top-gun"
-    | "black-panther"
-    | "rrr"
-    | "everything-everywhere";
+  nameSlug:
+    | "the-fire-inside"
+    | "im-just-ken"
+    | "it-never-went-away"
+    | "wahzhazhe"
+    | "what-was-i-made-for";
 }
 
 export interface ProductionDesignNomination extends Nomination {
-  movieSlug: "all-quiet" | "avatar" | "babylon" | "elvis" | "the-fabelmans";
+  movieSlug:
+    | "barbie"
+    | "killers-of-the-flower-moon"
+    | "napoleon"
+    | "oppenheimer"
+    | "poor-things";
 }
 
 export interface SoundNomination extends Nomination {
-  movieSlug: "all-quiet" | "avatar" | "the-batman" | "elvis" | "top-gun";
+  movieSlug:
+    | "the-creator"
+    | "maestro"
+    | "mission-impossible-dead-reckoning"
+    | "oppenheimer"
+    | "the-zone-of-interest";
 }
 
 export interface SupportingActorNomination extends Nomination {
   nameSlug:
-    | "brendan-gleeson"
-    | "brian-tyree-henry"
-    | "judd-hirsch"
-    | "barry-keoghan"
-    | "ke-huy-quan";
+    | "sterling-k-brown"
+    | "robert-de-niro"
+    | "robert-downey-jr"
+    | "ryan-gosling"
+    | "mark-ruffalo";
 }
 
 export interface SupportingActressNomination extends Nomination {
   nameSlug:
-    | "angela-bassett"
-    | "hong-chau"
-    | "kerry-condon"
-    | "jamie-lee-curtis"
-    | "stephanie-hsu";
+    | "emily-blunt"
+    | "danielle-brooks"
+    | "america-ferrera"
+    | "jodie-foster"
+    | "davine-joy-randolph";
 }
 
 export interface VisualEffectsNomination extends Nomination {
   movieSlug:
-    | "all-quiet"
-    | "avatar"
-    | "the-batman"
-    | "black-panther"
-    | "top-gun";
+    | "the-creator"
+    | "godzilla-minus-one"
+    | "guardians-of-the-galaxy-vol-3"
+    | "mission-impossible-dead-reckoning"
+    | "napoleon";
 }
 
 export interface Nominees {
@@ -272,578 +292,588 @@ export interface UserDocument {
 const nominees: Nominees = {
   bestPicture: [
     {
-      movie: "All Quiet on the Western Front",
-      movieSlug: "all-quiet",
+      movie: "American Fiction",
+      movieSlug: "american-fiction",
     },
     {
-      movie: "Avatar: The Way of Water",
-      movieSlug: "avatar",
+      movie: "Anatomy of a Fall",
+      movieSlug: "anatomy-of-a-fall",
     },
     {
-      movie: "The Banshees of Inisherin",
-      movieSlug: "the-banshees",
+      movie: "Barbie",
+      movieSlug: "barbie",
     },
     {
-      movie: "Elvis",
-      movieSlug: "elvis",
+      movie: "The Holdovers",
+      movieSlug: "the-holdovers",
     },
     {
-      movie: "Everything Everywhere All at Once",
-      movieSlug: "everything-everywhere",
+      movie: "Killers of the Flower Moon",
+      movieSlug: "killers-of-the-flower-moon",
     },
     {
-      movie: "The Fabelmans",
-      movieSlug: "the-fabelmans",
+      movie: "Maestro",
+      movieSlug: "maestro",
     },
     {
-      movie: "Tár",
-      movieSlug: "tar",
+      movie: "Oppenheimer",
+      movieSlug: "oppenheimer",
     },
     {
-      movie: "Top Gun: Maverick",
-      movieSlug: "top-gun",
+      movie: "Past Lives",
+      movieSlug: "past-lives",
     },
     {
-      movie: "Triangle of Sadness",
-      movieSlug: "triangle-of-sadness",
+      movie: "Poor Things",
+      movieSlug: "poor-things",
     },
     {
-      movie: "Women Talking",
-      movieSlug: "women-talking",
+      movie: "The Zone of Interest",
+      movieSlug: "the-zone-of-interest",
     },
   ],
   directing: [
     {
-      movie: "The Banshees of Inisherin",
-      movieSlug: "the-banshees",
-      name: "Martin McDonagh",
-      nameSlug: "martin-mcdonag",
+      movie: "Anatomy of a Fall",
+      movieSlug: "anatomy-of-a-fall",
+      name: "Justine Triet",
+      nameSlug: "justine-triet",
     },
     {
-      movie: "Everything Everywhere All at Once",
-      movieSlug: "everything-everywhere",
-      name: "Daniel Kwan and Daniel Scheinert",
-      nameSlug: "daniel-kwan-daniel-scheinert",
+      movie: "Killers of the Flower Moon",
+      movieSlug: "killers-of-the-flower-moon",
+      name: "Martin Scorsese",
+      nameSlug: "martin-scorsese",
     },
     {
-      movie: "The Fabelmans",
-      movieSlug: "the-fabelmans",
-      name: "Steven Spielberg",
-      nameSlug: "steven-spielberg",
+      movie: "Oppenheimer",
+      movieSlug: "oppenheimer",
+      name: "Christopher Nolan",
+      nameSlug: "christopher-nolan",
     },
     {
-      movie: "Tár",
-      movieSlug: "tar",
-      name: "Todd Field",
-      nameSlug: "todd-field",
+      movie: "Poor Things",
+      movieSlug: "poor-things",
+      name: "Yorgos Lanthimos",
+      nameSlug: "yorgos-lanthimos",
     },
     {
-      movie: "Triangle of Sadness",
-      movieSlug: "triangle-of-sadness",
-      name: "Ruben Östlund",
-      nameSlug: "ruben-ostlund",
+      movie: "The Zone of Interest",
+      movieSlug: "the-zone-of-interest",
+      name: "Jonathan Glazer",
+      nameSlug: "jonathan-glazer",
     },
   ],
   leadingActor: [
     {
-      movie: "Elvis Presley",
-      movieSlug: "elvis",
-      name: "Austin Butler",
-      nameSlug: "austin-butler",
+      movie: "Maestro",
+      movieSlug: "maestro",
+      name: "Bradley Cooper",
+      nameSlug: "bradley-cooper",
     },
     {
-      movie: "The Banshees of Inisherin",
-      movieSlug: "the-banshees",
-      name: "Colin Farrell",
-      nameSlug: "colin-farrell",
+      movie: "Rustin",
+      movieSlug: "rustin",
+      name: "Colman Domingo",
+      nameSlug: "colman-domingo",
     },
     {
-      movie: "The Whale",
-      movieSlug: "the-whale",
-      name: "Brendan Fraser",
-      nameSlug: "brendan-fraser",
+      movie: "The Holdovers",
+      movieSlug: "the-holdovers",
+      name: "Paul Giamatti",
+      nameSlug: "paul-giamatti",
     },
     {
-      movie: "Aftersun",
-      movieSlug: "aftersun",
-      name: "Paul Mescal",
-      nameSlug: "paul-mescal",
+      movie: "Oppenheimer",
+      movieSlug: "oppenheimer",
+      name: "Cillian Murphy",
+      nameSlug: "cillian-murphy",
     },
     {
-      movie: "Living",
-      movieSlug: "living",
-      name: "Bill Nighy",
-      nameSlug: "bill-nighy",
+      movie: "American Fiction",
+      movieSlug: "american-fiction",
+      name: "Jeffrey Wright",
+      nameSlug: "jeffrey-wright",
     },
   ],
   leadingActress: [
     {
-      movie: "Tár",
-      movieSlug: "tar",
-      name: "Cate Blanchett",
-      nameSlug: "cate-blanchett",
+      movie: "Nyad",
+      movieSlug: "nyad",
+      name: "Annette Bening",
+      nameSlug: "annette-bening",
     },
     {
-      movie: "Blonde",
-      movieSlug: "blonde",
-      name: "Ana de Armas",
-      nameSlug: "ana-de-armas",
+      movie: "Killers of the Flower Moon",
+      movieSlug: "killers-of-the-flower-moon",
+      name: "Lily Gladstone",
+      nameSlug: "lily-gladstone",
     },
     {
-      movie: "To Leslie",
-      movieSlug: "to-leslie",
-      name: "Andrea Riseborough",
-      nameSlug: "andrea-riseborough",
+      movie: "Anatomy of a Fall",
+      movieSlug: "anatomy-of-a-fall",
+      name: "Sandra Hüller",
+      nameSlug: "sandra-huller",
     },
     {
-      movie: "The Fabelmans",
-      movieSlug: "the-fabelmans",
-      name: "Michelle Williams",
-      nameSlug: "michelle-williams",
+      movie: "Maestro",
+      movieSlug: "maestro",
+      name: "Carey Mulligan",
+      nameSlug: "carey-mulligan",
     },
     {
-      movie: "Everything Everywhere All at Once",
-      movieSlug: "everything-everywhere",
-      name: "Michelle Yeoh",
-      nameSlug: "michelle-yeoh",
+      movie: "Poor Things",
+      movieSlug: "poor-things",
+      name: "Emma Stone",
+      nameSlug: "emma-stone",
     },
   ],
   supportingActor: [
     {
-      movie: "The Banshees of Inisherin",
-      movieSlug: "the-banshees",
-      name: "Brendan Gleeson",
-      nameSlug: "brendan-gleeson",
+      movie: "American Fiction",
+      movieSlug: "american-fiction",
+      name: "Sterling K. Brown",
+      nameSlug: "sterling-k-brown",
     },
     {
-      movie: "Causeway",
-      movieSlug: "causeway",
-      name: "Brian Tyree Henry",
-      nameSlug: "brian-tyree-henry",
+      movie: "Killers of the Flower Moon",
+      movieSlug: "killers-of-the-flower-moon",
+      name: "Robert De Niro",
+      nameSlug: "robert-de-niro",
     },
     {
-      movie: "The Fabelmans",
-      movieSlug: "the-fabelmans",
-      name: "Judd Hirsch",
-      nameSlug: "judd-hirsch",
+      movie: "Oppenheimer",
+      movieSlug: "oppenheimer",
+      name: "Robert Downey Jr.",
+      nameSlug: "robert-downey-jr",
     },
     {
-      movie: "The Banshees of Inisherin",
-      movieSlug: "the-banshees",
-      name: "Barry Keoghan",
-      nameSlug: "barry-keoghan",
+      movie: "Barbie",
+      movieSlug: "barbie",
+      name: "Ryan Gosling",
+      nameSlug: "ryan-gosling",
     },
     {
-      movie: "Everything Everywhere All at Once",
-      movieSlug: "everything-everywhere",
-      name: "Ke Huy Quan",
-      nameSlug: "ke-huy-quan",
+      movie: "Poor Things",
+      movieSlug: "poor-things",
+      name: "Mark Ruffalo",
+      nameSlug: "mark-ruffalo",
     },
   ],
   supportingActress: [
     {
-      movie: "Black Panther: Wakanda Forever",
-      movieSlug: "black-panther",
-      name: "Angela Bassett",
-      nameSlug: "angela-bassett",
+      movie: "Oppenheimer",
+      movieSlug: "oppenheimer",
+      name: "Emily Blunt",
+      nameSlug: "emily-blunt",
     },
     {
-      movie: "The Whale",
-      movieSlug: "the-whale",
-      name: "Hong Chau",
-      nameSlug: "hong-chau",
+      movie: "The Color Purple",
+      movieSlug: "the-color-purple",
+      name: "danielle-brooks",
+      nameSlug: "danielle-brooks",
     },
     {
-      movie: "The Banshees of Inisherin",
-      movieSlug: "the-banshees",
-      name: "Kerry Condon",
-      nameSlug: "kerry-condon",
+      movie: "Barbie",
+      movieSlug: "barbie",
+      name: "America Ferrera",
+      nameSlug: "america-ferrera",
     },
     {
-      movie: "Everything Everywhere All at Once",
-      movieSlug: "everything-everywhere",
-      name: "Jamie Lee Curtis",
-      nameSlug: "jamie-lee-curtis",
+      movie: "Nyad",
+      movieSlug: "nyad",
+      name: "Jodie Foster",
+      nameSlug: "jodie-foster",
     },
     {
-      movie: "Everything Everywhere All at Once",
-      movieSlug: "everything-everywhere",
-      name: "Stephanie Hsu",
-      nameSlug: "stephanie-hsu",
+      movie: "The Holdovers",
+      movieSlug: "the-holdovers",
+      name: "Da'Vine Joy Randolph",
+      nameSlug: "davine-joy-randolph",
     },
   ],
   animatedFeature: [
     {
-      movie: "Guillermo del Toro's Pinocchio",
-      movieSlug: "guillermo-del-toros-pinocchio",
+      movie: "The Boy and the Heron",
+      movieSlug: "the-boy-and-the-heron",
     },
     {
-      movie: "Marcel the Shell with Shoes On",
-      movieSlug: "marcel",
+      movie: "Elemental",
+      movieSlug: "elemental",
     },
     {
-      movie: "Puss in Boots: The Last Wish",
-      movieSlug: "puss-in-boots",
+      movie: "Nimona",
+      movieSlug: "nimona",
     },
     {
-      movie: "The Sea Beast",
-      movieSlug: "the-sea-beast",
+      movie: "Robot Dreams",
+      movieSlug: "robot-dreams",
     },
     {
-      movie: "Turning Red",
-      movieSlug: "turning-red",
+      movie: "Spider-Man: Across the Spider-Verse",
+      movieSlug: "spider-man-across-the-spider-verse",
     },
   ],
   originalScreenplay: [
     {
-      movie: "The Banshees of Inisherin",
-      movieSlug: "the-banshees",
+      movie: "Anatomy of a Fall",
+      movieSlug: "anatomy-of-a-fall",
     },
     {
-      movie: "Everything Everywhere All at Once",
-      movieSlug: "everything-everywhere",
+      movie: "The Holdovers",
+      movieSlug: "the-holdovers",
     },
     {
-      movie: "The Fabelmans",
-      movieSlug: "the-fabelmans",
+      movie: "Maestro",
+      movieSlug: "maestro",
     },
     {
-      movie: "Tár",
-      movieSlug: "tar",
+      movie: "May December",
+      movieSlug: "may-december",
     },
     {
-      movie: "Triangle of Sadness",
-      movieSlug: "triangle-of-sadness",
+      movie: "Past Lives",
+      movieSlug: "past-lives",
     },
   ],
   adaptedScreenplay: [
     {
-      movie: "All Quiet on the Western Front",
-      movieSlug: "all-quiet",
+      movie: "American Fiction",
+      movieSlug: "american-fiction",
     },
     {
-      movie: "Glass Onion: A Knives Out Mystery",
-      movieSlug: "glass-onion",
+      movie: "Barbie",
+      movieSlug: "barbie",
     },
     {
-      movie: "Living",
-      movieSlug: "living",
+      movie: "Oppenheimer",
+      movieSlug: "oppenheimer",
     },
     {
-      movie: "Top Gun: Maverick",
-      movieSlug: "top-gun",
+      movie: "Poor Things",
+      movieSlug: "poor-things",
     },
     {
-      movie: "Women Talking",
-      movieSlug: "women-talking",
+      movie: "The Zone of Interest",
+      movieSlug: "the-zone-of-interest",
     },
   ],
   internationalFeature: [
     {
-      movie: "All Quiet on the Western Front",
-      movieSlug: "all-quiet",
+      movie: "Io Capitano",
+      movieSlug: "io-capitano",
     },
     {
-      movie: "Argentina, 1985",
-      movieSlug: "argentina-1985",
+      movie: "Perfect Days",
+      movieSlug: "perfect-days",
     },
     {
-      movie: "Close",
-      movieSlug: "close",
+      movie: "Society of the Snow",
+      movieSlug: "society-of-the-snow",
     },
     {
-      movie: "EO",
-      movieSlug: "eo",
+      movie: "The Teacher's Lounge",
+      movieSlug: "the-teachers-lounge",
     },
     {
-      movie: "The Quiet Girl",
-      movieSlug: "the-quiet-girl",
+      movie: "The Zone of Interest",
+      movieSlug: "the-zone-of-interest",
     },
   ],
   documentaryFeature: [
     {
-      movie: "All That Breathes",
-      movieSlug: "all-that-breathes",
+      movie: "Bobi Wine: The People's President",
+      movieSlug: "bobi-wine",
     },
     {
-      movie: "All the Beauty and the Bloodshed",
-      movieSlug: "all-the-beauty",
+      movie: "The Eternal Memory",
+      movieSlug: "the-eternal-memory",
     },
     {
-      movie: "Fire of Love",
-      movieSlug: "fire-of-love",
+      movie: "Four Daughters",
+      movieSlug: "four-daughters",
     },
     {
-      movie: "A House Made of Splinters",
-      movieSlug: "a-house-made-of-splinters",
+      movie: "To Kill a Tiger",
+      movieSlug: "to-kill-a-tiger",
     },
     {
-      movie: "Navalny",
-      movieSlug: "navalny",
+      movie: "20 Days in Mariupol",
+      movieSlug: "20-days-in-mariupol",
     },
   ],
   documentaryShort: [
     {
-      movie: "The Elephant Whisperers",
-      movieSlug: "the-elephant-whisperers",
+      movie: "The ABCs of Book Banning",
+      movieSlug: "the-abcs-of-book-banning",
     },
     {
-      movie: "Haulout",
-      movieSlug: "haulout",
+      movie: "The Barber of Little Rock",
+      movieSlug: "the-barber-of-little-rock",
     },
     {
-      movie: "How Do You Measure a Year?",
-      movieSlug: "how-do-you-measure-a-year",
+      movie: "Island in Between",
+      movieSlug: "island-in-between",
     },
     {
-      movie: "The Martha Mitchell Effect",
-      movieSlug: "the-martha-mitchell-effect",
+      movie: "The Last Repair Shop",
+      movieSlug: "the-last-repair-shop",
     },
     {
-      movie: "Stranger at the Gate",
-      movieSlug: "stranger-at-the-gate",
+      movie: "Nǎi Nai & Wài Pó",
+      movieSlug: "nai-nai-and-wai-po",
     },
   ],
   liveActionShort: [
     {
-      movie: "An Irish Goodbye",
-      movieSlug: "an-irish-goodbye",
+      movie: "The After",
+      movieSlug: "the-after",
     },
     {
-      movie: "Ivalu",
-      movieSlug: "ivalu",
+      movie: "Invincible",
+      movieSlug: "invincible",
     },
     {
-      movie: "Le Pupille",
-      movieSlug: "le-pupille",
+      movie: "Knight of Fortune",
+      movieSlug: "knight-of-fortune",
     },
     {
-      movie: "Night Ride",
-      movieSlug: "night-ride",
+      movie: "Red, White and Blue",
+      movieSlug: "red-white-and-blue",
     },
     {
-      movie: "The Red Suitcase",
-      movieSlug: "the-red-suitcase",
+      movie: "The Wonderful Story of Henry Sugar",
+      movieSlug: "the-wonderful-story-of-henry-sugar",
     },
   ],
   animatedShort: [
     {
-      movie: "The Boy, the Mole, the Fox and the Horse",
-      movieSlug: "the-boy-the-mole-the-fox-and-the-horse",
+      movie: "Letter to a Pig",
+      movieSlug: "letter-to-a-pig",
     },
     {
-      movie: "The Flying Sailor",
-      movieSlug: "the-flying-sailor",
+      movie: "Ninety-Five Senses",
+      movieSlug: "ninety-five-senses",
     },
     {
-      movie: "Ice Merchants",
-      movieSlug: "ice-merchants",
+      movie: "Our Uniform",
+      movieSlug: "our-uniform",
     },
     {
-      movie: "My Year of Dicks",
-      movieSlug: "my-year-of-dicks",
+      movie: "Pachyderme",
+      movieSlug: "pachyderme",
     },
     {
-      movie: "An Ostrich Told Me the World Is Fake and I Think I Believe It",
-      movieSlug: "an-ostrich-told-me",
+      movie: "War is Over!",
+      movieSlug: "war-is-over",
     },
   ],
   originalScore: [
     {
-      movie: "All Quiet on the Western Front",
-      movieSlug: "all-quiet",
+      movie: "American Fiction",
+      movieSlug: "american-fiction",
     },
     {
-      movie: "Babylon",
-      movieSlug: "babylon",
+      movie: "Indiana Jones and the Dial of Destiny",
+      movieSlug: "indiana-jones-and-the-dial-of-destiny",
     },
     {
-      movie: "The Banshees of Inisherin",
-      movieSlug: "the-banshees",
+      movie: "Killers of the Flower Moon",
+      movieSlug: "killers-of-the-flower-moon",
     },
     {
-      movie: "Everything Everywhere All at Once",
-      movieSlug: "everything-everywhere",
+      movie: "Oppenheimer",
+      movieSlug: "oppenheimer",
     },
     {
-      movie: "The Fabelmans",
-      movieSlug: "the-fabelmans",
+      movie: "Poor Things",
+      movieSlug: "poor-things",
     },
   ],
   originalSong: [
     {
-      movie: "Tell It Like a Woman ",
-      movieSlug: "tell-it-like-a-woman",
+      movie: "Flamin' Hot",
+      movieSlug: "flamin-hot",
+      name: "The Fire Inside",
+      nameSlug: "the-fire-inside",
     },
     {
-      movie: "Top Gun: Maverick",
-      movieSlug: "top-gun",
+      movie: "Barbie",
+      movieSlug: "barbie",
+      name: "I'm Just Ken",
+      nameSlug: "im-just-ken",
     },
     {
-      movie: "Black Panther: Wakanda Forever",
-      movieSlug: "black-panther",
+      movie: "American Symphony",
+      movieSlug: "american-symphony",
+      name: "It Never Went Away",
+      nameSlug: "it-never-went-away",
     },
     {
-      movie: "RRR",
-      movieSlug: "rrr",
+      movie: "Killers of the Flower Moon",
+      movieSlug: "killers-of-the-flower-moon",
+      name: "Wahzhazhe",
+      nameSlug: "wahzhazhe",
     },
     {
-      movie: "Everything Everywhere All at Once",
-      movieSlug: "everything-everywhere",
+      movie: "Barbie",
+      movieSlug: "barbie",
+      name: "What Was I Made For?",
+      nameSlug: "what-was-i-made-for",
     },
   ],
   sound: [
     {
-      movie: "All Quiet on the Western Front",
-      movieSlug: "all-quiet",
+      movie: "The Creator",
+      movieSlug: "the-creator",
     },
     {
-      movie: "Avatar: The Way of Water",
-      movieSlug: "avatar",
+      movie: "Maestro",
+      movieSlug: "maestro",
     },
     {
-      movie: "The Batman",
-      movieSlug: "the-batman",
+      movie: "Mission: Impossible - Dead Reckoning Part One",
+      movieSlug: "mission-impossible-dead-reckoning",
     },
     {
-      movie: "Elvis",
-      movieSlug: "elvis",
+      movie: "Oppenheimer",
+      movieSlug: "oppenheimer",
     },
     {
-      movie: "Top Gun: Maverick",
-      movieSlug: "top-gun",
+      movie: "The Zone of Interest",
+      movieSlug: "the-zone-of-interest",
     },
   ],
   productionDesign: [
     {
-      movie: "All Quiet on the Western Front",
-      movieSlug: "all-quiet",
+      movie: "Barbie",
+      movieSlug: "barbie",
     },
     {
-      movie: "Avatar: The Way of Water",
-      movieSlug: "avatar",
+      movie: "Killers of the Flower Moon",
+      movieSlug: "killers-of-the-flower-moon",
     },
     {
-      movie: "Babylon",
-      movieSlug: "babylon",
+      movie: "Napoleon",
+      movieSlug: "napoleon",
     },
     {
-      movie: "Elvis",
-      movieSlug: "elvis",
+      movie: "Oppenheimer",
+      movieSlug: "oppenheimer",
     },
     {
-      movie: "The Fabelmans",
-      movieSlug: "the-fabelmans",
+      movie: "Poor Things",
+      movieSlug: "poor-things",
     },
   ],
   cinematography: [
     {
-      movie: "All Quiet on the Western Front",
-      movieSlug: "all-quiet",
+      movie: "El Conde",
+      movieSlug: "el-conde",
     },
     {
-      movie: "Bardo, False Chronicle of a Handful of Truths",
-      movieSlug: "bardo",
+      movie: "Killers of the Flower Moon",
+      movieSlug: "killers-of-the-flower-moon",
     },
     {
-      movie: "Elvis",
-      movieSlug: "elvis",
+      movie: "Maestro",
+      movieSlug: "maestro",
     },
     {
-      movie: "Empire of Light",
-      movieSlug: "empire-of-light",
+      movie: "Oppenheimer",
+      movieSlug: "oppenheimer",
     },
     {
-      movie: "Tár",
-      movieSlug: "tar",
+      movie: "Poor Things",
+      movieSlug: "poor-things",
     },
   ],
   makeup: [
     {
-      movie: "All Quiet on the Western Front",
-      movieSlug: "all-quiet",
+      movie: "Golda",
+      movieSlug: "golda",
     },
     {
-      movie: "The Batman",
-      movieSlug: "the-batman",
+      movie: "Maestro",
+      movieSlug: "maestro",
     },
     {
-      movie: "Black Panther: Wakanda Forever",
-      movieSlug: "black-panther",
+      movie: "Oppenheimer",
+      movieSlug: "oppenheimer",
     },
     {
-      movie: "Elvis",
-      movieSlug: "elvis",
+      movie: "Poor Things",
+      movieSlug: "poor-things",
     },
     {
-      movie: "The Whale",
-      movieSlug: "the-whale",
+      movie: "Society of the Snow",
+      movieSlug: "society-of-the-snow",
     },
   ],
   costumeDesign: [
     {
-      movie: "Babylon",
-      movieSlug: "babylon",
+      movie: "Barbie",
+      movieSlug: "barbie",
     },
     {
-      movie: "Black Panther: Wakanda Forever",
-      movieSlug: "black-panther",
+      movie: "Killers of the Flower Moon",
+      movieSlug: "killers-of-the-flower-moon",
     },
     {
-      movie: "Elvis",
-      movieSlug: "elvis",
+      movie: "Napoleon",
+      movieSlug: "napoleon",
     },
     {
-      movie: "Everything Everywhere All at Once",
-      movieSlug: "everything-everywhere",
+      movie: "Oppenheimer",
+      movieSlug: "oppenheimer",
     },
     {
-      movie: "Mrs. Harris Goes to Paris",
-      movieSlug: "mrs-harris",
+      movie: "Poor Things",
+      movieSlug: "poor-things",
     },
   ],
   filmEditing: [
     {
-      movie: "The Banshees of Inisherin",
-      movieSlug: "the-banshees",
+      movie: "Anatomy of a Fall",
+      movieSlug: "anatomy-of-a-fall",
     },
     {
-      movie: "Elvis",
-      movieSlug: "elvis",
+      movie: "The Holdovers",
+      movieSlug: "the-holdovers",
     },
     {
-      movie: "Everything Everywhere All at Once",
-      movieSlug: "everything-everywhere",
+      movie: "Killers of the Flower Moon",
+      movieSlug: "killers-of-the-flower-moon",
     },
     {
-      movie: "Tár",
-      movieSlug: "tar",
+      movie: "Oppenheimer",
+      movieSlug: "oppenheimer",
     },
     {
-      movie: "Top Gun: Maverick",
-      movieSlug: "top-gun",
+      movie: "Poor Things",
+      movieSlug: "poor-things",
     },
   ],
   visualEffects: [
     {
-      movie: "All Quiet on the Western Front",
-      movieSlug: "all-quiet",
+      movie: "The Creator",
+      movieSlug: "the-creator",
     },
     {
-      movie: "Avatar: The Way of Water",
-      movieSlug: "avatar",
+      movie: "Godzilla Minus One",
+      movieSlug: "godzilla-minus-one",
     },
     {
-      movie: "The Batman",
-      movieSlug: "the-batman",
+      movie: "Guardians of the Galaxy Vol. 3",
+      movieSlug: "guardians-of-the-galaxy-vol-3",
     },
     {
-      movie: "Black Panther: Wakanda Forever",
-      movieSlug: "black-panther",
+      movie: "Mission: Impossible - Dead Reckoning Part One",
+      movieSlug: "mission-impossible-dead-reckoning",
     },
     {
-      movie: "Top Gun: Maverick",
-      movieSlug: "top-gun",
+      movie: "Napoleon",
+      movieSlug: "napoleon",
     },
   ],
 };

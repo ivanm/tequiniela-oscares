@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { Flex, Heading, Spinner, Text } from "@chakra-ui/react";
 import { useAuth, useUser } from "reactfire";
-import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  signInWithRedirect,
+  signInWithPopup,
+} from "firebase/auth";
 import GoogleButton from "react-google-button";
 import { useNavigate } from "react-router-dom";
 
@@ -12,12 +16,12 @@ export const Login = () => {
 
   const provider = new GoogleAuthProvider();
   const [isSignInLoading] = useState<boolean>(
-    localStorage.getItem("loading-google") != null
+    localStorage.getItem("loading-google") != null,
   );
 
   const handleSignIn = async () => {
     localStorage.setItem("loading-google", "true");
-    signInWithRedirect(auth, provider);
+    signInWithPopup(auth, provider);
   };
 
   useEffect(() => {
