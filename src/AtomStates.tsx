@@ -25,11 +25,11 @@ import { type UserDocumentData } from "./nominees";
 import useEffectOnce from "./hooks/useEffectOnce";
 
 // 2023
-const nominationsCollection = 'tequiniela-user-nominations';
-const configCollection = 'config';
+// const nominationsCollection = 'tequiniela-user-nominations';
+// const configCollection = 'config';
 
-// const nominationsCollection = "user-nominations-2024";
-// const configCollection = "config-2024";
+const nominationsCollection = "user-nominations-2024";
+const configCollection = "config2024";
 // 2023
 
 export const AtomStates = () => {
