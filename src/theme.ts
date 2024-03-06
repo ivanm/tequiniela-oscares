@@ -3,7 +3,7 @@ import { extendTheme, theme as chakraTheme } from "@chakra-ui/react";
 const theme = extendTheme({
   colors: {
     cards: {
-      selected: "#016FB9",
+      selected: "#EEEEEE",
       won: "#239A0C",
       lost: "#C11A1A",
     },

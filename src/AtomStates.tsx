@@ -28,8 +28,8 @@ import useEffectOnce from "./hooks/useEffectOnce";
 // const nominationsCollection = 'tequiniela-user-nominations';
 // const configCollection = 'config';
 
-const nominationsCollection = "user-nominations-2024";
-const configCollection = "config2024";
+const nominationsCollection = "2024-user-nominations";
+const configCollection = "2024-config";
 // 2023
 
 export const AtomStates = () => {

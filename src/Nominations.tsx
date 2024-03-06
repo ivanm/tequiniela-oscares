@@ -7,8 +7,8 @@ import { Welcome } from "./Welcome";
 import nominees from "./nominees";
 
 import useEffectOnce from "./hooks/useEffectOnce";
-console.log("nominees");
-console.log(nominees);
+// console.log("nominees");
+// console.log(nominees);
 
 export const Nominations = () => {
   const [konami, setKonami] = useState<boolean>(false);

@@ -11,15 +11,26 @@ import {
   GridItem,
   Image,
   Text,
-  Heading,
   // Image,
   // useColorModeValue,
 } from "@chakra-ui/react";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 // import BigCard from "./cards/BigCard";
 // import MiniCard from "./cards/MiniCard";
-import SmallCard from "./cards/SmallCard";
-import type { Nomination } from "./nominees";
+// import SmallCard from "./cards/SmallCard";
+import CardNew from "./CardNew";
+import {
+  type Nomination,
+  type UserNominations,
+  type WinnerNominations,
+} from "./nominees";
+
+import {
+  hasNominationTimePassedState,
+  userNominationsState,
+  winnerNominationsState,
+} from "./atoms";
 
 export interface NominationCardsNewProps {
   nominations: Nomination[];
@@ -33,6 +44,21 @@ const NominationCardsNew = ({
 }: NominationCardsNewProps) => {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
   // const iconFilter = useColorModeValue(undefined, "invert(1)");
+
+  const [userNominations, setUserNominations] =
+    useRecoilState<UserNominations>(userNominationsState);
+
+  const hasNominationTimePassed = useRecoilValue<boolean>(
+    hasNominationTimePassedState
+  );
+
+  const winnerNominations = useRecoilValue<WinnerNominations>(
+    winnerNominationsState
+  );
+
+  const selectedNomination =  userNominations[nominationSlug] ? 
+    (userNominations[nominationSlug].nameSlug ? userNominations[nominationSlug].name :  userNominations[nominationSlug].movie) :
+    "";
 
   return (
     <Flex grow={1} basis={0} direction="column">
@@ -62,7 +88,7 @@ const NominationCardsNew = ({
                     {title}
                   </Text>
                   <Text textAlign="left" fontSize="sm">
-                    Oppenheimer
+                    {selectedNomination} 
                   </Text>
                 </Flex>
               </Flex>
@@ -74,11 +100,11 @@ const NominationCardsNew = ({
               {nominations.map(({ movie, movieSlug, name, nameSlug }, i) => (
                 <GridItem key={i}>
                   <Box>
-                    <SmallCard
+                    <CardNew
                       imgSrc={
                         nameSlug
-                          ? `portraits/${nameSlug}.jpg`
-                          : `moviePosters/${movieSlug}.jpg`
+                          ? `portraits/${nameSlug}.png`
+                          : `moviePosters/${movieSlug}.png`
                       }
                       matchKey={nameSlug ? "nameSlug" : "movieSlug"}
                       title={movie}
@@ -92,6 +118,7 @@ const NominationCardsNew = ({
                         ...(name ? { name } : {}),
                         ...(nameSlug ? { nameSlug } : {}),
                       }}
+                      transform=""
                     />
                   </Box>
                 </GridItem>
