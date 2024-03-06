@@ -470,7 +470,7 @@ const nominees: Nominees = {
     {
       movie: "The Color Purple",
       movieSlug: "the-color-purple",
-      name: "danielle-brooks",
+      name: "Danielle Brooks",
       nameSlug: "danielle-brooks",
     },
     {

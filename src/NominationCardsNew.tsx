@@ -56,9 +56,11 @@ const NominationCardsNew = ({
     winnerNominationsState
   );
 
-  const selectedNomination =  userNominations[nominationSlug] ? 
-    (userNominations[nominationSlug].nameSlug ? userNominations[nominationSlug].name :  userNominations[nominationSlug].movie) :
-    "";
+  const selectedNomination = userNominations[nominationSlug]
+    ? userNominations[nominationSlug].nameSlug
+      ? userNominations[nominationSlug].name
+      : userNominations[nominationSlug].movie
+    : null;
 
   return (
     <Flex grow={1} basis={0} direction="column">
@@ -79,7 +81,9 @@ const NominationCardsNew = ({
               <Flex align="center">
                 <Image
                   boxSize="24px"
-                  src="selectedOn.png"
+                  src={
+                    selectedNomination ? "selectedOn.png" : "selectedOff.png"
+                  }
                   alt="selected off"
                   mr={4}
                 />
@@ -88,7 +92,7 @@ const NominationCardsNew = ({
                     {title}
                   </Text>
                   <Text textAlign="left" fontSize="sm">
-                    {selectedNomination} 
+                    {selectedNomination}
                   </Text>
                 </Flex>
               </Flex>

@@ -16,17 +16,19 @@ export const Login = () => {
 
   const provider = new GoogleAuthProvider();
   const [isSignInLoading] = useState<boolean>(
-    localStorage.getItem("loading-google") != null,
+    localStorage.getItem("loading-google") != null
   );
 
   const handleSignIn = async () => {
     localStorage.setItem("loading-google", "true");
-    signInWithPopup(auth, provider);
+    await signInWithPopup(auth, provider);
+    // navigate("/", { replace: true });
   };
 
   useEffect(() => {
     if (user) {
       navigate("/", { replace: true });
+      location.reload();
     }
     localStorage.removeItem("loading-google");
   }, [user]);
