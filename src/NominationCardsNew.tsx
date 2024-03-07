@@ -66,76 +66,70 @@ const NominationCardsNew = ({
     : null;
 
   return (
-    <Flex grow={1} basis={0} direction="column">
-      <Accordion
-        maxWidth="400px"
-        allowToggle
-        bg={accordionBg}
-        borderRadius="13px"
-        border="1px"
-        borderColor={accordionBorderColor}
-      >
-        <AccordionItem
-          borderRadius="13px"
-          border="1px"
-          borderColor="transparent"
-        >
-          <AccordionButton>
-            <Flex grow={1} justify="space-between" align="center">
-              <Flex align="center">
-                <Image
-                  boxSize="24px"
-                  src={
-                    selectedNomination ? "selectedOn.png" : "selectedOff.png"
-                  }
-                  alt="selected off"
-                  mr={4}
-                />
-                <Flex justify="center" direction="column" minHeight="50px">
-                  <Text textAlign="left" fontSize="sm" fontWeight="extrabold">
-                    {title}
-                  </Text>
-                  <Text textAlign="left" fontSize="xs">
-                    {selectedNomination}
-                  </Text>
-                </Flex>
+    <Accordion
+      width="400px"
+      allowToggle
+      bg={accordionBg}
+      borderRadius="13px"
+      border="1px"
+      borderColor={accordionBorderColor}
+      display="inline-table"
+      margin="6px"
+    >
+      <AccordionItem borderRadius="13px" border="1px" borderColor="transparent">
+        <AccordionButton>
+          <Flex grow={1} justify="space-between" align="center">
+            <Flex align="center">
+              <Image
+                boxSize="24px"
+                src={selectedNomination ? "selectedOn.png" : "selectedOff.png"}
+                alt="selected off"
+                mr={4}
+              />
+              <Flex justify="center" direction="column" minHeight="50px">
+                <Text textAlign="left" fontSize="sm" fontWeight="extrabold">
+                  {title}
+                </Text>
+                <Text textAlign="left" fontSize="xs">
+                  {selectedNomination}
+                </Text>
               </Flex>
-              <AccordionIcon />
             </Flex>
-          </AccordionButton>
-          <AccordionPanel pb={4}>
-            <Grid templateColumns={"1fr"} gap={"10px"}>
-              {nominations.map(({ movie, movieSlug, name, nameSlug }, i) => (
-                <GridItem key={i}>
-                  <Box>
-                    <CardNew
-                      imgSrc={
-                        nameSlug
-                          ? `portraits/${nameSlug}.png`
-                          : `moviePosters/${movieSlug}.png`
-                      }
-                      matchKey={nameSlug ? "nameSlug" : "movieSlug"}
-                      title={movie}
-                      name={name}
-                      movieSlug={movieSlug}
-                      nameSlug={nameSlug}
-                      nominationSlug={nominationSlug}
-                      nomination={{
-                        movie,
-                        movieSlug,
-                        ...(name ? { name } : {}),
-                        ...(nameSlug ? { nameSlug } : {}),
-                      }}
-                      transform=""
-                    />
-                  </Box>
-                </GridItem>
-              ))}
-            </Grid>
-          </AccordionPanel>
-        </AccordionItem>
-      </Accordion>
-    </Flex>
+            <AccordionIcon />
+          </Flex>
+        </AccordionButton>
+        <AccordionPanel pb={4}>
+          <Grid templateColumns={"1fr"} gap={"10px"}>
+            {nominations.map(({ movie, movieSlug, name, nameSlug }, i) => (
+              <GridItem key={i}>
+                <Box>
+                  <CardNew
+                    imgSrc={
+                      nameSlug
+                        ? `portraits/${nameSlug}.png`
+                        : `moviePosters/${movieSlug}.png`
+                    }
+                    matchKey={nameSlug ? "nameSlug" : "movieSlug"}
+                    title={movie}
+                    name={name}
+                    movieSlug={movieSlug}
+                    nameSlug={nameSlug}
+                    nominationSlug={nominationSlug}
+                    nomination={{
+                      movie,
+                      movieSlug,
+                      ...(name ? { name } : {}),
+                      ...(nameSlug ? { nameSlug } : {}),
+                    }}
+                    transform=""
+                  />
+                </Box>
+              </GridItem>
+            ))}
+          </Grid>
+        </AccordionPanel>
+      </AccordionItem>
+    </Accordion>
   );
 };
 
