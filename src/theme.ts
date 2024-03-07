@@ -10,6 +10,9 @@ const theme = extendTheme({
     gray: {
       100: "#F8F3F5",
       200: "#e2e2e2",
+      300: "#c4c4c4",
+      400: "#2f2f2f",
+      700: "#202020"
     },
   },
   fonts: {

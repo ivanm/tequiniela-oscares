@@ -1,4 +1,4 @@
-import { Card, Flex, Image, Text } from "@chakra-ui/react";
+import { Card, Flex, Image, Text, useColorModeValue } from "@chakra-ui/react";
 import { omit } from "ramda";
 import { useCallback, useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
@@ -49,7 +49,7 @@ const CardNew = ({
   const [userNominations, setUserNominations] =
     useRecoilState<UserNominations>(userNominationsState);
 
-  console.log('nn');
+  console.log("nn");
   console.log(userNominations);
 
   const hasNominationTimePassed = useRecoilValue<boolean>(
@@ -122,7 +122,7 @@ const CardNew = ({
     ? "white"
     : status === "not-selected-won"
     ? "cards.won"
-    : undefined;
+    : "white";
 
   const handleCardClick = () => {
     setUserNominations(
@@ -134,6 +134,8 @@ const CardNew = ({
 
   const isClickable =
     user !== null && !hasNominationTimePassed && status !== "selected";
+
+  const cardBgBlendMode = useColorModeValue("normal", "soft-light");
 
   return (
     <Card
@@ -153,7 +155,9 @@ const CardNew = ({
       }
       bg={bgColor}
       bgImage={`url('${imgSrc}')`}
-      backgroundBlendMode={["not-selected-lost","normal"].includes(status) ? "soft-light" : ""}
+      backgroundBlendMode={
+        ["not-selected-lost", "normal"].includes(status) ? cardBgBlendMode : ""
+      }
       direction="row"
       onClick={isClickable ? handleCardClick : undefined}
       className={`card${isClickable ? " card-clickable" : ""}`}
@@ -184,4 +188,3 @@ const CardNew = ({
   );
 };
 export default CardNew;
-

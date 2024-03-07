@@ -11,6 +11,7 @@ import {
   GridItem,
   Image,
   Text,
+  useColorModeValue,
   // Image,
   // useColorModeValue,
 } from "@chakra-ui/react";
@@ -56,6 +57,8 @@ const NominationCardsNew = ({
     winnerNominationsState
   );
 
+  const accordionBg = useColorModeValue("gray.300", "gray.400");
+  const accordionBorderColor = useColorModeValue("gray.200", "black");
   const selectedNomination = userNominations[nominationSlug]
     ? userNominations[nominationSlug].nameSlug
       ? userNominations[nominationSlug].name
@@ -65,11 +68,12 @@ const NominationCardsNew = ({
   return (
     <Flex grow={1} basis={0} direction="column">
       <Accordion
+        maxWidth="400px"
         allowToggle
-        bg="#2f2f2f"
+        bg={accordionBg}
         borderRadius="13px"
         border="1px"
-        borderColor="black"
+        borderColor={accordionBorderColor}
       >
         <AccordionItem
           borderRadius="13px"
@@ -87,11 +91,11 @@ const NominationCardsNew = ({
                   alt="selected off"
                   mr={4}
                 />
-                <Flex direction="column" minHeight="50px">
-                  <Text textAlign="left" fontSize="lg" fontWeight="extrabold">
+                <Flex justify="center" direction="column" minHeight="50px">
+                  <Text textAlign="left" fontSize="sm" fontWeight="extrabold">
                     {title}
                   </Text>
-                  <Text textAlign="left" fontSize="sm">
+                  <Text textAlign="left" fontSize="xs">
                     {selectedNomination}
                   </Text>
                 </Flex>

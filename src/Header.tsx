@@ -53,7 +53,7 @@ export const Header = () => {
 
   const bgHeader = useColorModeValue("#fff", "gray.700");
   const iconFilter = useColorModeValue(undefined, "invert(1)");
-  const selectedColor = useColorModeValue("gray.200", "gray.800");
+  const selectedColor = useColorModeValue("gray.300", "gray.400");
   const { colorMode, toggleColorMode } = useColorMode();
   const { resizeEffect } = useResize();
 
@@ -88,8 +88,9 @@ export const Header = () => {
                 to={to}
                 mr={2}
                 bg={pathname === to ? selectedColor : "transparent"}
-                fontWeight={500}
+                fontWeight={pathname === to ? 800 : 500}
                 fontSize={{ md: "12px", lg: "md" }}
+                color={pathname === to ? "#FECB61" : "white"}
               >
                 {title}
               </Button>
@@ -152,7 +153,7 @@ export const Header = () => {
                       <CircularProgress
                         thickness="15px"
                         size="34px"
-                        color="cards.selected"
+                        color="gray.600"
                         mr={1}
                         value={
                           (Object.values(userNominations).length * 100) / 23
