@@ -3608,10 +3608,15 @@ react-is@^16.13.1, react-is@^16.7.0:
 
 react-masonry@^1.0.7:
   version "1.0.7"
-  resolved "https://registry.yarnpkg.com/react-masonry/-/react-masonry-1.0.7.tgz#31f215a0ad44ee9a87d96a529e26a2dd4326a24b"
+  resolved "https://registry.npmjs.org/react-masonry/-/react-masonry-1.0.7.tgz"
   integrity sha512-cKhinTeygGtm+8y7YCTMKXNKtU0toJAcOBD4q7fv+JTc94bj93/xut3iZvjD60lZYek+WGM6en5w8P+63zHN9Q==
   dependencies:
     react "^18.0.0"
+
+react-plock@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/react-plock/-/react-plock-3.1.0.tgz"
+  integrity sha512-Vk30iADOuQ85Pv3OAxTHzHmL0kYAA6SvBbv78ys3y5ObXh9nmUXmfR/E82MCgoTDildnl5TZrS+e3aCcee1xKQ==
 
 react-refresh@^0.14.0:
   version "0.14.0"

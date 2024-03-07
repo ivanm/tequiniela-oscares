@@ -67,14 +67,13 @@ const NominationCardsNew = ({
 
   return (
     <Accordion
-      width="400px"
+      width="380px"
       allowToggle
       bg={accordionBg}
       borderRadius="13px"
       border="1px"
       borderColor={accordionBorderColor}
       display="inline-table"
-      margin="6px"
     >
       <AccordionItem borderRadius="13px" border="1px" borderColor="transparent">
         <AccordionButton>
