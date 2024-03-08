@@ -92,26 +92,16 @@ export const Rules = () => {
         </Text>
         <UnorderedList spacing={3}>
           <ListItem>
-            Para el <b>primer lugar:</b> Libro de Pinocchio de Guillermo del
-            Toro, A Timeless Tale Told Anew.
+            <b>Primer lugar:</b> Subscripcion a mubi + Trofeo 1er lugar
           </ListItem>
           <ListItem>
-            {" "}
-            Para el <b>segundo lugar</b>: Una tarjeta de regalo de Amazon por
-            $500 mxn.
+            <b>Segundo lugar:</b> $750 de credito en uber eats + Trofeo 2do lugar
           </ListItem>
           <ListItem>
-            Para el <b>tercer lugar</b>: Una taza de Top Gun Maverick.
+            <b>Tercer lugar:</b> $500 pesos en tarjeta de regalo Amazon + Trofeo 3er lugar
           </ListItem>
           <ListItem>
-            Para el <b>cuarto lugar</b>: $300 mxn para comer en{" "}
-            <Link href="https://www.instagram.com/tacoscocuyos/" isExternal>
-              Taquería Los Cocuyos
-            </Link>{" "}
-            (CDMX).
-          </ListItem>
-          <ListItem>
-            Para el <b>quinto lugar</b>: Funko de Black Panther: Wakanda Forever{" "}
+            <b>Cuarto lugar:</b> Audifonos Bluetooth.
           </ListItem>
           <ListItem>
             Para el <b>último lugar</b> con un solo acierto y que haya llenado
@@ -156,40 +146,12 @@ export const Rules = () => {
           </Link>
         </Text>
         <Text>
-          <b>Contenido</b>:{" "}
-          <Link href="https://twitter.com/Crater_ae" isExternal>
-            @Crater_ae
-          </Link>
-        </Text>
-        <Text>
           <b>Dirección</b>: Enrique Segoviano
         </Text>
         <Text>
           <b>Diseño/UX</b>:{" "}
           <Link href="https://twitter.com/chrispulze" isExternal>
             @chrispulze
-          </Link>
-        </Text>
-        <Text>
-          <b>Premios:</b>{" "}
-          <Link href="https://twitter.com/canitoy" isExternal>
-            @canitoy
-          </Link>
-          ,{" "}
-          <Link href="https://twitter.com/Crater_ae" isExternal>
-            @Crater_ae
-          </Link>
-          ,{" "}
-          <Link href="https://twitter.com/Dulce_Angel_23" isExternal>
-            @Dulce_Angel_23
-          </Link>
-          ,{" "}
-          <Link href="https://twitter.com/thewarpaint" isExternal>
-            @thewarpaint
-          </Link>
-          ,{" "}
-          <Link href="https://twitter.com/vaan" isExternal>
-            @vaan
           </Link>
         </Text>
       </Flex>

@@ -265,6 +265,7 @@ export const Header = () => {
             </Button>
           )}
           <Button
+            hidden
             p={0}
             borderRadius="full"
             onClick={toggleColorMode}

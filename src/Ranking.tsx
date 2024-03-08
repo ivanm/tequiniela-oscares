@@ -48,7 +48,7 @@ export const Ranking = () => {
       <Flex pl={2} pr={2} mb={3} direction="column">
         <Text>
           La ceremonia de los Premios Óscar se llevará a cabo el{" "}
-          <b>domingo 12 de marzo de 2023</b>. Durante el evento, actualizaremos
+          <b>domingo 10 de marzo de 2024</b>. Durante el evento, actualizaremos
           los resultados tan pronto como se vayan anunciando, y este ranking se
           actualizará conforme a los resultados de los participantes.
         </Text>
