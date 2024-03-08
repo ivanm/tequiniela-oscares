@@ -96,15 +96,30 @@ export const Rules = () => {
             lugar.
           </ListItem>
           <ListItem>
-            <b>Segundo lugar:</b> $750 pesos de crédito en Uber Eats + Trofeo
-            2do lugar.
+            <b>Segundo lugar:</b> Suscripcion por un año a Apple TV + Trofeo 2do
+            lugar.
           </ListItem>
           <ListItem>
-            <b>Tercer lugar:</b> $500 pesos en tarjeta de regalo Amazon + Trofeo
-            3er lugar.
+            <b>Tercer lugar:</b> Libro de arte oficial{" "}
+              <b>Across The Spider-Verse</b> patrocinado por{" "}
+            <b>
+              <Link href="https://youtube.com/@tecnomenoide" isExternal>
+                Tecnomenoide
+              </Link>
+            </b>{" "}
+            + Trofeo 3er lugar.
           </ListItem>
           <ListItem>
-            <b>Cuarto lugar:</b> Audifonos Bluetooth.
+            <b>Cuarto lugar:</b> $750 pesos de crédito en Uber Eats.
+          </ListItem>
+          <ListItem>
+            <b>Quinto lugar:</b> Película <b>&apos;El 5to elemento&apos;</b>.
+          </ListItem>
+          <ListItem>
+            <b>Sexto lugar:</b> $500 pesos en tarjeta de regalo Amazon.
+          </ListItem>
+          <ListItem>
+            <b>Séptimo lugar:</b> Audífonos Bluetooth.
           </ListItem>
           <ListItem>
             Para el <b>último lugar</b> con un solo acierto y que haya llenado
@@ -162,8 +177,12 @@ export const Rules = () => {
         </Text>
         <Text>
           <b>Premios:</b>{" "}
-          <Link href="https://mastodon.social/@cupto" isExternal>
+          <Link href="https://www.threads.net/@cupto" isExternal>
             @cupto
+          </Link>
+          ,{" "}
+          <Link href="https://www.threads.net/@masiosare" isExternal>
+            @masiosare
           </Link>
           ,{" "}
           <Link href="https://www.threads.net/@o.ladino" isExternal>
@@ -174,7 +193,7 @@ export const Rules = () => {
             @luisitomx
           </Link>
           ,{" "}
-          <Link href="https://twitter.com/thewarpaint" isExternal>
+          <Link href="https://www.threads.net/thewarpaint" isExternal>
             @thewarpaint
           </Link>
           ,{" "}
