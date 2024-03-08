@@ -54,7 +54,7 @@ export const Ranking = () => {
         </Text>
         <Text mt={2}>
           Cada acierto de cada categoría equivale a <b>1 punto</b>. El ranking
-          ordenará a los usuarios según el numero de puntos acumulados. En caso
+          ordenará a los usuarios según el número de puntos acumulados. En caso
           de existir un empate, el usuario que se registró primero será el
           ganador.
         </Text>

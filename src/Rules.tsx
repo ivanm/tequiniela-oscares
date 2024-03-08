@@ -92,13 +92,16 @@ export const Rules = () => {
         </Text>
         <UnorderedList spacing={3}>
           <ListItem>
-            <b>Primer lugar:</b> Subscripcion por un año a mubi + Trofeo 1er lugar
+            <b>Primer lugar:</b> Subscripción por un año a mubi + Trofeo 1er
+            lugar.
           </ListItem>
           <ListItem>
-            <b>Segundo lugar:</b> $750 de credito en uber eats + Trofeo 2do lugar
+            <b>Segundo lugar:</b> $750 pesos de crédito en Uber Eats + Trofeo 2do
+            lugar.
           </ListItem>
           <ListItem>
-            <b>Tercer lugar:</b> $500 pesos en tarjeta de regalo Amazon + Trofeo 3er lugar
+            <b>Tercer lugar:</b> $500 pesos en tarjeta de regalo Amazon + Trofeo
+            3er lugar.
           </ListItem>
           <ListItem>
             <b>Cuarto lugar:</b> Audifonos Bluetooth.
@@ -153,6 +156,9 @@ export const Rules = () => {
           <Link href="https://twitter.com/chrispulze" isExternal>
             @chrispulze
           </Link>
+        </Text>
+        <Text>
+          <b>QA</b>: Rosalía
         </Text>
       </Flex>
     </Flex>
