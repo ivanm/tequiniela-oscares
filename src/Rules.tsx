@@ -185,6 +185,10 @@ export const Rules = () => {
             @masiosare
           </Link>
           ,{" "}
+          <Link href="https://twitter.com/chrispulze" isExternal>
+            @chrispulze
+          </Link>
+          ,{" "}
           <Link href="https://www.threads.net/@o.ladino" isExternal>
             @canitoy
           </Link>
