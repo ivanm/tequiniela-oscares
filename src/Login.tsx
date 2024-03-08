@@ -21,7 +21,8 @@ export const Login = () => {
 
   const handleSignIn = async () => {
     localStorage.setItem("loading-google", "true");
-    await signInWithPopup(auth, provider);
+    // await signInWithPopup(auth, provider);
+    signInWithRedirect(auth, provider);
     // navigate("/", { replace: true });
   };
 
