@@ -96,8 +96,8 @@ export const Rules = () => {
             lugar.
           </ListItem>
           <ListItem>
-            <b>Segundo lugar:</b> $750 pesos de crédito en Uber Eats + Trofeo 2do
-            lugar.
+            <b>Segundo lugar:</b> $750 pesos de crédito en Uber Eats + Trofeo
+            2do lugar.
           </ListItem>
           <ListItem>
             <b>Tercer lugar:</b> $500 pesos en tarjeta de regalo Amazon + Trofeo
@@ -136,7 +136,7 @@ export const Rules = () => {
       <Flex pl={2} pr={2} direction="column" gap={2}>
         <Text>
           <b>Código:</b>{" "}
-          <Link href="https://twitter.com/canitoy" isExternal>
+          <Link href="https://www.threads.net/@o.ladino" isExternal>
             @canitoy
           </Link>
           ,{" "}
@@ -159,6 +159,28 @@ export const Rules = () => {
         </Text>
         <Text>
           <b>QA</b>: Rosalía
+        </Text>
+        <Text>
+          <b>Premios:</b>{" "}
+          <Link href="https://mastodon.social/@cupto" isExternal>
+            @cupto
+          </Link>
+          ,{" "}
+          <Link href="https://www.threads.net/@o.ladino" isExternal>
+            @canitoy
+          </Link>
+          ,{" "}
+          <Link href="https://twitter.com/luisitomx/" isExternal>
+            @luisitomx
+          </Link>
+          ,{" "}
+          <Link href="https://twitter.com/thewarpaint" isExternal>
+            @thewarpaint
+          </Link>
+          ,{" "}
+          <Link href="https://twitter.com/vaan" isExternal>
+            @vaan
+          </Link>
         </Text>
       </Flex>
     </Flex>
