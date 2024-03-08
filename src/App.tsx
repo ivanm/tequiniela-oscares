@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Box, CSSReset, Image, Flex, Text, Link } from "@chakra-ui/react";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider, FirestoreProvider, useFirebaseApp } from "reactfire";
@@ -17,6 +18,7 @@ export const App = () => {
   const app = useFirebaseApp();
   const auth = getAuth();
   const firestoreInstance = getFirestore(app);
+  const [beer, setBeer] = useState(false);
 
   if (process.env.NODE_ENV !== "production") {
     try {
@@ -53,7 +55,19 @@ export const App = () => {
                 Efecto Tequila{" "}
               </Link>
             </Text>
-            <Image ml={1} boxSize="24px" src="et.svg" />
+            <Link
+              href="https://www.youtube.com/watch?v=0VXPnBszGCk"
+              isExternal={true}
+              onClick={() => {
+                setBeer(true);
+              }}
+            >
+              {beer ? (
+                <Image ml={1} boxSize="80px" src="cerveza-cristal.png" />
+              ) : (
+                <Image ml={1} boxSize="24px" src="et.svg" />
+              )}
+            </Link>
           </Flex>
         </Box>
       </FirestoreProvider>
