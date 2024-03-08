@@ -49,9 +49,6 @@ const CardNew = ({
   const [userNominations, setUserNominations] =
     useRecoilState<UserNominations>(userNominationsState);
 
-  console.log("nn");
-  console.log(userNominations);
-
   const hasNominationTimePassed = useRecoilValue<boolean>(
     hasNominationTimePassedState
   );

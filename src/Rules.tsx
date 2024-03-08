@@ -92,7 +92,7 @@ export const Rules = () => {
         </Text>
         <UnorderedList spacing={3}>
           <ListItem>
-            <b>Primer lugar:</b> Subscripcion a mubi + Trofeo 1er lugar
+            <b>Primer lugar:</b> Subscripcion por un año a mubi + Trofeo 1er lugar
           </ListItem>
           <ListItem>
             <b>Segundo lugar:</b> $750 de credito en uber eats + Trofeo 2do lugar

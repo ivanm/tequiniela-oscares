@@ -96,6 +96,7 @@ export const AtomStates = () => {
           photoURL: user.photoURL,
           uid: user.uid,
           created: new Date().toISOString(),
+          updated: new Date().toISOString(),
           nominations: {},
         });
         setDocumentId(user.uid);
@@ -133,6 +134,7 @@ export const AtomStates = () => {
       ) {
         updateDoc(doc(db, nominationsCollection, documentId), {
           nominations: userNominations,
+          updated: new Date().toISOString(),
         });
         const found = allUsersNominations.find(({ id }) => id === documentId);
 
