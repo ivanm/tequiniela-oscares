@@ -119,7 +119,7 @@ export const Rules = () => {
             <b>Sexto lugar:</b> $500 pesos en tarjeta de regalo Amazon.
           </ListItem>
           <ListItem>
-            <b>Séptimo lugar:</b> Audífonos Bluetooth.
+            <b>Séptimo lugar:</b> Audífonos Bluetooth de temu.
           </ListItem>
           <ListItem>
             Para el <b>último lugar</b> con un solo acierto y que haya llenado
