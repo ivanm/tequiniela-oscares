@@ -92,7 +92,7 @@ export const Rules = () => {
         </Text>
         <UnorderedList spacing={3}>
           <ListItem>
-            <b>Primer lugar:</b> Suscripción por un año a mubi + Trofeo 1er
+            <b>Primer lugar:</b> Subscripción por un año a <b><Link href="https://mubi.com/" isExternal>Mubi</Link></b> + Trofeo 1er
             lugar.
           </ListItem>
           <ListItem>
@@ -127,8 +127,10 @@ export const Rules = () => {
           </ListItem>
         </UnorderedList>
         <Text>
-          <b>*</b>Premios válidos dentro de México y sujetos a disponibilidad de
-          Amazon.
+          <b>*</b>
+          Para poder recibir los premios, es necesario que proporciones una
+          dirección de envío aceptada por Amazon y una dirección de correo
+          electrónico válida para suscripciones (Apple TV y Mubi).
         </Text>
       </Flex>
       <Flex pl={3} pr={3} pt={3} pb={3} mt={2} align="center">
