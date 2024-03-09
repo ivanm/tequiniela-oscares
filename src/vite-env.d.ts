@@ -8,6 +8,7 @@ interface ImportMetaEnv {
   readonly VITE_REACT_APP_FIREBASE_MESSAGING_SENDER_ID_OSCARIN_7B95C: string
   readonly VITE_REACT_APP_FIREBASE_APP_ID_OSCARIN_7B95C: string
   readonly VITE_REACT_APP_FIREBASE_MEASUREMENT_ID_OSCARIN_7B95C: string
+  readonly VITE_ENV: string
 }
 
 interface ImportMeta {

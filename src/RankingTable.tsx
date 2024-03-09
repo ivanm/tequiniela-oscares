@@ -29,6 +29,7 @@ export const RankingTable = () => {
     "supportingActress",
     "leadingActress",
     "leadingActor",
+    "originalSong",
   ];
 
   const { resizeEffect } = useResize();
@@ -120,84 +121,109 @@ export const RankingTable = () => {
     uidPointsMap,
   ]);
 
-  const borderColor = useColorModeValue("1px solid #aaa", "1px solid #222");
+  // const borderColor = useColorModeValue("1px solid #aaa", "1px solid #222");
+  const borderColor = useColorModeValue("gray.200", "gray.900");
+  const winnerColors = ["#a19313", "#717171", "#725112"];
+  const completedVotationAndWinners =
+    hasNominationTimePassed &&
+    Object.values(winnerNominations).every((n) =>
+      n.nameSlug ? n.nameSlug !== "" : n.movieSlug !== ""
+    );
 
   return allUserNominations.length !== 0 ? (
-    <Card mt={4}>
-      <Flex justify="space-between" borderBottom={borderColor}>
-        <Box w="60px" fontSize={{ base: "sm", sm: "md" }} pl={4} pt={3} pb={3}>
-          #
-        </Box>
-        <Box
-          flex={1}
-          w="66%"
-          fontSize={{ base: "sm", sm: "md" }}
-          pl={4}
-          pt={3}
-          pb={3}
-        >
-          Usuario
-        </Box>
-        <Box
-          w="90px"
-          fontSize={{ base: "sm", sm: "md" }}
-          pl={4}
-          pr={2}
-          pt={3}
-          pb={3}
-        >
-          Aciertos
-        </Box>
-      </Flex>
-      {sortedAllUserNominations != null &&
-        sortedAllUserNominations.map(
-          ({ data: { displayName, photoURL, uid, nominations } }, index) => (
-            <Flex
-              key={index}
-              pb={3}
-              pt={3}
-              borderTop={borderColor}
-              justify="space-between"
-            >
-              <Text
-                w="60px"
-                pl={4}
-                fontSize={{ base: "xs", sm: "sm", md: "md" }}
+    <Card
+      mt={4}
+      bg="gray.400"
+      border="1px"
+      borderColor={borderColor}
+      borderRadius="2xl"
+    >
+      <Flex direction="column" pb={2}>
+        <Flex justify="space-between">
+          <Box
+            w="60px"
+            fontSize={{ base: "sm", sm: "md" }}
+            pl={4}
+            pt={3}
+            pb={3}
+          ></Box>
+          <Box
+            flex={1}
+            w="66%"
+            fontSize={{ base: "xs", sm: "sm" }}
+            pl={4}
+            pt={6}
+            pb={3}
+          >
+            Nombre
+          </Box>
+          <Box
+            w="90px"
+            fontSize={{ base: "xs", sm: "sm" }}
+            pl={4}
+            pr={2}
+            pt={6}
+            pb={3}
+          >
+            Aciertos
+          </Box>
+        </Flex>
+        {sortedAllUserNominations != null &&
+          sortedAllUserNominations.map(
+            ({ data: { displayName, photoURL, uid, nominations } }, index) => (
+              <Flex
+                borderRadius="xl"
+                key={index}
+                bgColor={
+                  completedVotationAndWinners && winnerColors[index]
+                    ? winnerColors[index]
+                    : "gray.800"
+                }
+                padding={3}
+                mx={2}
+                my={1}
+                justify="space-between"
               >
-                {hasNominationTimePassed ? index + 1 : ""}
-              </Text>
-              <Flex w="auto" flex={1} align="center">
-                <Image boxSize="20px" src={photoURL} />
                 <Text
-                  fontSize="md"
-                  pl={2}
-                  textOverflow="ellipsis"
-                  whiteSpace="nowrap"
-                  overflow="hidden"
-                  display="inline"
-                  w="auto"
-                  maxWidth={{ base: "187px", md: "none" }}
+                  w="60px"
+                  pl={4}
+                  fontSize={{ base: "xs", sm: "sm", md: "md" }}
                 >
-                  {displayName}
+                  {hasNominationTimePassed ? index + 1 : ""}
                 </Text>
-                {Object.keys(nominations).length >= 23 ? (
-                  <CheckIcon ml={2} boxSize="10px" color="cards.won" mr={2} />
-                ) : null}
+                <Flex w="auto" flex={1} align="center">
+                  <Image boxSize="20px" src={photoURL} />
+                  <Text
+                    fontSize="md"
+                    pl={2}
+                    textOverflow="ellipsis"
+                    whiteSpace="nowrap"
+                    overflow="hidden"
+                    display="inline"
+                    w="auto"
+                    maxWidth={{ base: "187px", md: "none" }}
+                  >
+                    {displayName}
+                  </Text>
+                  {Object.keys(nominations).length >= 23 ? (
+                    <CheckIcon ml={2} boxSize="10px" color="cards.won" mr={2} />
+                  ) : null}
+                </Flex>
+                <Text
+                  w="90px"
+                  pl={10}
+                  fontSize={{ base: "xs", sm: "sm", md: "md" }}
+                >
+                  {hasNominationTimePassed
+                    ? uidPointsMap?.[uid]
+                      ? uidPointsMap[uid]
+                      : 0
+                    : ""}
+                </Text>
               </Flex>
-              <Text
-                w="90px"
-                pl={10}
-                fontSize={{ base: "xs", sm: "sm", md: "md" }}
-              >
-                {hasNominationTimePassed
-                  ? uidPointsMap?.[uid]
-                    ? uidPointsMap[uid]
-                    : 0
-                  : ""}
-              </Text>
-            </Flex>
-          )
-        )}
+            )
+          )}
+      </Flex>
     </Card>
   ) : (
     <Flex align="center" justify="center" w="100%" h="400px">

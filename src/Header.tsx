@@ -198,7 +198,7 @@ export const Header = () => {
                     </Flex>
                   ) : (
                     <Flex align="center">
-                      <Text color="gray.600" ml={3} mr={3} fontSize="10px">
+                      <Text ml={3} mr={3} fontSize="10px">
                         Votación cerrada
                       </Text>
                     </Flex>

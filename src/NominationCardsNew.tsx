@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -33,6 +33,8 @@ import {
   winnerNominationsState,
 } from "./atoms";
 
+type Status = "normal" | "won" | "lost";
+
 export interface NominationCardsNewProps {
   nominations: Nomination[];
   nominationSlug: string;
@@ -43,7 +45,8 @@ const NominationCardsNew = ({
   nominationSlug,
   title,
 }: NominationCardsNewProps) => {
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
+  const [status, setStatus] = useState<Status>("normal");
+  // const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
   // const iconFilter = useColorModeValue(undefined, "invert(1)");
 
   const [userNominations, setUserNominations] =
@@ -57,8 +60,42 @@ const NominationCardsNew = ({
     winnerNominationsState
   );
 
+  const matchKey = nominations.some((n) => n.nameSlug)
+    ? "nameSlug"
+    : "movieSlug";
+  const matchTo = userNominations[nominationSlug]?.[matchKey];
+  
+  const isWinner =
+    winnerNominations[nominationSlug] &&
+    winnerNominations[nominationSlug][matchKey] &&
+    winnerNominations[nominationSlug][matchKey] === matchTo;
+  const isWinnerPending =
+    winnerNominations[nominationSlug] &&
+    winnerNominations[nominationSlug][matchKey] &&
+    winnerNominations[nominationSlug][matchKey] === "";
+
+  const calcStatus = useCallback(() => {
+    if (
+      userNominations[nominationSlug] &&
+      hasNominationTimePassed &&
+      isWinnerPending === false
+    ) {
+      if (isWinner) {
+        setStatus("won");
+      } else {
+        setStatus("lost");
+      }
+    } else {
+      setStatus("normal");
+    }
+  }, [hasNominationTimePassed, isWinner, userNominations]);
+
+  useEffect(() => {
+    calcStatus();
+  }, [calcStatus]);
+
   const accordionBg = useColorModeValue("gray.300", "gray.400");
-  const accordionBorderColor = useColorModeValue("gray.200", "black");
+  const accordionBorderColor = useColorModeValue("gray.200", "gray.900");
   const selectedNomination = userNominations[nominationSlug]
     ? userNominations[nominationSlug].nameSlug
       ? userNominations[nominationSlug].name
@@ -76,14 +113,14 @@ const NominationCardsNew = ({
       display="inline-table"
     >
       <AccordionItem borderRadius="13px" border="1px" borderColor="transparent">
-        <AccordionButton>
+        <AccordionButton padding="10px">
           <Flex grow={1} justify="space-between" align="center">
-            <Flex align="center">
+            <Flex align="center" grow={1}>
               <Image
                 boxSize="24px"
                 src={selectedNomination ? "selectedOn.png" : "selectedOff.png"}
                 alt="selected off"
-                mr={4}
+                mr={2}
               />
               <Flex justify="center" direction="column" minHeight="50px">
                 <Text textAlign="left" fontSize="sm" fontWeight="extrabold">
@@ -92,6 +129,27 @@ const NominationCardsNew = ({
                 <Text textAlign="left" fontSize="xs">
                   {selectedNomination}
                 </Text>
+              </Flex>
+              <Flex ml="auto" mr="5px">
+                {status === "won" ? (
+                  <Box
+                    bg="#29b00f"
+                    borderRadius="10px"
+                    padding="2px 10px"
+                    fontSize="xs"
+                  >
+                    Acierto
+                  </Box>
+                ) : status === "lost" ? (
+                  <Box
+                    bg="#c11a1a"
+                    borderRadius="10px"
+                    padding="2px 10px"
+                    fontSize="xs"
+                  >
+                    Error
+                  </Box>
+                ) : null}
               </Flex>
             </Flex>
             <AccordionIcon />

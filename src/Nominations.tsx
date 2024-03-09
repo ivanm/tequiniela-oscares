@@ -8,8 +8,6 @@ import nominees from "./nominees";
 
 import useEffectOnce from "./hooks/useEffectOnce";
 import { Masonry } from "react-plock";
-// console.log("nominees");
-// console.log(nominees);
 
 export const Nominations = () => {
   const [konami, setKonami] = useState<boolean>(false);

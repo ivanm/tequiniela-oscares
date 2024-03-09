@@ -21,9 +21,9 @@ export const Login = () => {
 
   const handleSignIn = async () => {
     localStorage.setItem("loading-google", "true");
-    // await signInWithPopup(auth, provider);
-    signInWithRedirect(auth, provider);
-    // navigate("/", { replace: true });
+    if (import.meta.env.VITE_ENV === "development")
+      signInWithPopup(auth, provider);
+    else signInWithRedirect(auth, provider);
   };
 
   useEffect(() => {

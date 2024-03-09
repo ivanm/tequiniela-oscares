@@ -1,4 +1,11 @@
-import { Card, Flex, Image, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Card,
+  Flex,
+  Box,
+  Image,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { omit } from "ramda";
 import { useCallback, useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
@@ -104,21 +111,16 @@ const CardNew = ({
     calcStatus();
   }, [calcStatus]);
 
-  const bgColor =
-    status === "selected"
-      ? "cards.selected"
-      : status === "selected-won"
-      ? "cards.won"
-      : status === "selected-lost"
-      ? "cards.lost"
-      : undefined;
+  const bgColor = ["selected", "selected-won", "selected-lost"].includes(status)
+    ? "cards.selected"
+    : undefined;
 
   const textColor = ["selected", "selected-won", "selected-lost"].includes(
     status
   )
     ? "white"
     : status === "not-selected-won"
-    ? "cards.won"
+    ? "white"
     : "white";
 
   const handleCardClick = () => {
@@ -133,23 +135,18 @@ const CardNew = ({
     user !== null && !hasNominationTimePassed && status !== "selected";
 
   const cardBgBlendMode = useColorModeValue("normal", "soft-light");
+  const opacity = hasNominationTimePassed && !isWinner ? "0.5" : "1";
+  const winnerText = ["leadingActress", "supportingActress"].includes(
+    nominationSlug
+  ) || nameSlug === 'justine-triet'
+    ? "Ganadora"
+    : "Ganador";
 
   return (
     <Card
-      border={
-        bgColor
-          ? "3px solid transparent"
-          : status === "not-selected-won"
-          ? "3px solid transparent"
-          : undefined
-      }
-      borderColor={
-        bgColor
-          ? bgColor
-          : status === "not-selected-won"
-          ? "cards.won"
-          : undefined
-      }
+      opacity={opacity}
+      border={bgColor ? "3px solid transparent" : undefined}
+      borderColor={bgColor}
       bg={bgColor}
       bgImage={`url('${imgSrc}')`}
       backgroundBlendMode={
@@ -161,7 +158,7 @@ const CardNew = ({
       borderRadius="xl"
       minHeight="80px"
     >
-      <Flex pl={4} pr={4} justify="end" pb={2} direction="column">
+      <Flex pl={4} pr={4} justify="end" pb={2} direction="column" grow={1}>
         <Text
           lineHeight={1.1}
           fontSize={{ base: "sm", lg: "lg" }}
@@ -179,6 +176,21 @@ const CardNew = ({
           >
             {title}
           </Text>
+        ) : null}
+      </Flex>
+      <Flex align="center">
+        {hasNominationTimePassed && isWinner ? (
+          <Box
+            bg="#fecb61"
+            h="25px"
+            borderRadius="10px"
+            padding="2px 10px"
+            fontSize="xs"
+            color="#111111"
+            mr="5px"
+          >
+            {winnerText}
+          </Box>
         ) : null}
       </Flex>
     </Card>
