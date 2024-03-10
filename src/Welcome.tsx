@@ -7,11 +7,12 @@ export const Welcome = () => {
       <Flex align="center">
         <Flex direction="column">
           <Text fontSize={{ base: "20px", md: "30px" }}>
-            👋 Ya puedes votar en la Tequiniela 2024
+            🚨 Tequiniela cerrada
           </Text>
           <Text fontSize={{ base: "xs", md: "md" }}>
-            La Tequiniela es una quiniela organizada entre amigos para la entrega de los Premios Óscar 2024. 
-            Para participar, inicia sesión con tu cuenta de Google, selecciona tus candidatos, y no te olvides de revisar el reglamento.
+            Ya no puedes modificar tus predicciones. Inicia sesión e iremos
+            actualizando los resultados conforme los premios se vayan
+            entregando. ¡Mucha suerte!
           </Text>
         </Flex>
       </Flex>
