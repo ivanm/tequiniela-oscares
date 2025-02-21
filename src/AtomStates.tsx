@@ -24,13 +24,8 @@ import { type UserDocumentData } from "./nominees";
 
 import useEffectOnce from "./hooks/useEffectOnce";
 
-// 2023
-// const nominationsCollection = 'tequiniela-user-nominations';
-// const configCollection = 'config';
-
-const nominationsCollection = "2024-user-nominations";
-const configCollection = "2024-config";
-// 2023
+const nominationsCollection = "2025-user-nominations";
+const configCollection = "2025-config";
 
 export const AtomStates = () => {
   const [userNominations, setUserNominations] =
