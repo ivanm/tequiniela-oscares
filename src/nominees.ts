@@ -8,214 +8,214 @@ export interface Nomination {
 
 export interface AdaptedScreenplayNomination extends Nomination {
   movieSlug:
-    | "american-fiction"
-    | "barbie"
-    | "oppenheimer"
-    | "poor-things"
-    | "the-zone-of-interest";
+    | "a-complete-unknown"
+    | "conclave"
+    | "emilia-perez"
+    | "nickel-boys"
+    | "sing-sing";
 }
 
 export interface AnimatedFeatureNomination extends Nomination {
   movieSlug:
-    | "the-boy-and-the-heron"
-    | "elemental"
-    | "nimona"
-    | "robot-dreams"
-    | "spider-man-across-the-spider-verse";
+    | "flow"
+    | "inside-out-2"
+    | "memoir-of-a-snail"
+    | "wallace-and-gromit"
+    | "the-wild-robot";
 }
 
 export interface AnimatedShortNomination extends Nomination {
   movieSlug:
-    | "letter-to-a-pig"
-    | "ninety-five-senses"
-    | "our-uniform"
-    | "pachyderme"
-    | "war-is-over";
+    | "beautiful-men"
+    | "in-the-shadow-of-the-cypress"
+    | "magic-candies"
+    | "wander-to-wonder"
+    | "yuck";
 }
 
 export interface BestPictureNomination extends Nomination {
   movieSlug:
-    | "american-fiction"
-    | "anatomy-of-a-fall"
-    | "barbie"
-    | "the-holdovers"
-    | "killers-of-the-flower-moon"
-    | "maestro"
-    | "oppenheimer"
-    | "past-lives"
-    | "poor-things"
-    | "the-zone-of-interest";
+    | "anora"
+    | "the-brutalist"
+    | "a-complete-unknown"
+    | "conclave"
+    | "dune-2"
+    | "emilia-perez"
+    | "im-still-here"
+    | "nickel-boys"
+    | "the-substance"
+    | "wicked";
 }
 
 export interface CinematographyNomination extends Nomination {
   movieSlug:
-    | "el-conde"
-    | "killers-of-the-flower-moon"
-    | "maestro"
-    | "oppenheimer"
-    | "poor-things";
+    | "the-brutalist"
+    | "dune-2"
+    | "emilia-perez"
+    | "maria"
+    | "nosferatu";
 }
 
 export interface CostumeDesignNomination extends Nomination {
   movieSlug:
-    | "barbie"
-    | "killers-of-the-flower-moon"
-    | "napoleon"
-    | "oppenheimer"
-    | "poor-things";
+    | "a-complete-unknown"
+    | "conclave"
+    | "gladiator-2"
+    | "nosferatu"
+    | "wicked";
 }
 
 export interface DirectingNomination extends Nomination {
   nameSlug:
-    | "justine-triet"
-    | "martin-scorsese"
-    | "christopher-nolan"
-    | "yorgos-lanthimos"
-    | "jonathan-glazer";
+    | "anora"
+    | "the-brutalist"
+    | "a-complete-unknown"
+    | "emilia-perez"
+    | "the-substance";
 }
 
 export interface DocumentaryFeatureNomination extends Nomination {
   movieSlug:
-    | "bobi-wine"
-    | "the-eternal-memory"
-    | "four-daughters"
-    | "to-kill-a-tiger"
-    | "20-days-in-mariupol";
+    | "black-box-diaries"
+    | "no-other-land"
+    | "porcelain-war"
+    | "soundtrack-to-a-coup-detat"
+    | "sugarcane";
 }
 
 export interface DocumentaryShortNomination extends Nomination {
   movieSlug:
-    | "the-abcs-of-book-banning"
-    | "the-barber-of-little-rock"
-    | "island-in-between"
-    | "the-last-repair-shop"
-    | "nai-nai-and-wai-po";
+    | "death-by-numbers"
+    | "i-am-ready-warden"
+    | "incident"
+    | "instruments-of-a-beating-heart"
+    | "the-only-girl-in-the-orchestra";
 }
 
 export interface FilmEditingNomination extends Nomination {
   movieSlug:
-    | "anatomy-of-a-fall"
-    | "the-holdovers"
-    | "killers-of-the-flower-moon"
-    | "oppenheimer"
-    | "poor-things";
+    | "anora"
+    | "the-brutalist"
+    | "conclave"
+    | "emilia-perez"
+    | "wicked";
 }
 
 export interface InternationalFeatureNomination extends Nomination {
   movieSlug:
-    | "io-capitano"
-    | "perfect-days"
-    | "society-of-the-snow"
-    | "the-teachers-lounge"
-    | "the-zone-of-interest";
+    | "im-still-here"
+    | "the-girl-with-the-needle"
+    | "emilia-perez"
+    | "the-seed-of-the-sacred-fig"
+    | "flow";
 }
 
 export interface LeadingActorNomination extends Nomination {
   nameSlug:
-    | "bradley-cooper"
+    | "adrien-brody"
+    | "timothee-chalamet"
     | "colman-domingo"
-    | "paul-giamatti"
-    | "cillian-murphy"
-    | "jeffrey-wright";
+    | "ralph-fiennes"
+    | "sebastian-stan";
 }
 
 export interface LeadingActressNomination extends Nomination {
   nameSlug:
-    | "annette-bening"
-    | "lily-gladstone"
-    | "sandra-huller"
-    | "carey-mulligan"
-    | "emma-stone";
+    | "cynthia-erivo"
+    | "karla-sofia-gascon"
+    | "mikey-madison"
+    | "demi-moore"
+    | "fernanda-torres";
 }
 
 export interface LiveActionShortNomination extends Nomination {
   movieSlug:
-    | "the-after"
-    | "invincible"
-    | "knight-of-fortune"
-    | "red-white-and-blue"
-    | "the-wonderful-story-of-henry-sugar";
+    | "a-lien"
+    | "anuja"
+    | "im-not-a-robot"
+    | "the-last-ranger"
+    | "the-man-who-could-not-remain-silent";
 }
 
 export interface MakeupNomination extends Nomination {
   movieSlug:
-    | "golda"
-    | "maestro"
-    | "oppenheimer"
-    | "poor-things"
-    | "society-of-the-snow";
+    | "a-different-man"
+    | "emilia-perez"
+    | "nosferatu"
+    | "the-substance"
+    | "wicked";
 }
 
 export interface OriginalScoreNomination extends Nomination {
   movieSlug:
-    | "american-fiction"
-    | "indiana-jones-and-the-dial-of-destiny"
-    | "killers-of-the-flower-moon"
-    | "oppenheimer"
-    | "poor-things";
+    | "the-brutalist"
+    | "conclave"
+    | "emilia-perez"
+    | "wicked"
+    | "the-wild-robot";
 }
 
 export interface OriginalScreenplayNomination extends Nomination {
   movieSlug:
-    | "anatomy-of-a-fall"
-    | "the-holdovers"
-    | "maestro"
-    | "may-december"
-    | "past-lives";
+    | "anora"
+    | "the-brutalist"
+    | "a-real-pain"
+    | "september-5"
+    | "the-substance";
 }
 
 export interface OriginalSongNomination extends Nomination {
   nameSlug:
-    | "the-fire-inside"
-    | "im-just-ken"
-    | "it-never-went-away"
-    | "wahzhazhe"
-    | "what-was-i-made-for";
+    | "el-mal"
+    | "the-journey"
+    | "like-a-bird"
+    | "mi-camino"
+    | "never-too-late";
 }
 
 export interface ProductionDesignNomination extends Nomination {
   movieSlug:
-    | "barbie"
-    | "killers-of-the-flower-moon"
-    | "napoleon"
-    | "oppenheimer"
-    | "poor-things";
+    | "the-brutalist"
+    | "conclave"
+    | "dune-2"
+    | "nosferatu"
+    | "wicked";
 }
 
 export interface SoundNomination extends Nomination {
   movieSlug:
-    | "the-creator"
-    | "maestro"
-    | "mission-impossible-dead-reckoning"
-    | "oppenheimer"
-    | "the-zone-of-interest";
+    | "a-complete-unknown"
+    | "dune-2"
+    | "emilia-perez"
+    | "wicked"
+    | "the-wild-robot";
 }
 
 export interface SupportingActorNomination extends Nomination {
   nameSlug:
-    | "sterling-k-brown"
-    | "robert-de-niro"
-    | "robert-downey-jr"
-    | "ryan-gosling"
-    | "mark-ruffalo";
+    | "yura-borisov"
+    | "kieran-culkin"
+    | "edward-norton"
+    | "guy-pearce"
+    | "jeremy-strong";
 }
 
 export interface SupportingActressNomination extends Nomination {
   nameSlug:
-    | "emily-blunt"
-    | "danielle-brooks"
-    | "america-ferrera"
-    | "jodie-foster"
-    | "davine-joy-randolph";
+    | "monica-barbaro"
+    | "ariana-grande"
+    | "felicity-jones"
+    | "isabella-rossellini"
+    | "zoe-saldana";
 }
 
 export interface VisualEffectsNomination extends Nomination {
   movieSlug:
-    | "the-creator"
-    | "godzilla-minus-one"
-    | "guardians-of-the-galaxy-vol-3"
-    | "mission-impossible-dead-reckoning"
-    | "napoleon";
+    | "alien-romulus"
+    | "better-man"
+    | "dune-2"
+    | "kingdom-of-the-planet-of-the-apes"
+    | "wicked";
 }
 
 export interface Nominees {
@@ -292,140 +292,140 @@ export interface UserDocument {
 const nominees: Nominees = {
   bestPicture: [
     {
-      movie: "American Fiction",
-      movieSlug: "american-fiction",
+      movie: "Anora",
+      movieSlug: "anora",
     },
     {
-      movie: "Anatomy of a Fall",
-      movieSlug: "anatomy-of-a-fall",
+      movie: "The Brutalist",
+      movieSlug: "the-brutalist",
     },
     {
-      movie: "Barbie",
-      movieSlug: "barbie",
+      movie: "A Complete Unknown",
+      movieSlug: "a-complete-unknown",
     },
     {
-      movie: "The Holdovers",
-      movieSlug: "the-holdovers",
+      movie: "Conclave",
+      movieSlug: "conclave",
     },
     {
-      movie: "Killers of the Flower Moon",
-      movieSlug: "killers-of-the-flower-moon",
+      movie: "Dune: Part Two",
+      movieSlug: "dune-2",
     },
     {
-      movie: "Maestro",
-      movieSlug: "maestro",
+      movie: "Emilia Pérez",
+      movieSlug: "emilia-perez",
     },
     {
-      movie: "Oppenheimer",
-      movieSlug: "oppenheimer",
+      movie: "I'm still here",
+      movieSlug: "im-still-here",
     },
     {
-      movie: "Past Lives",
-      movieSlug: "past-lives",
+      movie: "Nickel Boys",
+      movieSlug: "nickel-boys",
     },
     {
-      movie: "Poor Things",
-      movieSlug: "poor-things",
+      movie: "The Substance",
+      movieSlug: "the-substance",
     },
     {
-      movie: "The Zone of Interest",
-      movieSlug: "the-zone-of-interest",
+      movie: "Wicked",
+      movieSlug: "wicked",
     },
   ],
   directing: [
     {
-      movie: "Anatomy of a Fall",
-      movieSlug: "anatomy-of-a-fall",
-      name: "Justine Triet",
-      nameSlug: "justine-triet",
+      movie: "Anora",
+      movieSlug: "anora",
+      name: "Sean Baker",
+      nameSlug: "sean-baker",
     },
     {
-      movie: "Killers of the Flower Moon",
-      movieSlug: "killers-of-the-flower-moon",
-      name: "Martin Scorsese",
-      nameSlug: "martin-scorsese",
+      movie: "The Brutalist",
+      movieSlug: "the-brutalist",
+      name: "Brady Corbet",
+      nameSlug: "brady-corbet",
     },
     {
-      movie: "Oppenheimer",
-      movieSlug: "oppenheimer",
-      name: "Christopher Nolan",
-      nameSlug: "christopher-nolan",
+      movie: "A Complete Unknown",
+      movieSlug: "a-complete-unknown",
+      name: "James Mangold",
+      nameSlug: "james-mangold",
     },
     {
-      movie: "Poor Things",
-      movieSlug: "poor-things",
-      name: "Yorgos Lanthimos",
-      nameSlug: "yorgos-lanthimos",
+      movie: "Emilia Pérez",
+      movieSlug: "emilia-perez",
+      name: "Jacques Audiard",
+      nameSlug: "jacques-audiard",
     },
     {
-      movie: "The Zone of Interest",
-      movieSlug: "the-zone-of-interest",
-      name: "Jonathan Glazer",
-      nameSlug: "jonathan-glazer",
+      movie: "The Substance",
+      movieSlug: "the-substance",
+      name: "Coralie Fargeat",
+      nameSlug: "coralie-fargeat",
     },
   ],
   leadingActor: [
     {
-      movie: "Maestro",
-      movieSlug: "maestro",
-      name: "Bradley Cooper",
-      nameSlug: "bradley-cooper",
+      movie: "The Brutalist",
+      movieSlug: "the-brutalist",
+      name: "Adrien Brody",
+      nameSlug: "adrien-brody",
     },
     {
-      movie: "Rustin",
-      movieSlug: "rustin",
+      movie: "A Complete Unknown",
+      movieSlug: "a-complete-unknown",
+      name: "Timothée Chalamet",
+      nameSlug: "timothee-chalamet",
+    },
+    {
+      movie: "Sing Sing",
+      movieSlug: "sing-sing",
       name: "Colman Domingo",
       nameSlug: "colman-domingo",
     },
     {
-      movie: "The Holdovers",
-      movieSlug: "the-holdovers",
-      name: "Paul Giamatti",
-      nameSlug: "paul-giamatti",
+      movie: "Conclave",
+      movieSlug: "conclave",
+      name: "Ralph Fiennes",
+      nameSlug: "ralph-fiennes",
     },
     {
-      movie: "Oppenheimer",
-      movieSlug: "oppenheimer",
-      name: "Cillian Murphy",
-      nameSlug: "cillian-murphy",
-    },
-    {
-      movie: "American Fiction",
-      movieSlug: "american-fiction",
-      name: "Jeffrey Wright",
-      nameSlug: "jeffrey-wright",
+      movie: "The Apprentice",
+      movieSlug: "the-apprentice",
+      name: "Sebastian Stan",
+      nameSlug: "sebastian-stan",
     },
   ],
   leadingActress: [
     {
-      movie: "Nyad",
-      movieSlug: "nyad",
-      name: "Annette Bening",
-      nameSlug: "annette-bening",
+      movie: "Wicked",
+      movieSlug: "wicked",
+      name: "Cynthia Erivo",
+      nameSlug: "cynthia-erivo",
     },
     {
-      movie: "Killers of the Flower Moon",
-      movieSlug: "killers-of-the-flower-moon",
-      name: "Lily Gladstone",
-      nameSlug: "lily-gladstone",
+      movie: "Emilia Pérez",
+      movieSlug: "emilia-perez",
+      name: "Karla Sofia Gascon",
+      nameSlug: "karla-sofia-gascon",
     },
     {
-      movie: "Anatomy of a Fall",
-      movieSlug: "anatomy-of-a-fall",
-      name: "Sandra Hüller",
-      nameSlug: "sandra-huller",
+      movie: "Anora",
+      movieSlug: "anora",
+      name: "Mikey Madison",
+      nameSlug: "mikey-madison",
     },
     {
-      movie: "Maestro",
-      movieSlug: "maestro",
-      name: "Carey Mulligan",
-      nameSlug: "carey-mulligan",
+      movie: "The Substance",
+      movieSlug: "the-substance",
+      name: "Demi Moore",
+      nameSlug: "demi-moore",
     },
     {
-      movie: "Poor Things",
-      movieSlug: "poor-things",
-      name: "Emma Stone",
-      nameSlug: "emma-stone",
+      movie: "I'm Still Here",
+      movieSlug: "im-still-here",
+      name: "Fernanda Torres",
+      nameSlug: "fernanda-torres",
     },
   ],
   supportingActor: [
