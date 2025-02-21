@@ -90,47 +90,8 @@ export const Rules = () => {
           Compite con otros fanáticos del cine para ganar alguno de estos
           increíbles premios<b>*</b>:{" "}
         </Text>
-        <UnorderedList spacing={3}>
-          <ListItem>
-            <b>Primer lugar:</b> Subscripción por un año a <b><Link href="https://mubi.com/" isExternal>Mubi</Link></b> + Trofeo 1er
-            lugar.
-          </ListItem>
-          <ListItem>
-            <b>Segundo lugar:</b> Suscripción por un año a Apple TV + Trofeo 2do
-            lugar.
-          </ListItem>
-          <ListItem>
-            <b>Tercer lugar:</b> Libro de arte oficial{" "}
-              <b>Across The Spider-Verse</b> patrocinado por{" "}
-            <b>
-              <Link href="https://youtube.com/@tecnomenoide" isExternal>
-                Tecnomenoide
-              </Link>
-            </b>{" "}
-            + Trofeo 3er lugar.
-          </ListItem>
-          <ListItem>
-            <b>Cuarto lugar:</b> $750 pesos de crédito en Uber Eats.
-          </ListItem>
-          <ListItem>
-            <b>Quinto lugar:</b> Película <b>&apos;El 5to elemento&apos;</b>.
-          </ListItem>
-          <ListItem>
-            <b>Sexto lugar:</b> $500 pesos en tarjeta de regalo Amazon.
-          </ListItem>
-          <ListItem>
-            <b>Séptimo lugar:</b> Audífonos Bluetooth de temu.
-          </ListItem>
-          <ListItem>
-            Para el <b>último lugar</b> con un solo acierto y que haya llenado
-            totalmente su quiniela: Una recarga Telcel de $20 pesos.
-          </ListItem>
-        </UnorderedList>
         <Text>
-          <b>*</b>
-          Para poder recibir los premios, es necesario que proporciones una
-          dirección de envío aceptada por Amazon y una dirección de correo
-          electrónico válida para suscripciones (Apple TV y Mubi).
+          (Proximamente)
         </Text>
       </Flex>
       <Flex pl={3} pr={3} pt={3} pb={3} mt={2} align="center">
@@ -175,37 +136,10 @@ export const Rules = () => {
           </Link>
         </Text>
         <Text>
-          <b>QA</b>: Rosalía
+          <b>Premios:</b>{" "}
         </Text>
         <Text>
-          <b>Premios:</b>{" "}
-          <Link href="https://www.threads.net/@cupto" isExternal>
-            @cupto
-          </Link>
-          ,{" "}
-          <Link href="https://www.threads.net/@masiosare" isExternal>
-            @masiosare
-          </Link>
-          ,{" "}
-          <Link href="https://twitter.com/chrispulze" isExternal>
-            @chrispulze
-          </Link>
-          ,{" "}
-          <Link href="https://www.threads.net/@o.ladino" isExternal>
-            @canitoy
-          </Link>
-          ,{" "}
-          <Link href="https://twitter.com/luisitomx/" isExternal>
-            @luisitomx
-          </Link>
-          ,{" "}
-          <Link href="https://www.threads.net/thewarpaint" isExternal>
-            @thewarpaint
-          </Link>
-          ,{" "}
-          <Link href="https://twitter.com/vaan" isExternal>
-            @vaan
-          </Link>
+          (Proximamente)
         </Text>
       </Flex>
     </Flex>
