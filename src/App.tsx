@@ -50,7 +50,7 @@ export const App = () => {
         <Box as="footer" width="100%" p={5}>
           <Flex align="center" justify="center">
             <Text fontSize="sm">
-              2024 | Powered by{" "}
+              2025 | Powered by{" "}
               <Link href="https://efectotequila.com/" isExternal={true}>
                 Efecto Tequila{" "}
               </Link>

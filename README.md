@@ -1,4 +1,4 @@
-# Tequiniela Oscares 2024
+# Tequiniela Oscares 2025
 ![image](https://user-images.githubusercontent.com/32628/223587651-29aa841b-90e5-4f75-80cb-3757bb48d5f5.png)
 
 # Deploy instrucitions
