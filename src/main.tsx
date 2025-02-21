@@ -18,6 +18,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <BrowserRouter>
           <FirebaseAppProvider firebaseConfig={firebaseConfig}>
             <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+            <App />
           </FirebaseAppProvider>
         </BrowserRouter>
       </ChakraProvider>
