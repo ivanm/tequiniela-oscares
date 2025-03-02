@@ -90,8 +90,43 @@ export const Rules = () => {
           Compite con otros fanáticos del cine para ganar alguno de estos
           increíbles premios<b>*</b>:{" "}
         </Text>
+        <UnorderedList spacing={3}>
+          <ListItem>
+            <b>Primer lugar:</b> Subscripción por un año a{" "}
+            <b>
+              <Link href="https://mubi.com/" isExternal>
+                Mubi
+              </Link>
+            </b>
+            .
+          </ListItem>
+          <ListItem>
+            <b>Segundo lugar:</b> Libro de Arte de  <b>&apos;The Wild Robot&apos;</b>.
+          </ListItem>
+          <ListItem>
+            <b>Tercer lugar:</b> Tarjeta de regalo de Apple Store con el valor
+            de 3 meses de suscripción a Apple TV+.
+          </ListItem>
+          <ListItem>
+            <b>Cuarto lugar:</b> Cinepolis VIP: 4 entradas de cine.
+          </ListItem>
+          <ListItem>
+            <b>Quinto lugar:</b> Película <b>&apos;El 5to elemento&apos;</b>.
+          </ListItem>
+          <ListItem>
+            <b>Sexto lugar:</b> Cupón de 200 pesos para comprar en Uber Eats un
+            pollo rostizado.
+          </ListItem>
+          <ListItem>
+            Para el <b>último lugar</b> con un solo acierto y que haya llenado
+            totalmente su quiniela: Una recarga Telcel de $20 pesos.
+          </ListItem>
+        </UnorderedList>
         <Text>
-          (Proximamente)
+          <b>*</b>
+          Para poder recibir los premios, es necesario que proporciones una
+          dirección de envío aceptada por Amazon y una dirección de correo
+          electrónico válida para suscripciones (Apple TV y Mubi).
         </Text>
       </Flex>
       <Flex pl={3} pr={3} pt={3} pb={3} mt={2} align="center">
@@ -137,9 +172,25 @@ export const Rules = () => {
         </Text>
         <Text>
           <b>Premios:</b>{" "}
-        </Text>
-        <Text>
-          (Proximamente)
+          <Link href="#" isExternal>
+            @cupto
+          </Link>
+          ,{" "}
+          <Link href="#" isExternal>
+            @chrispulze
+          </Link>
+          ,{" "}
+          <Link href="#" isExternal>
+            @canitoy
+          </Link>
+          ,{" "}
+          <Link href="#" isExternal>
+            @thewarpaint
+          </Link>
+          ,{" "}
+          <Link href="https://x.com/vaan" isExternal>
+            @vaan
+          </Link>
         </Text>
       </Flex>
     </Flex>
