@@ -102,7 +102,7 @@ export const AtomStates = () => {
     (async () => {
       unsuscribeWinners = onSnapshot(doc(db, configCollection, "default"), (doc) => {
         if (doc !== undefined) {
-          setWinnerNominations(doc.data()?.winners);
+          setWinnerNominations(doc.data()?.winners ?? {});
           setHasNominationTimePassed(!doc.data()?.votingEnabled);
         }
       });
