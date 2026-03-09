@@ -44,6 +44,7 @@ export const Header = () => {
     { to: "/", title: "Mi Quiniela" },
     { to: "/ranking", title: "Ranking" },
     { to: "/rules", title: "Reglas" },
+    { to: "/winners", title: "Ganadores" },
   ];
 
   const menuSelected = menuLinks.find(({ to }) => pathname === to);

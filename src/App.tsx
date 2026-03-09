@@ -8,6 +8,7 @@ import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";
 import { Nominations } from "./Nominations";
 import { Ranking } from "./Ranking";
 import { Rules } from "./Rules";
+import { Winners } from "./Winners";
 import { Header } from "./Header";
 import { Login } from "./Login";
 import { AtomStates } from "./AtomStates";
@@ -44,6 +45,7 @@ export const App = () => {
             <Route path="/" element={<Nominations />} />
             <Route path="/ranking" element={<Ranking />} />
             <Route path="/rules" element={<Rules />} />
+            <Route path="/winners" element={<Winners />} />
             <Route path="/login" element={<Login />} />
           </Routes>
         </Box>

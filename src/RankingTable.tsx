@@ -16,22 +16,13 @@ import {
   winnerNominationsState,
   hasNominationTimePassedState,
 } from "./atoms";
+import { computeScores, type NominationPick } from "./scoring";
 import useResize from "./hooks/useResize";
 
 export const RankingTable = () => {
   const allUserNominations = useRecoilValue(allUsersNominationsState);
   const winnerNominations = useRecoilValue(winnerNominationsState);
   const hasNominationTimePassed = useRecoilValue(hasNominationTimePassedState);
-
-  const matchKeysNameSlug = [
-    "directing",
-    "supportingActor",
-    "supportingActress",
-    "leadingActress",
-    "leadingActor",
-    "originalSong",
-    "casting",
-  ];
 
   const { resizeEffect } = useResize();
 
@@ -40,46 +31,19 @@ export const RankingTable = () => {
   }, [allUserNominations]);
 
   const uidPointsMap = useMemo(() => {
-    let uidPointsMap: { [key: string]: number } = {};
     if (
       hasNominationTimePassed &&
       Object.keys(winnerNominations).length !== 0 &&
       allUserNominations.length !== 0
     ) {
-      allUserNominations.forEach((userNomination) => {
-        uidPointsMap[userNomination.data.uid] = 0;
-      });
-      Object.keys(winnerNominations).forEach((winnerNominationsKey) => {
-        const slugKey = matchKeysNameSlug.includes(winnerNominationsKey)
-          ? "nameSlug"
-          : "movieSlug";
-        const winner = winnerNominations[winnerNominationsKey][slugKey];
-
-        if (winner && winner !== "") {
-          allUserNominations.forEach((userNomination) => {
-            if (
-              userNomination &&
-              userNomination.data &&
-              userNomination.data.nominations &&
-              userNomination.data.nominations[winnerNominationsKey] &&
-              userNomination.data.nominations[winnerNominationsKey][slugKey]
-            ) {
-              if (
-                userNomination.data.nominations[winnerNominationsKey][
-                  slugKey
-                ] == winner
-              ) {
-                uidPointsMap = {
-                  ...uidPointsMap,
-                  [userNomination.data.uid]:
-                    uidPointsMap[userNomination.data.uid] + 1,
-                };
-              }
-            }
-          });
-        }
-      });
-      return uidPointsMap;
+      const users = allUserNominations.map(({ data }) => ({
+        uid: data.uid,
+        nominations: data.nominations as Record<string, NominationPick>,
+      }));
+      return computeScores(
+        users,
+        winnerNominations as Record<string, NominationPick>,
+      );
     }
   }, [allUserNominations, hasNominationTimePassed, winnerNominations]);
 
