@@ -157,15 +157,15 @@ export const Header = () => {
                         color="gray.600"
                         mr={1}
                         value={
-                          (Object.values(userNominations).length * 100) / 23
+                          (Object.values(userNominations).length * 100) / 24
                         }
                       >
                         <CircularProgressLabel fontSize="8px">{`${Math.round(
-                          (Object.values(userNominations).length * 100) / 23
+                          (Object.values(userNominations).length * 100) / 24
                         )}%`}</CircularProgressLabel>
                       </CircularProgress>
 
-                      {Object.values(userNominations).length === 23 ? (
+                      {Object.values(userNominations).length === 24 ? (
                         <Flex align="center">
                           <Text
                             minWidth="107px"
@@ -189,8 +189,8 @@ export const Header = () => {
                           minWidth="120px"
                           fontSize="10px"
                         >
-                          {`${23 - Object.values(userNominations).length} ${
-                            Object.values(userNominations).length == 22
+                          {`${24 - Object.values(userNominations).length} ${
+                            Object.values(userNominations).length == 23
                               ? "categoría por elegir"
                               : "categorías por elegir"
                           }`}
