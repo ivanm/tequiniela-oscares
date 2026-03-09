@@ -21,7 +21,7 @@ export const App = () => {
   const firestoreInstance = getFirestore(app);
   const [beer, setBeer] = useState(false);
 
-  if (process.env.NODE_ENV !== "production") {
+  if (import.meta.env.DEV) {
     try {
       connectFirestoreEmulator(firestoreInstance, "localhost", 8080);
       connectAuthEmulator(auth, "http://localhost:9099");
