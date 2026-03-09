@@ -54,7 +54,7 @@ export const App = () => {
             <Text fontSize="sm">
               2026 | Powered by{" "}
               <Link href="https://efectotequila.com/" isExternal={true}>
-                Efecto Tequila{" "}
+                Efecto Tequila {" "}
               </Link>
             </Text>
             <Link
