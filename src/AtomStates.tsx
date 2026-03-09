@@ -24,8 +24,8 @@ import { type UserDocumentData } from "./nominees";
 
 import useEffectOnce from "./hooks/useEffectOnce";
 
-const nominationsCollection = "2025-user-nominations";
-const configCollection = "2025-config";
+const nominationsCollection = "2026-user-nominations";
+const configCollection = "2026-config";
 
 export const AtomStates = () => {
   const [userNominations, setUserNominations] =

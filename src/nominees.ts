@@ -8,214 +8,223 @@ export interface Nomination {
 
 export interface AdaptedScreenplayNomination extends Nomination {
   movieSlug:
-    | "a-complete-unknown"
-    | "conclave"
-    | "emilia-perez"
-    | "nickel-boys"
-    | "sing-sing";
+    | "bugonia"
+    | "frankenstein"
+    | "hamnet"
+    | "one-battle-after-another"
+    | "train-dreams";
 }
 
 export interface AnimatedFeatureNomination extends Nomination {
   movieSlug:
-    | "flow"
-    | "inside-out-2"
-    | "memoir-of-a-snail"
-    | "wallace-and-gromit"
-    | "the-wild-robot";
+    | "arco"
+    | "elio"
+    | "kpop-demon-hunters"
+    | "little-amelie-or-the-character-of-rain"
+    | "zootopia-2";
 }
 
 export interface AnimatedShortNomination extends Nomination {
   movieSlug:
-    | "beautiful-men"
-    | "in-the-shadow-of-the-cypress"
-    | "magic-candies"
-    | "wander-to-wonder"
-    | "yuck";
+    | "butterfly"
+    | "forevergreen"
+    | "the-girl-who-cried-pearls"
+    | "retirement-plan"
+    | "the-three-sisters";
 }
 
 export interface BestPictureNomination extends Nomination {
   movieSlug:
-    | "anora"
-    | "the-brutalist"
-    | "a-complete-unknown"
-    | "conclave"
-    | "dune-2"
-    | "emilia-perez"
-    | "im-still-here"
-    | "nickel-boys"
-    | "the-substance"
-    | "wicked";
+    | "bugonia"
+    | "f1"
+    | "frankenstein"
+    | "hamnet"
+    | "marty-supreme"
+    | "one-battle-after-another"
+    | "the-secret-agent"
+    | "sentimental-value"
+    | "sinners"
+    | "train-dreams";
 }
 
 export interface CinematographyNomination extends Nomination {
   movieSlug:
-    | "the-brutalist"
-    | "dune-2"
-    | "emilia-perez"
-    | "maria"
-    | "nosferatu";
+    | "frankenstein"
+    | "marty-supreme"
+    | "one-battle-after-another"
+    | "sinners"
+    | "train-dreams";
 }
 
 export interface CostumeDesignNomination extends Nomination {
   movieSlug:
-    | "a-complete-unknown"
-    | "conclave"
-    | "gladiator-2"
-    | "nosferatu"
-    | "wicked";
+    | "avatar-fire-and-ash"
+    | "frankenstein"
+    | "hamnet"
+    | "marty-supreme"
+    | "sinners";
 }
 
 export interface DirectingNomination extends Nomination {
   nameSlug:
-    | "sean-baker"
-    | "brady-corbet"
-    | "james-mangold"
-    | "jacques-audiard"
-    | "coralie-fargeat";
+    | "chloe-zhao"
+    | "josh-safdie"
+    | "paul-thomas-anderson"
+    | "joachim-trier"
+    | "ryan-coogler";
 }
 
 export interface DocumentaryFeatureNomination extends Nomination {
   movieSlug:
-    | "black-box-diaries"
-    | "no-other-land"
-    | "porcelain-war"
-    | "soundtrack-to-a-coup-detat"
-    | "sugarcane";
+    | "the-alabama-solution"
+    | "come-see-me-in-the-good-light"
+    | "cutting-through-rocks"
+    | "mr-nobody-against-putin"
+    | "the-perfect-neighbor";
 }
 
 export interface DocumentaryShortNomination extends Nomination {
   movieSlug:
-    | "death-by-numbers"
-    | "i-am-ready-warden"
-    | "incident"
-    | "instruments-of-a-beating-heart"
-    | "the-only-girl-in-the-orchestra";
+    | "all-the-empty-rooms"
+    | "armed-only-with-a-camera"
+    | "children-no-more"
+    | "the-devil-is-busy"
+    | "perfectly-a-strangeness";
 }
 
 export interface FilmEditingNomination extends Nomination {
   movieSlug:
-    | "anora"
-    | "the-brutalist"
-    | "conclave"
-    | "emilia-perez"
-    | "wicked";
+    | "f1"
+    | "marty-supreme"
+    | "one-battle-after-another"
+    | "sentimental-value"
+    | "sinners";
 }
 
 export interface InternationalFeatureNomination extends Nomination {
   movieSlug:
-    | "im-still-here"
-    | "the-girl-with-the-needle"
-    | "emilia-perez"
-    | "the-seed-of-the-sacred-fig"
-    | "flow";
+    | "it-was-just-an-accident"
+    | "the-secret-agent"
+    | "sentimental-value"
+    | "sirat"
+    | "the-voice-of-hind-rajab";
 }
 
 export interface LeadingActorNomination extends Nomination {
   nameSlug:
-    | "adrien-brody"
     | "timothee-chalamet"
-    | "colman-domingo"
-    | "ralph-fiennes"
-    | "sebastian-stan";
+    | "leonardo-dicaprio"
+    | "ethan-hawke"
+    | "michael-b-jordan"
+    | "wagner-moura";
 }
 
 export interface LeadingActressNomination extends Nomination {
   nameSlug:
-    | "cynthia-erivo"
-    | "karla-sofia-gascon"
-    | "mikey-madison"
-    | "demi-moore"
-    | "fernanda-torres";
+    | "jessie-buckley"
+    | "rose-byrne"
+    | "kate-hudson"
+    | "renate-reinsve"
+    | "emma-stone";
 }
 
 export interface LiveActionShortNomination extends Nomination {
   movieSlug:
-    | "a-lien"
-    | "anuja"
-    | "im-not-a-robot"
-    | "the-last-ranger"
-    | "the-man-who-could-not-remain-silent";
+    | "butchers-stain"
+    | "a-friend-of-dorothy"
+    | "jane-austens-period-drama"
+    | "the-singers"
+    | "two-people-exchanging-saliva";
 }
 
 export interface MakeupNomination extends Nomination {
   movieSlug:
-    | "a-different-man"
-    | "emilia-perez"
-    | "nosferatu"
-    | "the-substance"
-    | "wicked";
+    | "frankenstein"
+    | "kokuho"
+    | "sinners"
+    | "the-smashing-machine"
+    | "the-ugly-stepsister";
 }
 
 export interface OriginalScoreNomination extends Nomination {
   movieSlug:
-    | "the-brutalist"
-    | "conclave"
-    | "emilia-perez"
-    | "wicked"
-    | "the-wild-robot";
+    | "bugonia"
+    | "frankenstein"
+    | "hamnet"
+    | "one-battle-after-another"
+    | "sinners";
 }
 
 export interface OriginalScreenplayNomination extends Nomination {
   movieSlug:
-    | "anora"
-    | "the-brutalist"
-    | "a-real-pain"
-    | "september-5"
-    | "the-substance";
+    | "blue-moon"
+    | "it-was-just-an-accident"
+    | "marty-supreme"
+    | "sentimental-value"
+    | "sinners";
 }
 
 export interface OriginalSongNomination extends Nomination {
   nameSlug:
-    | "el-mal"
-    | "the-journey"
-    | "like-a-bird"
-    | "mi-camino"
-    | "never-too-late";
+    | "dear-me"
+    | "golden"
+    | "i-lied-to-you"
+    | "sweet-dreams-of-joy"
+    | "train-dreams";
 }
 
 export interface ProductionDesignNomination extends Nomination {
   movieSlug:
-    | "the-brutalist"
-    | "conclave"
-    | "dune-2"
-    | "nosferatu"
-    | "wicked";
+    | "frankenstein"
+    | "hamnet"
+    | "marty-supreme"
+    | "one-battle-after-another"
+    | "sinners";
 }
 
 export interface SoundNomination extends Nomination {
   movieSlug:
-    | "a-complete-unknown"
-    | "dune-2"
-    | "emilia-perez"
-    | "wicked"
-    | "the-wild-robot";
+    | "f1"
+    | "frankenstein"
+    | "one-battle-after-another"
+    | "sinners"
+    | "sirat";
 }
 
 export interface SupportingActorNomination extends Nomination {
   nameSlug:
-    | "yura-borisov"
-    | "kieran-culkin"
-    | "edward-norton"
-    | "guy-pearce"
-    | "jeremy-strong";
+    | "benicio-del-toro"
+    | "jacob-elordi"
+    | "delroy-lindo"
+    | "sean-penn"
+    | "stellan-skarsgard";
 }
 
 export interface SupportingActressNomination extends Nomination {
   nameSlug:
-    | "monica-barbaro"
-    | "ariana-grande"
-    | "felicity-jones"
-    | "isabella-rossellini"
-    | "zoe-saldana";
+    | "elle-fanning"
+    | "inga-ibsdotter-lilleaas"
+    | "amy-madigan"
+    | "wunmi-mosaku"
+    | "teyana-taylor";
 }
 
 export interface VisualEffectsNomination extends Nomination {
   movieSlug:
-    | "alien-romulus"
-    | "better-man"
-    | "dune-2"
-    | "kingdom-of-the-planet-of-the-apes"
-    | "wicked";
+    | "avatar-fire-and-ash"
+    | "f1"
+    | "jurassic-world-rebirth"
+    | "the-lost-bus"
+    | "sinners";
+}
+
+export interface CastingNomination extends Nomination {
+  nameSlug:
+    | "nina-gold"
+    | "jennifer-venditti"
+    | "cassandra-kulukundis"
+    | "gabriel-domingues"
+    | "francine-maisler";
 }
 
 export interface Nominees {
@@ -242,6 +251,7 @@ export interface Nominees {
   costumeDesign: CostumeDesignNomination[];
   filmEditing: FilmEditingNomination[];
   visualEffects: VisualEffectsNomination[];
+  casting: CastingNomination[];
 }
 
 export interface SelectedNominations {
@@ -270,6 +280,7 @@ export interface SelectedNominations {
   costumeDesign?: CostumeDesignNomination;
   filmEditing?: FilmEditingNomination;
   visualEffects?: VisualEffectsNomination;
+  casting?: CastingNomination;
 }
 
 export type UserNominations = SelectedNominations;
@@ -292,588 +303,620 @@ export interface UserDocument {
 const nominees: Nominees = {
   bestPicture: [
     {
-      movie: "Anora",
-      movieSlug: "anora",
+      movie: "Bugonia",
+      movieSlug: "bugonia",
     },
     {
-      movie: "The Brutalist",
-      movieSlug: "the-brutalist",
+      movie: "F1",
+      movieSlug: "f1",
     },
     {
-      movie: "A Complete Unknown",
-      movieSlug: "a-complete-unknown",
+      movie: "Frankenstein",
+      movieSlug: "frankenstein",
     },
     {
-      movie: "Conclave",
-      movieSlug: "conclave",
+      movie: "Hamnet",
+      movieSlug: "hamnet",
     },
     {
-      movie: "Dune: Part Two",
-      movieSlug: "dune-2",
+      movie: "Marty Supreme",
+      movieSlug: "marty-supreme",
     },
     {
-      movie: "Emilia Pérez",
-      movieSlug: "emilia-perez",
+      movie: "One Battle After Another",
+      movieSlug: "one-battle-after-another",
     },
     {
-      movie: "I'm still here",
-      movieSlug: "im-still-here",
+      movie: "The Secret Agent",
+      movieSlug: "the-secret-agent",
     },
     {
-      movie: "Nickel Boys",
-      movieSlug: "nickel-boys",
+      movie: "Sentimental Value",
+      movieSlug: "sentimental-value",
     },
     {
-      movie: "The Substance",
-      movieSlug: "the-substance",
+      movie: "Sinners",
+      movieSlug: "sinners",
     },
     {
-      movie: "Wicked",
-      movieSlug: "wicked",
+      movie: "Train Dreams",
+      movieSlug: "train-dreams",
     },
   ],
   directing: [
     {
-      movie: "Anora",
-      movieSlug: "anora",
-      name: "Sean Baker",
-      nameSlug: "sean-baker",
+      movie: "Hamnet",
+      movieSlug: "hamnet",
+      name: "Chloé Zhao",
+      nameSlug: "chloe-zhao",
     },
     {
-      movie: "The Brutalist",
-      movieSlug: "the-brutalist",
-      name: "Brady Corbet",
-      nameSlug: "brady-corbet",
+      movie: "Marty Supreme",
+      movieSlug: "marty-supreme",
+      name: "Josh Safdie",
+      nameSlug: "josh-safdie",
     },
     {
-      movie: "A Complete Unknown",
-      movieSlug: "a-complete-unknown",
-      name: "James Mangold",
-      nameSlug: "james-mangold",
+      movie: "One Battle After Another",
+      movieSlug: "one-battle-after-another",
+      name: "Paul Thomas Anderson",
+      nameSlug: "paul-thomas-anderson",
     },
     {
-      movie: "Emilia Pérez",
-      movieSlug: "emilia-perez",
-      name: "Jacques Audiard",
-      nameSlug: "jacques-audiard",
+      movie: "Sentimental Value",
+      movieSlug: "sentimental-value",
+      name: "Joachim Trier",
+      nameSlug: "joachim-trier",
     },
     {
-      movie: "The Substance",
-      movieSlug: "the-substance",
-      name: "Coralie Fargeat",
-      nameSlug: "coralie-fargeat",
+      movie: "Sinners",
+      movieSlug: "sinners",
+      name: "Ryan Coogler",
+      nameSlug: "ryan-coogler",
     },
   ],
   leadingActor: [
     {
-      movie: "The Brutalist",
-      movieSlug: "the-brutalist",
-      name: "Adrien Brody",
-      nameSlug: "adrien-brody",
-    },
-    {
-      movie: "A Complete Unknown",
-      movieSlug: "a-complete-unknown",
+      movie: "Marty Supreme",
+      movieSlug: "marty-supreme",
       name: "Timothée Chalamet",
       nameSlug: "timothee-chalamet",
     },
     {
-      movie: "Sing Sing",
-      movieSlug: "sing-sing",
-      name: "Colman Domingo",
-      nameSlug: "colman-domingo",
+      movie: "One Battle After Another",
+      movieSlug: "one-battle-after-another",
+      name: "Leonardo DiCaprio",
+      nameSlug: "leonardo-dicaprio",
     },
     {
-      movie: "Conclave",
-      movieSlug: "conclave",
-      name: "Ralph Fiennes",
-      nameSlug: "ralph-fiennes",
+      movie: "Blue Moon",
+      movieSlug: "blue-moon",
+      name: "Ethan Hawke",
+      nameSlug: "ethan-hawke",
     },
     {
-      movie: "The Apprentice",
-      movieSlug: "the-apprentice",
-      name: "Sebastian Stan",
-      nameSlug: "sebastian-stan",
+      movie: "Sinners",
+      movieSlug: "sinners",
+      name: "Michael B. Jordan",
+      nameSlug: "michael-b-jordan",
+    },
+    {
+      movie: "The Secret Agent",
+      movieSlug: "the-secret-agent",
+      name: "Wagner Moura",
+      nameSlug: "wagner-moura",
     },
   ],
   leadingActress: [
     {
-      movie: "Wicked",
-      movieSlug: "wicked",
-      name: "Cynthia Erivo",
-      nameSlug: "cynthia-erivo",
+      movie: "Hamnet",
+      movieSlug: "hamnet",
+      name: "Jessie Buckley",
+      nameSlug: "jessie-buckley",
     },
     {
-      movie: "Emilia Pérez",
-      movieSlug: "emilia-perez",
-      name: "Karla Sofia Gascon",
-      nameSlug: "karla-sofia-gascon",
+      movie: "If I Had Legs I'd Kick You",
+      movieSlug: "if-i-had-legs-id-kick-you",
+      name: "Rose Byrne",
+      nameSlug: "rose-byrne",
     },
     {
-      movie: "Anora",
-      movieSlug: "anora",
-      name: "Mikey Madison",
-      nameSlug: "mikey-madison",
+      movie: "Song Sung Blue",
+      movieSlug: "song-sung-blue",
+      name: "Kate Hudson",
+      nameSlug: "kate-hudson",
     },
     {
-      movie: "The Substance",
-      movieSlug: "the-substance",
-      name: "Demi Moore",
-      nameSlug: "demi-moore",
+      movie: "Sentimental Value",
+      movieSlug: "sentimental-value",
+      name: "Renate Reinsve",
+      nameSlug: "renate-reinsve",
     },
     {
-      movie: "I'm Still Here",
-      movieSlug: "im-still-here",
-      name: "Fernanda Torres",
-      nameSlug: "fernanda-torres",
+      movie: "Bugonia",
+      movieSlug: "bugonia",
+      name: "Emma Stone",
+      nameSlug: "emma-stone",
     },
   ],
   supportingActor: [
     {
-      movie: "Anora",
-      movieSlug: "anora",
-      name: "Yura Borisov",
-      nameSlug: "yura-borisov",
+      movie: "One Battle After Another",
+      movieSlug: "one-battle-after-another",
+      name: "Benicio Del Toro",
+      nameSlug: "benicio-del-toro",
     },
     {
-      movie: "A Real Pain",
-      movieSlug: "a-real-pain",
-      name: "Kieran Culkin",
-      nameSlug: "kieran-culkin",
+      movie: "Frankenstein",
+      movieSlug: "frankenstein",
+      name: "Jacob Elordi",
+      nameSlug: "jacob-elordi",
     },
     {
-      movie: "A Complete Unknown",
-      movieSlug: "a-complete-unknown",
-      name: "Edward Norton",
-      nameSlug: "edward-norton",
+      movie: "Sinners",
+      movieSlug: "sinners",
+      name: "Delroy Lindo",
+      nameSlug: "delroy-lindo",
     },
     {
-      movie: "The Brutalist",
-      movieSlug: "the-brutalist",
-      name: "Guy Pearce",
-      nameSlug: "guy-pearce",
+      movie: "One Battle After Another",
+      movieSlug: "one-battle-after-another",
+      name: "Sean Penn",
+      nameSlug: "sean-penn",
     },
     {
-      movie: "The Apprentice",
-      movieSlug: "the-apprentice",
-      name: "Jeremy Strong",
-      nameSlug: "jeremy-strong",
+      movie: "Sentimental Value",
+      movieSlug: "sentimental-value",
+      name: "Stellan Skarsgård",
+      nameSlug: "stellan-skarsgard",
     },
   ],
   supportingActress: [
     {
-      movie: "A Complete Unknown",
-      movieSlug: "a-complete-unknown",
-      name: "Monica Barbaro",
-      nameSlug: "monica-barbaro",
+      movie: "Sentimental Value",
+      movieSlug: "sentimental-value",
+      name: "Elle Fanning",
+      nameSlug: "elle-fanning",
     },
     {
-      movie: "Wicked",
-      movieSlug: "wicked",
-      name: "Ariana Grande",
-      nameSlug: "ariana-grande",
+      movie: "Sentimental Value",
+      movieSlug: "sentimental-value",
+      name: "Inga Ibsdotter Lilleaas",
+      nameSlug: "inga-ibsdotter-lilleaas",
     },
     {
-      movie: "The Brutalist",
-      movieSlug: "the-brutalist",
-      name: "Felicity Jones",
-      nameSlug: "felicity-jones",
+      movie: "Weapons",
+      movieSlug: "weapons",
+      name: "Amy Madigan",
+      nameSlug: "amy-madigan",
     },
     {
-      movie: "Conclave",
-      movieSlug: "conclave",
-      name: "Isabella Rossellini",
-      nameSlug: "isabella-rossellini",
+      movie: "Sinners",
+      movieSlug: "sinners",
+      name: "Wunmi Mosaku",
+      nameSlug: "wunmi-mosaku",
     },
     {
-      movie: "Emilia Pérez",
-      movieSlug: "emilia-perez",
-      name: "Zoe Saldaña",
-      nameSlug: "zoe-saldana",
+      movie: "One Battle After Another",
+      movieSlug: "one-battle-after-another",
+      name: "Teyana Taylor",
+      nameSlug: "teyana-taylor",
     },
   ],
   animatedFeature: [
     {
-      movie: "Flow",
-      movieSlug: "flow",
+      movie: "Arco",
+      movieSlug: "arco",
     },
     {
-      movie: "Inside Out 2",
-      movieSlug: "inside-out-2",
+      movie: "Elio",
+      movieSlug: "elio",
     },
     {
-      movie: "Memoir of a Snail",
-      movieSlug: "memoir-of-a-snail",
+      movie: "KPop Demon Hunters",
+      movieSlug: "kpop-demon-hunters",
     },
     {
-      movie: "Wallace & Gromit: Vengeance Most Fowl",
-      movieSlug: "wallace-and-gromit",
+      movie: "Little Amelie or the Character of Rain",
+      movieSlug: "little-amelie-or-the-character-of-rain",
     },
     {
-      movie: "The Wild Robot",
-      movieSlug: "the-wild-robot",
+      movie: "Zootopia 2",
+      movieSlug: "zootopia-2",
     },
   ],
   originalScreenplay: [
     {
-      movie: "Anora",
-      movieSlug: "anora",
+      movie: "Blue Moon",
+      movieSlug: "blue-moon",
     },
     {
-      movie: "The Brutalist",
-      movieSlug: "the-brutalist",
+      movie: "It Was Just an Accident",
+      movieSlug: "it-was-just-an-accident",
     },
     {
-      movie: "A Real Pain",
-      movieSlug: "a-real-pain",
+      movie: "Marty Supreme",
+      movieSlug: "marty-supreme",
     },
     {
-      movie: "September 5",
-      movieSlug: "september-5",
+      movie: "Sentimental Value",
+      movieSlug: "sentimental-value",
     },
     {
-      movie: "The Substance",
-      movieSlug: "the-substance",
+      movie: "Sinners",
+      movieSlug: "sinners",
     },
   ],
   adaptedScreenplay: [
     {
-      movie: "A Complete Unknown",
-      movieSlug: "a-complete-unknown",
+      movie: "Bugonia",
+      movieSlug: "bugonia",
     },
     {
-      movie: "Conclave",
-      movieSlug: "conclave",
+      movie: "Frankenstein",
+      movieSlug: "frankenstein",
     },
     {
-      movie: "Emilia Pérez",
-      movieSlug: "emilia-perez",
+      movie: "Hamnet",
+      movieSlug: "hamnet",
     },
     {
-      movie: "Nickel Boys",
-      movieSlug: "nickel-boys",
+      movie: "One Battle After Another",
+      movieSlug: "one-battle-after-another",
     },
     {
-      movie: "Sing Sing",
-      movieSlug: "sing-sing",
+      movie: "Train Dreams",
+      movieSlug: "train-dreams",
     },
   ],
   internationalFeature: [
     {
-      movie: "I'm Still Here",
-      movieSlug: "im-still-here",
+      movie: "It Was Just an Accident",
+      movieSlug: "it-was-just-an-accident",
     },
     {
-      movie: "The Girl with the Needle",
-      movieSlug: "the-girl-with-the-needle",
+      movie: "The Secret Agent",
+      movieSlug: "the-secret-agent",
     },
     {
-      movie: "Emilia Pérez",
-      movieSlug: "emilia-perez",
+      movie: "Sentimental Value",
+      movieSlug: "sentimental-value",
     },
     {
-      movie: "The Seed of the Sacred Fig",
-      movieSlug: "the-seed-of-the-sacred-fig",
+      movie: "Sirat",
+      movieSlug: "sirat",
     },
     {
-      movie: "Flow",
-      movieSlug: "flow",
+      movie: "The Voice of Hind Rajab",
+      movieSlug: "the-voice-of-hind-rajab",
     },
   ],
   documentaryFeature: [
     {
-      movie: "Black Box Diaries",
-      movieSlug: "black-box-diaries",
+      movie: "The Alabama Solution",
+      movieSlug: "the-alabama-solution",
     },
     {
-      movie: "No Other Land",
-      movieSlug: "no-other-land",
+      movie: "Come See Me in the Good Light",
+      movieSlug: "come-see-me-in-the-good-light",
     },
     {
-      movie: "Porcelain War",
-      movieSlug: "porcelain-war",
+      movie: "Cutting Through Rocks",
+      movieSlug: "cutting-through-rocks",
     },
     {
-      movie: "Soundtrack to a Coup d'Etat",
-      movieSlug: "soundtrack-to-a-coup-detat",
+      movie: "Mr. Nobody Against Putin",
+      movieSlug: "mr-nobody-against-putin",
     },
     {
-      movie: "Sugarcane",
-      movieSlug: "sugarcane",
+      movie: "The Perfect Neighbor",
+      movieSlug: "the-perfect-neighbor",
     },
   ],
   documentaryShort: [
     {
-      movie: "Death by Numbers",
-      movieSlug: "death-by-numbers",
+      movie: "All the Empty Rooms",
+      movieSlug: "all-the-empty-rooms",
     },
     {
-      movie: "I Am Ready, Warden",
-      movieSlug: "i-am-ready-warden",
+      movie: "Armed Only with a Camera",
+      movieSlug: "armed-only-with-a-camera",
     },
     {
-      movie: "Incident",
-      movieSlug: "incident",
+      movie: "Children No More",
+      movieSlug: "children-no-more",
     },
     {
-      movie: "Instruments of a Beating Heart",
-      movieSlug: "instruments-of-a-beating-heart",
+      movie: "The Devil Is Busy",
+      movieSlug: "the-devil-is-busy",
     },
     {
-      movie: "The Only Girl in the Orchestra",
-      movieSlug: "the-only-girl-in-the-orchestra",
+      movie: "Perfectly a Strangeness",
+      movieSlug: "perfectly-a-strangeness",
     },
   ],
   liveActionShort: [
     {
-      movie: "A Lien",
-      movieSlug: "a-lien",
+      movie: "Butcher's Stain",
+      movieSlug: "butchers-stain",
     },
     {
-      movie: "Anuja",
-      movieSlug: "anuja",
+      movie: "A Friend of Dorothy",
+      movieSlug: "a-friend-of-dorothy",
     },
     {
-      movie: "I'm Not a Robot",
-      movieSlug: "im-not-a-robot",
+      movie: "Jane Austen's Period Drama",
+      movieSlug: "jane-austens-period-drama",
     },
     {
-      movie: "The Last Ranger",
-      movieSlug: "the-last-ranger",
+      movie: "The Singers",
+      movieSlug: "the-singers",
     },
     {
-      movie: "The Man Who Could Not Remain Silent",
-      movieSlug: "the-man-who-could-not-remain-silent",
+      movie: "Two People Exchanging Saliva",
+      movieSlug: "two-people-exchanging-saliva",
     },
   ],
   animatedShort: [
     {
-      movie: "Beautiful Men",
-      movieSlug: "beautiful-men",
+      movie: "Butterfly",
+      movieSlug: "butterfly",
     },
     {
-      movie: "In the Shadow of the Cypress",
-      movieSlug: "in-the-shadow-of-the-cypress",
+      movie: "Forevergreen",
+      movieSlug: "forevergreen",
     },
     {
-      movie: "Magic Candies",
-      movieSlug: "magic-candies",
+      movie: "The Girl Who Cried Pearls",
+      movieSlug: "the-girl-who-cried-pearls",
     },
     {
-      movie: "Wander to Wonder",
-      movieSlug: "wander-to-wonder",
+      movie: "Retirement Plan",
+      movieSlug: "retirement-plan",
     },
     {
-      movie: "Yuck!",
-      movieSlug: "yuck",
+      movie: "The Three Sisters",
+      movieSlug: "the-three-sisters",
     },
   ],
   originalScore: [
     {
-      movie: "The Brutalist",
-      movieSlug: "the-brutalist",
+      movie: "Bugonia",
+      movieSlug: "bugonia",
     },
     {
-      movie: "Conclave",
-      movieSlug: "conclave",
+      movie: "Frankenstein",
+      movieSlug: "frankenstein",
     },
     {
-      movie: "Emilia Pérez",
-      movieSlug: "emilia-perez",
+      movie: "Hamnet",
+      movieSlug: "hamnet",
     },
     {
-      movie: "Wicked",
-      movieSlug: "wicked",
+      movie: "One Battle After Another",
+      movieSlug: "one-battle-after-another",
     },
     {
-      movie: "The Wild Robot",
-      movieSlug: "the-wild-robot",
+      movie: "Sinners",
+      movieSlug: "sinners",
     },
   ],
   originalSong: [
     {
-      movie: "Emilia Pérez",
-      movieSlug: "emilia-perez",
-      name: "El Mal",
-      nameSlug: "el-mal",
+      movie: "Diane Warren: Relentless",
+      movieSlug: "diane-warren-relentless",
+      name: "Dear Me",
+      nameSlug: "dear-me",
     },
     {
-      movie: "The Six Triple Eight",
-      movieSlug: "the-six-triple-eight",
-      name: "The Journey",
-      nameSlug: "the-journey",
+      movie: "KPop Demon Hunters",
+      movieSlug: "kpop-demon-hunters",
+      name: "Golden",
+      nameSlug: "golden",
     },
     {
-      movie: "Sing Sing",
-      movieSlug: "sing-sing",
-      name: "Like A Bird",
-      nameSlug: "like-a-bird",
+      movie: "Sinners",
+      movieSlug: "sinners",
+      name: "I Lied to You",
+      nameSlug: "i-lied-to-you",
     },
     {
-      movie: "Emilia Pérez",
-      movieSlug: "emilia-perez",
-      name: "Mi Camino",
-      nameSlug: "mi-camino",
+      movie: "Viva Verdi!",
+      movieSlug: "viva-verdi",
+      name: "Sweet Dreams of Joy",
+      nameSlug: "sweet-dreams-of-joy",
     },
     {
-      movie: "Elton John: Never Too Late",
-      movieSlug: "elton-john-never-too-late",
-      name: "Never Too Late",
-      nameSlug: "never-too-late",
+      movie: "Train Dreams",
+      movieSlug: "train-dreams",
+      name: "Train Dreams",
+      nameSlug: "train-dreams",
     },
   ],
   sound: [
     {
-      movie: "A Complete Unknown",
-      movieSlug: "a-complete-unknown",
+      movie: "F1",
+      movieSlug: "f1",
     },
     {
-      movie: "Dune: Part Two",
-      movieSlug: "dune-2",
+      movie: "Frankenstein",
+      movieSlug: "frankenstein",
     },
     {
-      movie: "Emilia Pérez",
-      movieSlug: "emilia-perez",
+      movie: "One Battle After Another",
+      movieSlug: "one-battle-after-another",
     },
     {
-      movie: "Wicked",
-      movieSlug: "wicked",
+      movie: "Sinners",
+      movieSlug: "sinners",
     },
     {
-      movie: "The Wild Robot",
-      movieSlug: "the-wild-robot",
+      movie: "Sirat",
+      movieSlug: "sirat",
     },
   ],
   productionDesign: [
     {
-      movie: "The Brutalist",
-      movieSlug: "the-brutalist",
+      movie: "Frankenstein",
+      movieSlug: "frankenstein",
     },
     {
-      movie: "Conclave",
-      movieSlug: "conclave",
+      movie: "Hamnet",
+      movieSlug: "hamnet",
     },
     {
-      movie: "Dune: Part Two",
-      movieSlug: "dune-2",
+      movie: "Marty Supreme",
+      movieSlug: "marty-supreme",
     },
     {
-      movie: "Nosferatu",
-      movieSlug: "nosferatu",
+      movie: "One Battle After Another",
+      movieSlug: "one-battle-after-another",
     },
     {
-      movie: "Wicked",
-      movieSlug: "wicked",
+      movie: "Sinners",
+      movieSlug: "sinners",
     },
   ],
   cinematography: [
     {
-      movie: "The Brutalist",
-      movieSlug: "the-brutalist",
+      movie: "Frankenstein",
+      movieSlug: "frankenstein",
     },
     {
-      movie: "Dune: Part Two",
-      movieSlug: "dune-2",
+      movie: "Marty Supreme",
+      movieSlug: "marty-supreme",
     },
     {
-      movie: "Emilia Pérez",
-      movieSlug: "emilia-perez",
+      movie: "One Battle After Another",
+      movieSlug: "one-battle-after-another",
     },
     {
-      movie: "Maria",
-      movieSlug: "maria",
+      movie: "Sinners",
+      movieSlug: "sinners",
     },
     {
-      movie: "Nosferatu",
-      movieSlug: "nosferatu",
+      movie: "Train Dreams",
+      movieSlug: "train-dreams",
     },
   ],
   makeup: [
     {
-      movie: "A Different Man",
-      movieSlug: "a-different-man",
+      movie: "Frankenstein",
+      movieSlug: "frankenstein",
     },
     {
-      movie: "Emilia Pérez",
-      movieSlug: "emilia-perez",
+      movie: "Kokuho",
+      movieSlug: "kokuho",
     },
     {
-      movie: "Nosferatu",
-      movieSlug: "nosferatu",
+      movie: "Sinners",
+      movieSlug: "sinners",
     },
     {
-      movie: "The Substance",
-      movieSlug: "the-substance",
+      movie: "The Smashing Machine",
+      movieSlug: "the-smashing-machine",
     },
     {
-      movie: "Wicked",
-      movieSlug: "wicked",
+      movie: "The Ugly Stepsister",
+      movieSlug: "the-ugly-stepsister",
     },
   ],
   costumeDesign: [
     {
-      movie: "A Complete Unknown",
-      movieSlug: "a-complete-unknown",
+      movie: "Avatar: Fire and Ash",
+      movieSlug: "avatar-fire-and-ash",
     },
     {
-      movie: "Conclave",
-      movieSlug: "conclave",
+      movie: "Frankenstein",
+      movieSlug: "frankenstein",
     },
     {
-      movie: "Gladiator II",
-      movieSlug: "gladiator-2",
+      movie: "Hamnet",
+      movieSlug: "hamnet",
     },
     {
-      movie: "Nosferatu",
-      movieSlug: "nosferatu",
+      movie: "Marty Supreme",
+      movieSlug: "marty-supreme",
     },
     {
-      movie: "Wicked",
-      movieSlug: "wicked",
+      movie: "Sinners",
+      movieSlug: "sinners",
     },
   ],
   filmEditing: [
     {
-      movie: "Anora",
-      movieSlug: "anora",
+      movie: "F1",
+      movieSlug: "f1",
     },
     {
-      movie: "The Brutalist",
-      movieSlug: "the-brutalist",
+      movie: "Marty Supreme",
+      movieSlug: "marty-supreme",
     },
     {
-      movie: "Conclave",
-      movieSlug: "conclave",
+      movie: "One Battle After Another",
+      movieSlug: "one-battle-after-another",
     },
     {
-      movie: "Emilia Pérez",
-      movieSlug: "emilia-perez",
+      movie: "Sentimental Value",
+      movieSlug: "sentimental-value",
     },
     {
-      movie: "Wicked",
-      movieSlug: "wicked",
+      movie: "Sinners",
+      movieSlug: "sinners",
     },
   ],
   visualEffects: [
     {
-      movie: "Alien: Romulus",
-      movieSlug: "alien-romulus",
+      movie: "Avatar: Fire and Ash",
+      movieSlug: "avatar-fire-and-ash",
     },
     {
-      movie: "Better Man",
-      movieSlug: "better-man",
+      movie: "F1",
+      movieSlug: "f1",
     },
     {
-      movie: "Dune: Part Two",
-      movieSlug: "dune-2",
+      movie: "Jurassic World: Rebirth",
+      movieSlug: "jurassic-world-rebirth",
     },
     {
-      movie: "Kingdom of the Planet of the Apes",
-      movieSlug: "kingdom-of-the-planet-of-the-apes",
+      movie: "The Lost Bus",
+      movieSlug: "the-lost-bus",
     },
     {
-      movie: "Wicked",
-      movieSlug: "wicked",
+      movie: "Sinners",
+      movieSlug: "sinners",
+    },
+  ],
+  casting: [
+    {
+      movie: "Hamnet",
+      movieSlug: "hamnet",
+      name: "Nina Gold",
+      nameSlug: "nina-gold",
+    },
+    {
+      movie: "Marty Supreme",
+      movieSlug: "marty-supreme",
+      name: "Jennifer Venditti",
+      nameSlug: "jennifer-venditti",
+    },
+    {
+      movie: "One Battle After Another",
+      movieSlug: "one-battle-after-another",
+      name: "Cassandra Kulukundis",
+      nameSlug: "cassandra-kulukundis",
+    },
+    {
+      movie: "The Secret Agent",
+      movieSlug: "the-secret-agent",
+      name: "Gabriel Domingues",
+      nameSlug: "gabriel-domingues",
+    },
+    {
+      movie: "Sinners",
+      movieSlug: "sinners",
+      name: "Francine Maisler",
+      nameSlug: "francine-maisler",
     },
   ],
 };

@@ -30,6 +30,7 @@ export const RankingTable = () => {
     "leadingActress",
     "leadingActor",
     "originalSong",
+    "casting",
   ];
 
   const { resizeEffect } = useResize();
@@ -205,7 +206,7 @@ export const RankingTable = () => {
                   >
                     {displayName}
                   </Text>
-                  {Object.keys(nominations).length >= 23 ? (
+                  {Object.keys(nominations).length >= 24 ? (
                     <CheckIcon ml={2} boxSize="10px" color="cards.won" mr={2} />
                   ) : null}
                 </Flex>

@@ -65,6 +65,14 @@ const CardNew = ({
   );
 
   const [status, setStatus] = useState<Status>("normal");
+  const [cardImgSrc, setCardImgSrc] = useState(imgSrc);
+
+  useEffect(() => {
+    const img = new window.Image();
+    img.onload = () => setCardImgSrc(imgSrc);
+    img.onerror = () => setCardImgSrc("placeholder.png");
+    img.src = imgSrc ?? "";
+  }, [imgSrc]);
 
   const { data: user } = useUser();
 
@@ -148,7 +156,7 @@ const CardNew = ({
       border={bgColor ? "3px solid transparent" : undefined}
       borderColor={bgColor}
       bg={bgColor}
-      bgImage={`url('${imgSrc}')`}
+      bgImage={`url('${cardImgSrc}')`}
       backgroundBlendMode={
         ["not-selected-lost", "normal"].includes(status) ? cardBgBlendMode : ""
       }

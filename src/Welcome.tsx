@@ -7,10 +7,10 @@ export const Welcome = () => {
       <Flex align="center">
         <Flex direction="column">
           <Text fontSize={{ base: "20px", md: "30px" }}>
-            👋 Ya puedes votar en la Tequiniela 2025
+            👋 Ya puedes votar en la Tequiniela 2026
           </Text>
           <Text fontSize={{ base: "xs", md: "md" }}>
-            La Tequiniela es una quiniela organizada entre amigos para la entrega de los Premios Óscar 2025. 
+            La Tequiniela es una quiniela organizada entre amigos para la entrega de los Premios Óscar 2026. 
             Para participar, inicia sesión con tu cuenta de Google, selecciona tus candidatos, y no te olvides de revisar el reglamento.
           </Text>
         </Flex>

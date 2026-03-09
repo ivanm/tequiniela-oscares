@@ -8,8 +8,8 @@ import {
 export const hasNominationTimePassedState: RecoilState<boolean> = atom<boolean>(
   {
     key: "hasNominationTimePassed",
-    // Blocks Frontend after 2023-03-12, needs Backend validation
-    default: new Date().getTime() > new Date("2023-03-12").getTime(),
+    // Blocks Frontend after 2027-03-08, needs Backend validation
+    default: new Date().getTime() > new Date("2027-03-08").getTime(),
     // Uncomment to fast-forward time to 2023-03-12
     // default: true,
   }

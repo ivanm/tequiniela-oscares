@@ -162,6 +162,11 @@ export const Nominations = () => {
       title="Best Documentary Short Subject"
       nominationSlug="documentaryShort"
     />,
+    <NominationCardsNew
+      nominations={nominees.casting}
+      title="Best Casting"
+      nominationSlug="casting"
+    />,
   ];
 
   return (
