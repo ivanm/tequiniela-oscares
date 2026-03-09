@@ -105,6 +105,7 @@ export const Header = () => {
               mr={2}
             />
             <Menu>
+              {/* @ts-expect-error Chakra UI v2 + TS5 complex union type */}
               <MenuButton
                 pl={1}
                 pr={2}

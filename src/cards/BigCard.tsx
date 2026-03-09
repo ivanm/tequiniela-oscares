@@ -118,6 +118,7 @@ const BigCard = ({
     user !== null && !hasNominationTimePassed && status !== "selected";
 
   return (
+    // @ts-expect-error Chakra UI v2 + TS5 complex union type
     <Card
       border={
         bgColor

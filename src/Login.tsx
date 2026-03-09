@@ -15,13 +15,13 @@ export const Login = () => {
   const { data: user } = useUser();
 
   const provider = new GoogleAuthProvider();
-  const [isSignInLoading] = useState<boolean>(
+  const [isSignInLoading, setIsSignInLoading] = useState<boolean>(
     localStorage.getItem("loading-google") != null
   );
 
   const handleSignIn = async () => {
     localStorage.setItem("loading-google", "true");
-    if (import.meta.env.VITE_ENV === "development")
+    if (import.meta.env.DEV)
       signInWithPopup(auth, provider);
     else signInWithRedirect(auth, provider);
   };
@@ -32,6 +32,7 @@ export const Login = () => {
       location.reload();
     }
     localStorage.removeItem("loading-google");
+    setIsSignInLoading(false);
   }, [user]);
 
   return (
