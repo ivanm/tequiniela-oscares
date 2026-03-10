@@ -278,7 +278,7 @@ export const Header = () => {
             fontSize="xs"
             minW="32px"
           >
-            {i18n.language === "es" ? "EN" : "ES"}
+            {i18n.language === "es" ? "ES" : "EN"}
           </Button>
           <Button
             hidden
