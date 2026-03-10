@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { AuthProvider, FirestoreProvider, useFirebaseApp } from "reactfire";
 import { getAuth, connectAuthEmulator } from "firebase/auth";
 import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";
+import { useTranslation } from "react-i18next";
 
 import { Nominations } from "./Nominations";
 import { Ranking } from "./Ranking";
@@ -15,6 +16,7 @@ import { AtomStates } from "./AtomStates";
 import useResize from "./hooks/useResize";
 
 export const App = () => {
+  const { t } = useTranslation();
   const { scrollbarWidth } = useResize();
   const app = useFirebaseApp();
   const auth = getAuth();
@@ -52,7 +54,7 @@ export const App = () => {
         <Box as="footer" width="100%" p={5}>
           <Flex align="center" justify="center">
             <Text fontSize="sm">
-              2026 | Powered by{" "}
+              2026 | {t("footer.poweredBy")}{" "}
               <Link href="https://efectotequila.com/" isExternal={true}>
                 Efecto Tequila {" "}
               </Link>

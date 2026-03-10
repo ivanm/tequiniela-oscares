@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Flex, Box } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 import NominationCards from "./NominationCards";
 import NominationCardsNew from "./NominationCardsNew";
@@ -10,6 +11,7 @@ import useEffectOnce from "./hooks/useEffectOnce";
 import { Masonry } from "react-plock";
 
 export const Nominations = () => {
+  const { t } = useTranslation();
   const [konami, setKonami] = useState<boolean>(false);
 
   useEffectOnce(() => {
@@ -49,122 +51,122 @@ export const Nominations = () => {
   const items = [
     <NominationCardsNew
       nominations={nominees.bestPicture}
-      title="Best Picture"
+      title={t("categories.bestPicture")}
       nominationSlug="bestPicture"
     />,
     <NominationCardsNew
       nominations={nominees.leadingActor}
-      title="Best Actor"
+      title={t("categories.leadingActor")}
       nominationSlug="leadingActor"
     />,
     <NominationCardsNew
       nominations={nominees.leadingActress}
-      title="Best Actress"
+      title={t("categories.leadingActress")}
       nominationSlug="leadingActress"
     />,
     <NominationCardsNew
       nominations={nominees.directing}
-      title="Best Director"
+      title={t("categories.directing")}
       nominationSlug="directing"
     />,
     <NominationCardsNew
       nominations={nominees.supportingActor}
-      title="Best Supporting Actor"
+      title={t("categories.supportingActor")}
       nominationSlug="supportingActor"
     />,
     <NominationCardsNew
       nominations={nominees.supportingActress}
-      title="Best Supporting Actress"
+      title={t("categories.supportingActress")}
       nominationSlug="supportingActress"
     />,
     <NominationCardsNew
       nominations={nominees.originalScreenplay}
-      title="Best Original Screenplay"
+      title={t("categories.originalScreenplay")}
       nominationSlug="originalScreenplay"
     />,
     <NominationCardsNew
       nominations={nominees.adaptedScreenplay}
-      title="Best Adapted Screenplay"
+      title={t("categories.adaptedScreenplay")}
       nominationSlug="adaptedScreenplay"
     />,
     <NominationCardsNew
       nominations={nominees.originalSong}
-      title="Best Original Song"
+      title={t("categories.originalSong")}
       nominationSlug="originalSong"
     />,
     <NominationCardsNew
       nominations={nominees.originalScore}
-      title="Best Original Score"
+      title={t("categories.originalScore")}
       nominationSlug="originalScore"
     />,
     <NominationCardsNew
       nominations={nominees.internationalFeature}
-      title="Best International Feature Film"
+      title={t("categories.internationalFeature")}
       nominationSlug="internationalFeature"
     />,
     <NominationCardsNew
       nominations={nominees.animatedFeature}
-      title="Best Animated Feature Film"
+      title={t("categories.animatedFeature")}
       nominationSlug="animatedFeature"
     />,
     <NominationCardsNew
       nominations={nominees.documentaryFeature}
-      title="Best Documentary Feature"
+      title={t("categories.documentaryFeature")}
       nominationSlug="documentaryFeature"
     />,
     <NominationCardsNew
       nominations={nominees.productionDesign}
-      title="Best Production Design"
+      title={t("categories.productionDesign")}
       nominationSlug="productionDesign"
     />,
     <NominationCardsNew
       nominations={nominees.costumeDesign}
-      title="Best Costume Design"
+      title={t("categories.costumeDesign")}
       nominationSlug="costumeDesign"
     />,
     <NominationCardsNew
       nominations={nominees.makeup}
-      title="Best Makeup and Hairstyling"
+      title={t("categories.makeup")}
       nominationSlug="makeup"
     />,
     <NominationCardsNew
       nominations={nominees.sound}
-      title="Best Sound"
+      title={t("categories.sound")}
       nominationSlug="sound"
     />,
     <NominationCardsNew
       nominations={nominees.filmEditing}
-      title="Best Film Editing"
+      title={t("categories.filmEditing")}
       nominationSlug="filmEditing"
     />,
     <NominationCardsNew
       nominations={nominees.cinematography}
-      title="Best Cinematography"
+      title={t("categories.cinematography")}
       nominationSlug="cinematography"
     />,
     <NominationCardsNew
       nominations={nominees.visualEffects}
-      title="Best Visual Effects"
+      title={t("categories.visualEffects")}
       nominationSlug="visualEffects"
     />,
     <NominationCardsNew
       nominations={nominees.liveActionShort}
-      title="Best Live Action Short Film"
+      title={t("categories.liveActionShort")}
       nominationSlug="liveActionShort"
     />,
     <NominationCardsNew
       nominations={nominees.animatedShort}
-      title="Best Animated Short Film"
+      title={t("categories.animatedShort")}
       nominationSlug="animatedShort"
     />,
     <NominationCardsNew
       nominations={nominees.documentaryShort}
-      title="Best Documentary Short Subject"
+      title={t("categories.documentaryShort")}
       nominationSlug="documentaryShort"
     />,
     <NominationCardsNew
       nominations={nominees.casting}
-      title="Best Casting"
+      title={t("categories.casting")}
       nominationSlug="casting"
     />,
   ];

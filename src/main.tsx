@@ -1,4 +1,5 @@
 import "./index.css";
+import "./i18n";
 
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import React from "react";

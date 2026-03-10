@@ -8,8 +8,10 @@ import {
 } from "firebase/auth";
 import GoogleButton from "react-google-button";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const Login = () => {
+  const { t } = useTranslation();
   const auth = useAuth();
   const navigate = useNavigate();
   const { data: user } = useUser();
@@ -63,16 +65,15 @@ export const Login = () => {
                 mr={2}
                 ml={2}
               >
-                Iniciar Sesión
+                {t("login.title")}
               </Heading>
             </Flex>
           </Flex>
           <Text textAlign="center" maxWidth="480px" fontSize="sm">
-            Para registrar tus votos, inica sesión con tu cuenta de Google.
+            {t("login.instructions")}
           </Text>
           <Text textAlign="center" maxWidth="480px" fontSize="sm">
-            El nombre y foto de perfil de tu cuenta serán mostrados
-            publicamente.
+            {t("login.publicNotice")}
           </Text>
           <Flex mt={20} justify="center">
             <GoogleButton onClick={handleSignIn} />

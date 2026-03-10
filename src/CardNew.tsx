@@ -10,6 +10,7 @@ import { omit } from "ramda";
 import { useCallback, useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { useUser } from "reactfire";
+import { useTranslation } from "react-i18next";
 
 import {
   hasNominationTimePassedState,
@@ -53,6 +54,7 @@ const CardNew = ({
   nomination,
   matchKey = "nameSlug",
 }: CardNewProps) => {
+  const { t } = useTranslation();
   const [userNominations, setUserNominations] =
     useRecoilState<UserNominations>(userNominationsState);
 
@@ -144,11 +146,12 @@ const CardNew = ({
 
   const cardBgBlendMode = useColorModeValue("normal", "soft-light");
   const opacity = hasNominationTimePassed && !isWinner ? "0.5" : "1";
-  const winnerText = ["leadingActress", "supportingActress"].includes(
+  const isFemale = ["leadingActress", "supportingActress"].includes(
     nominationSlug
-  ) || nameSlug === 'justine-triet'
-    ? "Ganadora"
-    : "Ganador";
+  ) || nameSlug === 'justine-triet';
+  const winnerText = isFemale
+    ? t("nominations.winnerFemale")
+    : t("nominations.winnerMale");
 
   return (
     <Card

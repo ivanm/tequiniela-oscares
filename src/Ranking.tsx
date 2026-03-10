@@ -5,9 +5,11 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { Trans, useTranslation } from "react-i18next";
 import { RankingTable } from "./RankingTable";
 
 export const Ranking = () => {
+  const { t } = useTranslation();
   const iconFilter = useColorModeValue(undefined, "invert(1)");
 
   return (
@@ -41,22 +43,16 @@ export const Ranking = () => {
             mr={2}
             ml={2}
           >
-            Ranking
+            {t("ranking.title")}
           </Heading>
         </Flex>
       </Flex>
       <Flex pl={2} pr={2} mb={3} direction="column">
         <Text>
-          La ceremonia de los Premios Óscar se llevará a cabo el{" "}
-          <b>domingo 15 de marzo de 2026</b>. Durante el evento, actualizaremos
-          los resultados tan pronto como se vayan anunciando, y este ranking se
-          actualizará conforme a los resultados de los participantes.
+          <Trans i18nKey="ranking.description" components={{ bold: <b /> }} />
         </Text>
         <Text mt={2}>
-          Cada acierto de cada categoría equivale a <b>1 punto</b>. El ranking
-          ordenará a los usuarios según el número de puntos acumulados. En caso
-          de existir un empate, el usuario que se registró primero será el
-          ganador.
+          <Trans i18nKey="ranking.scoring" components={{ bold: <b /> }} />
         </Text>
       </Flex>
       <RankingTable />

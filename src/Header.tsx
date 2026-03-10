@@ -25,11 +25,13 @@ import {
 import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { useUser, useAuth } from "reactfire";
 import { useRecoilState, useRecoilValue } from "recoil";
+import { useTranslation } from "react-i18next";
 
 import { hasNominationTimePassedState, userNominationsState } from "./atoms";
 import useResize from "./hooks/useResize";
 
 export const Header = () => {
+  const { t, i18n } = useTranslation();
   const hasNominationTimePassed = useRecoilValue(hasNominationTimePassedState);
 
   const [userNominations, setUserNominations] =
@@ -41,10 +43,10 @@ export const Header = () => {
   const isMobileMenu = useBreakpointValue({ base: true, md: false });
 
   const menuLinks = [
-    { to: "/", title: "Mi Quiniela" },
-    { to: "/ranking", title: "Ranking" },
-    { to: "/rules", title: "Reglas" },
-    { to: "/winners", title: "Ganadores" },
+    { to: "/", title: t("nav.myQuiniela") },
+    { to: "/ranking", title: t("nav.ranking") },
+    { to: "/rules", title: t("nav.rules") },
+    { to: "/winners", title: t("nav.winners") },
   ];
 
   const menuSelected = menuLinks.find(({ to }) => pathname === to);
@@ -61,6 +63,12 @@ export const Header = () => {
   useEffect(() => {
     resizeEffect();
   }, [pathname]);
+
+  const remaining = 24 - Object.values(userNominations).length;
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === "es" ? "en" : "es");
+  };
 
   return (
     <Box
@@ -174,7 +182,7 @@ export const Header = () => {
                             fontSize="10px"
                             display={{ base: "none", sm: "block" }}
                           >
-                            Tequiniela completada
+                            {t("header.completed")}
                           </Text>
                           <CheckIcon
                             ml={2}
@@ -190,18 +198,14 @@ export const Header = () => {
                           minWidth="120px"
                           fontSize="10px"
                         >
-                          {`${24 - Object.values(userNominations).length} ${
-                            Object.values(userNominations).length == 23
-                              ? "categoría por elegir"
-                              : "categorías por elegir"
-                          }`}
+                          {t("header.categoriesRemaining", { count: remaining })}
                         </Text>
                       )}
                     </Flex>
                   ) : (
                     <Flex align="center">
                       <Text ml={3} mr={3} fontSize="10px">
-                        Votación cerrada
+                        {t("header.votingClosed")}
                       </Text>
                     </Flex>
                   )}
@@ -248,7 +252,7 @@ export const Header = () => {
                       navigate("/", { replace: true });
                     }}
                   >
-                    Logout
+                    {t("header.logout")}
                   </MenuItem>
                 </MenuList>
               </Menu>
@@ -263,9 +267,19 @@ export const Header = () => {
               fontWeight={500}
               fontSize={{ md: "12px", lg: "md" }}
             >
-              Iniciar Sesión
+              {t("header.login")}
             </Button>
           )}
+          <Button
+            p={0}
+            borderRadius="full"
+            onClick={toggleLanguage}
+            bg="transparent"
+            fontSize="xs"
+            minW="32px"
+          >
+            {i18n.language === "es" ? "EN" : "ES"}
+          </Button>
           <Button
             hidden
             p={0}

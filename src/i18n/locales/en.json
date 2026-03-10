@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "myQuiniela": "My Picks",
+    "ranking": "Ranking",
+    "rules": "Rules",
+    "winners": "Winners"
+  },
+  "header": {
+    "completed": "Tequiniela complete",
+    "categoriesRemaining_one": "{{count}} category to pick",
+    "categoriesRemaining_other": "{{count}} categories to pick",
+    "votingClosed": "Voting closed",
+    "login": "Sign In",
+    "logout": "Logout"
+  },
+  "welcome": {
+    "title": "You can now vote in the Tequiniela 2026",
+    "description": "The Tequiniela is a pool organized among friends for the Oscars 2026 ceremony. To participate, sign in with your Google account, select your nominees, and don't forget to check the rules."
+  },
+  "login": {
+    "title": "Sign In",
+    "instructions": "To register your votes, sign in with your Google account.",
+    "publicNotice": "Your account name and profile photo will be displayed publicly."
+  },
+  "nominations": {
+    "correct": "Correct",
+    "incorrect": "Wrong",
+    "winnerMale": "Winner",
+    "winnerFemale": "Winner"
+  },
+  "ranking": {
+    "title": "Ranking",
+    "description": "The Oscars ceremony will take place on <bold>Sunday, March 15, 2026</bold>. During the event, we will update the results as soon as they are announced, and this ranking will be updated according to the participants' results.",
+    "scoring": "Each correct pick per category equals <bold>1 point</bold>. The ranking will sort users by the number of accumulated points. In case of a tie, the user who registered first will be the winner."
+  },
+  "table": {
+    "name": "Name",
+    "score": "Score"
+  },
+  "winners": {
+    "title": "Winners",
+    "noData": "No data available for this year."
+  },
+  "rules": {
+    "title": "Rules",
+    "welcome": "Welcome to the traditional Oscars pool!",
+    "joinFun": "Join the fun and compete with other movie fans to see who has the sharpest eye for picking the winners.",
+    "forEveryone": "It doesn't matter if you're a seasoned cinephile or just a casual viewer, the pool is for everyone!",
+    "getReady": "Get ready to enjoy a night full of surprises, celebrities and great awards, and show your skills picking the Oscar winners in the Tequiniela!",
+    "prizesTitle": "Prizes",
+    "prizesDescription": "This year's prizes are yet to be defined. Stay tuned!",
+    "teamTitle": "Team",
+    "code": "Code",
+    "direction": "Direction",
+    "design": "Design/UX",
+    "prizes": "Prizes"
+  },
+  "footer": {
+    "poweredBy": "Powered by"
+  },
+  "categories": {
+    "bestPicture": "Best Picture",
+    "leadingActor": "Best Actor",
+    "leadingActress": "Best Actress",
+    "directing": "Best Director",
+    "supportingActor": "Best Supporting Actor",
+    "supportingActress": "Best Supporting Actress",
+    "originalScreenplay": "Best Original Screenplay",
+    "adaptedScreenplay": "Best Adapted Screenplay",
+    "originalSong": "Best Original Song",
+    "originalScore": "Best Original Score",
+    "internationalFeature": "Best International Feature Film",
+    "animatedFeature": "Best Animated Feature Film",
+    "documentaryFeature": "Best Documentary Feature",
+    "productionDesign": "Best Production Design",
+    "costumeDesign": "Best Costume Design",
+    "makeup": "Best Makeup and Hairstyling",
+    "sound": "Best Sound",
+    "filmEditing": "Best Film Editing",
+    "cinematography": "Best Cinematography",
+    "visualEffects": "Best Visual Effects",
+    "liveActionShort": "Best Live Action Short Film",
+    "animatedShort": "Best Animated Short Film",
+    "documentaryShort": "Best Documentary Short Subject",
+    "casting": "Best Casting"
+  }
+}

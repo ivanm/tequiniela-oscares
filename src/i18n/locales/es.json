@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "myQuiniela": "Mi Quiniela",
+    "ranking": "Ranking",
+    "rules": "Reglas",
+    "winners": "Ganadores"
+  },
+  "header": {
+    "completed": "Tequiniela completada",
+    "categoriesRemaining_one": "{{count}} categoria por elegir",
+    "categoriesRemaining_other": "{{count}} categorias por elegir",
+    "votingClosed": "Votacion cerrada",
+    "login": "Iniciar Sesion",
+    "logout": "Logout"
+  },
+  "welcome": {
+    "title": "Ya puedes votar en la Tequiniela 2026",
+    "description": "La Tequiniela es una quiniela organizada entre amigos para la entrega de los Premios Oscar 2026. Para participar, inicia sesion con tu cuenta de Google, selecciona tus candidatos, y no te olvides de revisar el reglamento."
+  },
+  "login": {
+    "title": "Iniciar Sesion",
+    "instructions": "Para registrar tus votos, inicia sesion con tu cuenta de Google.",
+    "publicNotice": "El nombre y foto de perfil de tu cuenta seran mostrados publicamente."
+  },
+  "nominations": {
+    "correct": "Acierto",
+    "incorrect": "Error",
+    "winnerMale": "Ganador",
+    "winnerFemale": "Ganadora"
+  },
+  "ranking": {
+    "title": "Ranking",
+    "description": "La ceremonia de los Premios Oscar se llevara a cabo el <bold>domingo 15 de marzo de 2026</bold>. Durante el evento, actualizaremos los resultados tan pronto como se vayan anunciando, y este ranking se actualizara conforme a los resultados de los participantes.",
+    "scoring": "Cada acierto de cada categoria equivale a <bold>1 punto</bold>. El ranking ordenara a los usuarios segun el numero de puntos acumulados. En caso de existir un empate, el usuario que se registro primero sera el ganador."
+  },
+  "table": {
+    "name": "Nombre",
+    "score": "Aciertos"
+  },
+  "winners": {
+    "title": "Ganadores",
+    "noData": "No hay datos para este ano."
+  },
+  "rules": {
+    "title": "Reglas",
+    "welcome": "Bienvenidos a la tradicional quiniela de los Oscars!",
+    "joinFun": "Unete a la diversion y compite con otros aficionados del cine para ver quien tiene el ojo mas agudo para seleccionar a los ganadores.",
+    "forEveryone": "No importa si eres un cinefilo experimentado o simplemente un espectador casual, la quiniela es para todos!",
+    "getReady": "Preparate para disfrutar de una noche llena de sorpresas, celebridades y grandes premios, y demuestra tus habilidades para elegir a los ganadores de los Oscars en la Tequiniela!",
+    "prizesTitle": "Premios",
+    "prizesDescription": "Los premios de este ano estan por definirse. Mantente al pendiente!",
+    "teamTitle": "Equipo",
+    "code": "Codigo",
+    "direction": "Direccion",
+    "design": "Diseno/UX",
+    "prizes": "Premios"
+  },
+  "footer": {
+    "poweredBy": "Powered by"
+  },
+  "categories": {
+    "bestPicture": "Mejor Pelicula",
+    "leadingActor": "Mejor Actor",
+    "leadingActress": "Mejor Actriz",
+    "directing": "Mejor Director",
+    "supportingActor": "Mejor Actor de Reparto",
+    "supportingActress": "Mejor Actriz de Reparto",
+    "originalScreenplay": "Mejor Guion Original",
+    "adaptedScreenplay": "Mejor Guion Adaptado",
+    "originalSong": "Mejor Cancion Original",
+    "originalScore": "Mejor Banda Sonora",
+    "internationalFeature": "Mejor Pelicula Internacional",
+    "animatedFeature": "Mejor Pelicula Animada",
+    "documentaryFeature": "Mejor Documental",
+    "productionDesign": "Mejor Diseno de Produccion",
+    "costumeDesign": "Mejor Diseno de Vestuario",
+    "makeup": "Mejor Maquillaje y Peinado",
+    "sound": "Mejor Sonido",
+    "filmEditing": "Mejor Edicion",
+    "cinematography": "Mejor Fotografia",
+    "visualEffects": "Mejores Efectos Visuales",
+    "liveActionShort": "Mejor Cortometraje de Accion en Vivo",
+    "animatedShort": "Mejor Cortometraje Animado",
+    "documentaryShort": "Mejor Cortometraje Documental",
+    "casting": "Mejor Casting"
+  }
+}

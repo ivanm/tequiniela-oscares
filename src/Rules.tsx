@@ -9,7 +9,10 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { AtSignIcon } from "@chakra-ui/icons";
+import { useTranslation } from "react-i18next";
+
 export const Rules = () => {
+  const { t } = useTranslation();
   const iconFilter = useColorModeValue(undefined, "invert(1)");
 
   return (
@@ -43,25 +46,15 @@ export const Rules = () => {
             mr={2}
             ml={2}
           >
-            Reglas
+            {t("rules.title")}
           </Heading>
         </Flex>
       </Flex>
       <Flex pl={2} pr={2} direction="column" gap={2}>
-        <Text>¡Bienvenidos a la tradicional quiniela de los Oscars!</Text>
-        <Text>
-          Únete a la diversión y compite con otros aficionados del cine para ver
-          quién tiene el ojo más agudo para seleccionar a los ganadores.
-        </Text>
-        <Text>
-          ¡No importa si eres un cinéfilo experimentado o simplemente un
-          espectador casual, la quiniela es para todos!
-        </Text>
-        <Text>
-          Prepárate para disfrutar de una noche llena de sorpresas, celebridades
-          y grandes premios, ¡y demuestra tus habilidades para elegir a los
-          ganadores de los Oscars en la Tequiniela!
-        </Text>
+        <Text>{t("rules.welcome")}</Text>
+        <Text>{t("rules.joinFun")}</Text>
+        <Text>{t("rules.forEveryone")}</Text>
+        <Text>{t("rules.getReady")}</Text>
       </Flex>
       <Flex pl={3} pr={3} pt={3} pb={3} mt={2} align="center">
         <Image
@@ -81,14 +74,12 @@ export const Rules = () => {
             mr={2}
             ml={2}
           >
-            Premios
+            {t("rules.prizesTitle")}
           </Heading>
         </Flex>
       </Flex>
       <Flex pl={2} pr={2} direction="column" gap={2}>
-        <Text>
-          Los premios de este año están por definirse. ¡Mantente al pendiente!
-        </Text>
+        <Text>{t("rules.prizesDescription")}</Text>
       </Flex>
       <Flex pl={3} pr={3} pt={3} pb={3} mt={2} align="center">
         <AtSignIcon boxSize="25px" />
@@ -103,13 +94,13 @@ export const Rules = () => {
             mr={2}
             ml={2}
           >
-            Equipo
+            {t("rules.teamTitle")}
           </Heading>
         </Flex>
       </Flex>
       <Flex pl={2} pr={2} direction="column" gap={2}>
         <Text>
-          <b>Código:</b>{" "}
+          <b>{t("rules.code")}:</b>{" "}
           <Link href="https://www.threads.net/@o.ladino" isExternal>
             @canitoy
           </Link>
@@ -123,16 +114,16 @@ export const Rules = () => {
           </Link>
         </Text>
         <Text>
-          <b>Dirección</b>: Enrique Segoviano
+          <b>{t("rules.direction")}</b>: Enrique Segoviano
         </Text>
         <Text>
-          <b>Diseño/UX</b>:{" "}
+          <b>{t("rules.design")}</b>:{" "}
           <Link href="https://twitter.com/chrispulze" isExternal>
             @chrispulze
           </Link>
         </Text>
         <Text>
-          <b>Premios:</b>{" "}
+          <b>{t("rules.prizes")}:</b>{" "}
           <Link href="#" isExternal>
             @cupto
           </Link>

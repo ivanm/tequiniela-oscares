@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { useFirestore } from "reactfire";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+import { useTranslation } from "react-i18next";
 import { computeScores, type NominationPick } from "./scoring";
 
 interface YearConfig {
@@ -59,6 +60,7 @@ interface YearData {
 }
 
 export const Winners = () => {
+  const { t } = useTranslation();
   const db = useFirestore();
   const [yearData, setYearData] = useState<Record<string, YearData>>({});
   const [loading, setLoading] = useState(true);
@@ -126,7 +128,7 @@ export const Winners = () => {
     if (!data || data.users.length === 0) {
       return (
         <Text mt={4} color="gray.400">
-          No hay datos para este año.
+          {t("winners.noData")}
         </Text>
       );
     }
@@ -156,7 +158,7 @@ export const Winners = () => {
               pt={6}
               pb={3}
             >
-              Nombre
+              {t("table.name")}
             </Box>
             <Box
               w="90px"
@@ -166,7 +168,7 @@ export const Winners = () => {
               pt={6}
               pb={3}
             >
-              Aciertos
+              {t("table.score")}
             </Box>
           </Flex>
           {data.users.map((user, index) => (
@@ -246,7 +248,7 @@ export const Winners = () => {
             mr={2}
             ml={2}
           >
-            Ganadores
+            {t("winners.title")}
           </Heading>
         </Flex>
       </Flex>

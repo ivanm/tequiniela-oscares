@@ -16,6 +16,7 @@ import {
   // useColorModeValue,
 } from "@chakra-ui/react";
 import { useRecoilState, useRecoilValue } from "recoil";
+import { useTranslation } from "react-i18next";
 
 // import BigCard from "./cards/BigCard";
 // import MiniCard from "./cards/MiniCard";
@@ -45,6 +46,7 @@ const NominationCardsNew = ({
   nominationSlug,
   title,
 }: NominationCardsNewProps) => {
+  const { t } = useTranslation();
   const [status, setStatus] = useState<Status>("normal");
   // const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
   // const iconFilter = useColorModeValue(undefined, "invert(1)");
@@ -64,7 +66,7 @@ const NominationCardsNew = ({
     ? "nameSlug"
     : "movieSlug";
   const matchTo = userNominations[nominationSlug]?.[matchKey];
-  
+
   const isWinner =
     winnerNominations[nominationSlug] &&
     winnerNominations[nominationSlug][matchKey] &&
@@ -138,7 +140,7 @@ const NominationCardsNew = ({
                     padding="2px 10px"
                     fontSize="xs"
                   >
-                    Acierto
+                    {t("nominations.correct")}
                   </Box>
                 ) : status === "lost" ? (
                   <Box
@@ -147,7 +149,7 @@ const NominationCardsNew = ({
                     padding="2px 10px"
                     fontSize="xs"
                   >
-                    Error
+                    {t("nominations.incorrect")}
                   </Box>
                 ) : null}
               </Flex>

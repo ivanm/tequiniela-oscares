@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import { useRecoilValue } from "recoil";
+import { useTranslation } from "react-i18next";
 
 import {
   allUsersNominationsState,
@@ -20,6 +21,7 @@ import { computeScores, type NominationPick } from "./scoring";
 import useResize from "./hooks/useResize";
 
 export const RankingTable = () => {
+  const { t } = useTranslation();
   const allUserNominations = useRecoilValue(allUsersNominationsState);
   const winnerNominations = useRecoilValue(winnerNominationsState);
   const hasNominationTimePassed = useRecoilValue(hasNominationTimePassedState);
@@ -120,7 +122,7 @@ export const RankingTable = () => {
             pt={6}
             pb={3}
           >
-            Nombre
+            {t("table.name")}
           </Box>
           <Box
             w="90px"
@@ -130,7 +132,7 @@ export const RankingTable = () => {
             pt={6}
             pb={3}
           >
-            Aciertos
+            {t("table.score")}
           </Box>
         </Flex>
         {sortedAllUserNominations != null &&
