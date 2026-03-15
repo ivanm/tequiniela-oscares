@@ -3,9 +3,9 @@ import {
   Heading,
   Image,
   Text,
-  UnorderedList,
-  ListItem,
   Link,
+  Badge,
+  Box,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { AtSignIcon } from "@chakra-ui/icons";
@@ -78,8 +78,94 @@ export const Rules = () => {
           </Heading>
         </Flex>
       </Flex>
-      <Flex pl={2} pr={2} direction="column" gap={2}>
-        <Text>{t("rules.prizesDescription")}</Text>
+      <Flex pl={2} pr={2} direction="column" gap={4}>
+        <Flex
+          align="center"
+          gap={3}
+          p={3}
+          borderRadius="md"
+          bg="rgba(161, 147, 19, 0.15)"
+          borderLeft="4px solid #a19313"
+        >
+          <Badge
+            colorScheme="yellow"
+            fontSize="md"
+            px={2}
+            py={1}
+            borderRadius="md"
+          >
+            {t("rules.prizeFirst")}
+          </Badge>
+          <Box>
+            <Text fontWeight="bold" fontSize="lg">
+              {t("rules.prize1")}
+            </Text>
+            <Text fontSize="sm" opacity={0.7}>
+              {t("rules.donatedBy")}{" "}
+              <Link href="https://www.threads.com/@masiosare" isExternal>
+                @masiosare
+              </Link>
+            </Text>
+          </Box>
+        </Flex>
+        <Flex
+          align="center"
+          gap={3}
+          p={3}
+          borderRadius="md"
+          bg="rgba(113, 113, 113, 0.15)"
+          borderLeft="4px solid #717171"
+        >
+          <Badge
+            colorScheme="gray"
+            fontSize="md"
+            px={2}
+            py={1}
+            borderRadius="md"
+          >
+            {t("rules.prizeSecond")}
+          </Badge>
+          <Box>
+            <Text fontWeight="bold" fontSize="lg">
+              {t("rules.prize2")}
+            </Text>
+            <Text fontSize="sm" opacity={0.7}>
+              {t("rules.donatedBy")}{" "}
+              <Link href="https://twitter.com/thewarpaint" isExternal>
+                @thewarpaint
+              </Link>
+            </Text>
+          </Box>
+        </Flex>
+        <Flex
+          align="center"
+          gap={3}
+          p={3}
+          borderRadius="md"
+          bg="rgba(114, 81, 18, 0.15)"
+          borderLeft="4px solid #725112"
+        >
+          <Badge
+            colorScheme="orange"
+            fontSize="md"
+            px={2}
+            py={1}
+            borderRadius="md"
+          >
+            {t("rules.prizeThird")}
+          </Badge>
+          <Box>
+            <Text fontWeight="bold" fontSize="lg">
+              {t("rules.prize3")}
+            </Text>
+            <Text fontSize="sm" opacity={0.7}>
+              {t("rules.donatedBy")}{" "}
+              <Link href="https://www.threads.com/@o.ladino" isExternal>
+                @Cani
+              </Link>
+            </Text>
+          </Box>
+        </Flex>
       </Flex>
       <Flex pl={3} pr={3} pt={3} pb={3} mt={2} align="center">
         <AtSignIcon boxSize="25px" />
@@ -124,24 +210,16 @@ export const Rules = () => {
         </Text>
         <Text>
           <b>{t("rules.prizes")}:</b>{" "}
-          <Link href="#" isExternal>
-            @cupto
+          <Link href="https://www.threads.com/@masiosare" isExternal>
+            @masiosare
           </Link>
           ,{" "}
-          <Link href="#" isExternal>
-            @chrispulze
-          </Link>
-          ,{" "}
-          <Link href="#" isExternal>
-            @canitoy
-          </Link>
-          ,{" "}
-          <Link href="#" isExternal>
+          <Link href="https://twitter.com/thewarpaint" isExternal>
             @thewarpaint
           </Link>
           ,{" "}
-          <Link href="https://x.com/vaan" isExternal>
-            @vaan
+          <Link href="https://www.threads.com/@o.ladino" isExternal>
+            @Cani
           </Link>
         </Text>
       </Flex>
