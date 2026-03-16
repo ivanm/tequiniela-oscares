@@ -15,6 +15,7 @@ import { useTranslation } from "react-i18next";
 import {
   allUsersNominationsState,
   winnerNominationsState,
+  tiedWinnerNominationsState,
   hasNominationTimePassedState,
 } from "./atoms";
 import { computeScores, type NominationPick } from "./scoring";
@@ -24,6 +25,7 @@ export const RankingTable = () => {
   const { t } = useTranslation();
   const allUserNominations = useRecoilValue(allUsersNominationsState);
   const winnerNominations = useRecoilValue(winnerNominationsState);
+  const tiedWinnerNominations = useRecoilValue(tiedWinnerNominationsState);
   const hasNominationTimePassed = useRecoilValue(hasNominationTimePassedState);
 
   const { resizeEffect } = useResize();
@@ -45,9 +47,10 @@ export const RankingTable = () => {
       return computeScores(
         users,
         winnerNominations as Record<string, NominationPick>,
+        tiedWinnerNominations as Record<string, NominationPick>,
       );
     }
-  }, [allUserNominations, hasNominationTimePassed, winnerNominations]);
+  }, [allUserNominations, hasNominationTimePassed, winnerNominations, tiedWinnerNominations]);
 
   const sortedAllUserNominations = useMemo(() => {
     if (!hasNominationTimePassed) {

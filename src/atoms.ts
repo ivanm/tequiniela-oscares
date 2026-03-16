@@ -27,6 +27,13 @@ export const winnerNominationsState: RecoilState<WinnerNominations> =
     default: {},
   });
 
+// Maps category → second winner nomination (only for tied categories)
+export const tiedWinnerNominationsState: RecoilState<WinnerNominations> =
+  atom<WinnerNominations>({
+    key: "tiedWinnerNominations",
+    default: {},
+  });
+
 export const documentIdState: RecoilState<string | undefined> = atom<
   string | undefined
 >({

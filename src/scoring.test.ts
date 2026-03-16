@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import {
   computeScores,
+  normalizeWinners,
   NAME_SLUG_MATCH_KEYS,
   NominationPick,
 } from "./scoring";
@@ -394,6 +395,132 @@ describe("computeScores", () => {
     expect(scores.p).toBe(23);
     expect(scores.z).toBe(0);
     expect(scores.m).toBe(18);
+  });
+
+  // --- Tied winners ---
+
+  describe("tied winners", () => {
+    it("awards 1 point when user picked the primary tied winner", () => {
+      const winners: Record<string, NominationPick> = {
+        liveActionShort: { movieSlug: "two-people-exchanging-saliva" },
+      };
+      const tiedWinners: Record<string, NominationPick> = {
+        liveActionShort: { movieSlug: "the-singers" },
+      };
+      const users = [{
+        uid: "u1",
+        nominations: { liveActionShort: { movieSlug: "two-people-exchanging-saliva" } },
+      }];
+      expect(computeScores(users, winners, tiedWinners)["u1"]).toBe(1);
+    });
+
+    it("awards 1 point when user picked the secondary tied winner", () => {
+      const winners: Record<string, NominationPick> = {
+        liveActionShort: { movieSlug: "two-people-exchanging-saliva" },
+      };
+      const tiedWinners: Record<string, NominationPick> = {
+        liveActionShort: { movieSlug: "the-singers" },
+      };
+      const users = [{
+        uid: "u1",
+        nominations: { liveActionShort: { movieSlug: "the-singers" } },
+      }];
+      expect(computeScores(users, winners, tiedWinners)["u1"]).toBe(1);
+    });
+
+    it("awards 0 points when user picked neither tied winner", () => {
+      const winners: Record<string, NominationPick> = {
+        liveActionShort: { movieSlug: "two-people-exchanging-saliva" },
+      };
+      const tiedWinners: Record<string, NominationPick> = {
+        liveActionShort: { movieSlug: "the-singers" },
+      };
+      const users = [{
+        uid: "u1",
+        nominations: { liveActionShort: { movieSlug: "some-other-film" } },
+      }];
+      expect(computeScores(users, winners, tiedWinners)["u1"]).toBe(0);
+    });
+
+    it("tied winner doesn't affect scoring of other categories", () => {
+      const winners: Record<string, NominationPick> = {
+        bestPicture: { movieSlug: "anora" },
+        liveActionShort: { movieSlug: "two-people-exchanging-saliva" },
+      };
+      const tiedWinners: Record<string, NominationPick> = {
+        liveActionShort: { movieSlug: "the-singers" },
+      };
+      const users = [{
+        uid: "u1",
+        nominations: {
+          bestPicture: { movieSlug: "anora" },
+          liveActionShort: { movieSlug: "the-singers" },
+        },
+      }];
+      expect(computeScores(users, winners, tiedWinners)["u1"]).toBe(2);
+    });
+
+    it("works correctly when tiedWinners is undefined (backwards compat)", () => {
+      const winners: Record<string, NominationPick> = {
+        bestPicture: { movieSlug: "anora" },
+      };
+      const users = [{
+        uid: "u1",
+        nominations: { bestPicture: { movieSlug: "anora" } },
+      }];
+      expect(computeScores(users, winners)["u1"]).toBe(1);
+      expect(computeScores(users, winners, undefined)["u1"]).toBe(1);
+    });
+  });
+
+  // --- normalizeWinners ---
+
+  describe("normalizeWinners", () => {
+    it("passes through plain objects unchanged", () => {
+      const raw = {
+        bestPicture: { movieSlug: "anora" },
+        directing: { nameSlug: "sean-baker" },
+      };
+      const { primary, tied } = normalizeWinners(raw);
+      expect(primary).toEqual(raw);
+      expect(tied).toEqual({});
+    });
+
+    it("splits array into primary and tied", () => {
+      const raw = {
+        liveActionShort: [
+          { movieSlug: "two-people-exchanging-saliva" },
+          { movieSlug: "the-singers" },
+        ],
+      };
+      const { primary, tied } = normalizeWinners(raw);
+      expect(primary).toEqual({ liveActionShort: { movieSlug: "two-people-exchanging-saliva" } });
+      expect(tied).toEqual({ liveActionShort: { movieSlug: "the-singers" } });
+    });
+
+    it("handles single-element array as single winner", () => {
+      const raw = {
+        liveActionShort: [{ movieSlug: "only-one" }],
+      };
+      const { primary, tied } = normalizeWinners(raw);
+      expect(primary).toEqual({ liveActionShort: { movieSlug: "only-one" } });
+      expect(tied).toEqual({});
+    });
+
+    it("handles mix of arrays and objects", () => {
+      const raw = {
+        bestPicture: { movieSlug: "anora" },
+        liveActionShort: [
+          { movieSlug: "winner-a" },
+          { movieSlug: "winner-b" },
+        ],
+      };
+      const { primary, tied } = normalizeWinners(raw);
+      expect(primary.bestPicture).toEqual({ movieSlug: "anora" });
+      expect(primary.liveActionShort).toEqual({ movieSlug: "winner-a" });
+      expect(tied.liveActionShort).toEqual({ movieSlug: "winner-b" });
+      expect(tied.bestPicture).toBeUndefined();
+    });
   });
 
   // --- All 8 users at once (2023) ---

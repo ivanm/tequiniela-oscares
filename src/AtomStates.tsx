@@ -18,9 +18,11 @@ import {
   allUsersNominationsState,
   documentIdState,
   winnerNominationsState,
+  tiedWinnerNominationsState,
   hasNominationTimePassedState,
 } from "./atoms";
 import { type UserDocumentData } from "./nominees";
+import { normalizeWinners } from "./scoring";
 
 import useEffectOnce from "./hooks/useEffectOnce";
 
@@ -34,6 +36,7 @@ export const AtomStates = () => {
     allUsersNominationsState,
   );
   const [, setWinnerNominations] = useRecoilState(winnerNominationsState);
+  const [, setTiedWinnerNominations] = useRecoilState(tiedWinnerNominationsState);
   const [, setHasNominationTimePassed] = useRecoilState(
     hasNominationTimePassedState,
   );
@@ -102,7 +105,10 @@ export const AtomStates = () => {
     (async () => {
       unsuscribeWinners = onSnapshot(doc(db, configCollection, "default"), (doc) => {
         if (doc !== undefined) {
-          setWinnerNominations(doc.data()?.winners ?? {});
+          const raw = doc.data()?.winners ?? {};
+          const { primary, tied } = normalizeWinners(raw);
+          setWinnerNominations(primary);
+          setTiedWinnerNominations(tied);
           setHasNominationTimePassed(!doc.data()?.votingEnabled);
         }
       });

@@ -17,7 +17,7 @@ import {
 import { useFirestore } from "reactfire";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { useTranslation } from "react-i18next";
-import { computeScores, type NominationPick } from "./scoring";
+import { computeScores, normalizeWinners, type NominationPick } from "./scoring";
 
 interface YearConfig {
   year: string;
@@ -94,10 +94,11 @@ export const Winners = () => {
                 };
               });
 
-              const winners = configSnap.exists()
+              const rawWinners = configSnap.exists()
                 ? (configSnap.data()?.winners ?? {})
                 : {};
-              const scores = computeScores(users, winners);
+              const { primary: winners, tied: tiedWinners } = normalizeWinners(rawWinners);
+              const scores = computeScores(users, winners, tiedWinners);
 
               users.sort((a, b) => {
                 const pointsCompare =

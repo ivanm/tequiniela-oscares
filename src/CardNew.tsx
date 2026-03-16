@@ -16,6 +16,7 @@ import {
   hasNominationTimePassedState,
   userNominationsState,
   winnerNominationsState,
+  tiedWinnerNominationsState,
 } from "./atoms";
 import {
   type Nomination,
@@ -66,6 +67,10 @@ const CardNew = ({
     winnerNominationsState
   );
 
+  const tiedWinnerNominations = useRecoilValue<WinnerNominations>(
+    tiedWinnerNominationsState
+  );
+
   const [status, setStatus] = useState<Status>("normal");
   const [cardImgSrc, setCardImgSrc] = useState(imgSrc);
 
@@ -88,6 +93,11 @@ const CardNew = ({
     winnerNominations[nominationSlug] &&
     winnerNominations[nominationSlug][matchKey] &&
     winnerNominations[nominationSlug][matchKey] === matchTo;
+  const isTiedWinner =
+    tiedWinnerNominations[nominationSlug] &&
+    tiedWinnerNominations[nominationSlug][matchKey] &&
+    tiedWinnerNominations[nominationSlug][matchKey] === matchTo;
+  const isAnyWinner = isWinner || isTiedWinner;
   const isWinnerPending =
     winnerNominations[nominationSlug] &&
     winnerNominations[nominationSlug][matchKey] &&
@@ -95,7 +105,7 @@ const CardNew = ({
 
   const calcStatus = useCallback(() => {
     if (hasNominationTimePassed && isWinnerPending === false) {
-      if (isWinner) {
+      if (isAnyWinner) {
         if (isSelected) {
           setStatus("selected-won");
         } else {
@@ -115,7 +125,7 @@ const CardNew = ({
         setStatus("normal");
       }
     }
-  }, [hasNominationTimePassed, isSelected, isWinner]);
+  }, [hasNominationTimePassed, isSelected, isAnyWinner]);
 
   useEffect(() => {
     calcStatus();
@@ -145,7 +155,7 @@ const CardNew = ({
     user !== null && !hasNominationTimePassed && status !== "selected";
 
   const cardBgBlendMode = useColorModeValue("normal", "soft-light");
-  const opacity = hasNominationTimePassed && !isWinner ? "0.5" : "1";
+  const opacity = hasNominationTimePassed && !isAnyWinner ? "0.5" : "1";
   const isFemale = ["leadingActress", "supportingActress"].includes(
     nominationSlug
   ) || nameSlug === 'justine-triet';
@@ -190,7 +200,7 @@ const CardNew = ({
         ) : null}
       </Flex>
       <Flex align="center">
-        {hasNominationTimePassed && isWinner ? (
+        {hasNominationTimePassed && isAnyWinner ? (
           <Box
             bg="#fecb61"
             h="25px"

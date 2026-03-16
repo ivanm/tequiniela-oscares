@@ -32,6 +32,7 @@ import {
   hasNominationTimePassedState,
   userNominationsState,
   winnerNominationsState,
+  tiedWinnerNominationsState,
 } from "./atoms";
 
 type Status = "normal" | "won" | "lost";
@@ -62,6 +63,10 @@ const NominationCardsNew = ({
     winnerNominationsState
   );
 
+  const tiedWinnerNominations = useRecoilValue<WinnerNominations>(
+    tiedWinnerNominationsState
+  );
+
   const matchKey = nominations.some((n) => n.nameSlug)
     ? "nameSlug"
     : "movieSlug";
@@ -71,6 +76,10 @@ const NominationCardsNew = ({
     winnerNominations[nominationSlug] &&
     winnerNominations[nominationSlug][matchKey] &&
     winnerNominations[nominationSlug][matchKey] === matchTo;
+  const isTiedWinner =
+    tiedWinnerNominations[nominationSlug] &&
+    tiedWinnerNominations[nominationSlug][matchKey] &&
+    tiedWinnerNominations[nominationSlug][matchKey] === matchTo;
   const isWinnerPending =
     winnerNominations[nominationSlug] &&
     winnerNominations[nominationSlug][matchKey] &&
@@ -82,7 +91,7 @@ const NominationCardsNew = ({
       hasNominationTimePassed &&
       isWinnerPending === false
     ) {
-      if (isWinner) {
+      if (isWinner || isTiedWinner) {
         setStatus("won");
       } else {
         setStatus("lost");
@@ -90,7 +99,7 @@ const NominationCardsNew = ({
     } else {
       setStatus("normal");
     }
-  }, [hasNominationTimePassed, isWinner, userNominations]);
+  }, [hasNominationTimePassed, isWinner, isTiedWinner, userNominations]);
 
   useEffect(() => {
     calcStatus();
